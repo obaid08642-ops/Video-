@@ -1,0 +1,24 @@
+{
+ "text": "طب عمرك سألت نفسك، ليه الدكتور ساعات بيرفض يكتبهولك، وإنت تعبان؟",
+ "params": {
+  "num_step": 32,
+  "guidance_scale": 2.0,
+  "speed": 1.0
+ },
+ "seed": 1234,
+ "gen_seconds": {
+  "Ahmed": 79.7,
+  "Ali": 108.1,
+  "Hassan": 60.5,
+  "Karim": 68.0,
+  "Mahmoud": 89.1,
+  "Mohammed": 73.4,
+  "Mostafa": 54.8,
+  "Ramy": 67.9,
+  "Shaker": 78.0,
+  "Tareq": 64.0,
+  "Yehia": 57.0,
+  "Youssef": 77.0
+ },
+ "device": "CPU, 4 cores, float32"
+}
