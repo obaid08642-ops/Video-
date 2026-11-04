@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, CalculateMetadataFunction, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { Badge, Camera, Paper, SeriesTag, Tray } from "../../components/Frame";
+import { Badge, Camera, Paper, SeriesTag, Tray, type TrayItem } from "../../components/Frame";
 import { Captions } from "../../components/Captions";
 import { buildCards, type CaptionData } from "../../lib/captions";
 import { FPS, T, type Timing } from "../../lib/timing";
@@ -10,6 +10,7 @@ import captionData from "../../data/ep01_captions.json";
 import { Scene1, scene1Cues, scene1Pulses, scene1Tray } from "./Scene1";
 import { Scene4, scene4Cues, scene4Pulses } from "./Scene4";
 import { Scene7, scene7Cues, scene7Pulses, scene7Silence } from "./Scene7";
+import { Outro, Scene2, Scene3, Scene5, Scene6, Scene8, Scene9, scene2, scene3, scene5, scene6, scene8, scene9 } from "./ScenesRest";
 
 export type Ep01Props = { voice: string; mode: "full" | "hook"; timing?: Timing };
 
@@ -23,37 +24,43 @@ export const calcEp01: CalculateMetadataFunction<Ep01Props> = async ({ props }) 
   return { durationInFrames: Math.ceil(dur * FPS), props: { ...props, timing } };
 };
 
-const SCENES: Record<number, React.FC<{ t: T }>> = { 1: Scene1, 4: Scene4, 7: Scene7 };
-const has = (t: T, id: string) => t.timing.lines.some((l) => l.id === id);
+type SceneDef = {
+  C: React.FC<{ t: T }>;
+  cues: (t: T) => Cue[];
+  pulses: (t: T) => number[];
+  tray?: (t: T) => TrayItem[];
+  silence?: (t: T) => [number, number];
+};
+const SCENES: Record<number, SceneDef> = {
+  1: { C: Scene1, cues: scene1Cues, pulses: scene1Pulses, tray: scene1Tray },
+  2: { C: Scene2, ...scene2 },
+  3: { C: Scene3, ...scene3 },
+  4: { C: Scene4, cues: scene4Cues, pulses: scene4Pulses },
+  5: { C: Scene5, ...scene5 },
+  6: { C: Scene6, ...scene6 },
+  7: { C: Scene7, cues: scene7Cues, pulses: scene7Pulses, silence: scene7Silence },
+  8: { C: Scene8, ...scene8 },
+  9: { C: Scene9, ...scene9 },
+};
 
 export const Ep01: React.FC<Ep01Props> = ({ timing, mode }) => {
   const f = useCurrentFrame();
   const t = useMemo(() => new T(timing!), [timing]);
-  const cards = useMemo(() => {
-    const all = buildCards(timing!, captionData as unknown as CaptionData);
-    return mode === "hook" ? all.filter((c) => c.scene === 1) : all;
-  }, [timing, mode]);
-  const total = Math.ceil((timing!.duration + OUTRO) * FPS);
+  const has = (id: string) => timing!.lines.some((l) => l.id === id);
+  const active = useMemo(
+    () => Object.keys(SCENES).map(Number).filter((id) => (mode === "hook" ? id === 1 : has(`s${id}l1`))),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [timing, mode],
+  );
+  const cards = useMemo(() => buildCards(timing!, captionData as unknown as CaptionData).filter((c) => active.includes(c.scene)), [timing, active]);
+  const voiceEnd = Math.ceil(timing!.duration * FPS);
+  const total = voiceEnd + Math.ceil(OUTRO * FPS);
+  const logoAt = voiceEnd;
 
-  const built = (id: number) => SCENES[id] && has(t, `s${id}l1`);
-  const cues = useMemo(() => {
-    const list: Cue[] = [...scene1Cues(t)];
-    if (mode === "full") {
-      if (built(4)) list.push(...scene4Cues(t));
-      if (built(7)) list.push(...scene7Cues(t));
-    }
-    return schedule(list, t.keywordSpans());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [t, mode]);
-  const pulses = useMemo(() => {
-    const p = [...scene1Pulses(t)];
-    if (mode === "full") {
-      if (built(4)) p.push(...scene4Pulses(t));
-      if (built(7)) p.push(...scene7Pulses(t));
-    }
-    return p;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [t, mode]);
+  const cues = useMemo(() => schedule(active.flatMap((id) => SCENES[id].cues(t)), t.keywordSpans()), [t, active]);
+  const pulses = useMemo(() => active.flatMap((id) => SCENES[id].pulses(t)), [t, active]);
+  const tray = useMemo(() => active.flatMap((id) => SCENES[id].tray?.(t) ?? []), [t, active]);
+  const silences = useMemo(() => active.flatMap((id) => (SCENES[id].silence ? [SCENES[id].silence!(t)] : [])), [t, active]);
 
   // music ducking from the word timings: barely audible under speech, a little up in pauses
   const mask = useMemo(() => {
@@ -67,39 +74,42 @@ export const Ep01: React.FC<Ep01Props> = ({ timing, mode }) => {
     }
     return out;
   }, [t, total]);
-  const silence = mode === "full" && built(7) ? scene7Silence(t) : null;
-  const musicVol = (frame: number, base = 1) => {
-    const duck = 0.45 - 0.27 * (mask[Math.min(frame, total - 1)] ?? 0);
-    let v = duck * base;
-    if (silence) {
-      const s = frame / FPS;
-      v *= interpolate(s, [silence[0] - 0.25, silence[0], silence[1], silence[1] + 0.6], [1, 0, 0, 1], clamp);
-    }
+  const musicVol = (frame: number) => {
+    let v = 0.45 - 0.27 * (mask[Math.min(frame, total - 1)] ?? 0);
+    const s = frame / FPS;
+    for (const [a, b] of silences) v *= interpolate(s, [a - 0.25, a, b, b + 0.6], [1, 0, 0, 1], clamp);
     return v;
   };
+  // three themes: curiosity (hook -> explanation), calm tension (resistance + numbers), warm hope (ending)
+  const tensionAt = has("s6l1") && mode === "full" ? t.f("s6l1") - 8 : total;
+  const hopeAt = has("s8l1") && mode === "full" ? t.f("s8l1") - 8 : total;
+  const themes: [string, number, number][] = [
+    ["curiosity", FPS, tensionAt],
+    ["tension", tensionAt, hopeAt],
+    ["hope", hopeAt, logoAt],
+  ];
 
   // scene windows (zoom transitions at the midpoint between scenes)
-  const scenes = timing!.scenes.filter((s) => mode === "full" || s.id === 1);
-  const bounds = scenes.map((s, i) => {
-    const prev = timing!.scenes[timing!.scenes.indexOf(s) - 1];
-    const next = timing!.scenes[timing!.scenes.indexOf(s) + 1];
+  const scenes = timing!.scenes.filter((s) => active.includes(s.id));
+  const bounds = scenes.map((s) => {
+    const i = timing!.scenes.indexOf(s);
+    const prev = timing!.scenes[i - 1];
+    const next = timing!.scenes[i + 1];
     const a = prev ? Math.round(((prev.end + s.start) / 2) * FPS) : 0;
-    const b = next && mode === "full" ? Math.round(((s.end + next.start) / 2) * FPS) : Math.round((s.end + 1.2) * FPS);
-    return { id: s.id, a, b, i };
+    const b = next && mode === "full" ? Math.round(((s.end + next.start) / 2) * FPS) : Math.round((s.end + (mode === "full" ? 0.6 : 1.2)) * FPS);
+    return { id: s.id, a, b };
   });
-
-  const tray = scene1Tray(t);
-  const curiosityEnd = has(t, "s6l1") ? t.f("s6l1") - 10 : total;
+  const tension = mode === "full" && has("s6l1") ? interpolate(f, [t.f("s6l1") - 15, t.f("s6l1"), t.f("s7l5@end"), t.f("s7l5@end") + 15], [0, 0.1, 0.1, 0], clamp) : 0;
 
   return (
     <AbsoluteFill style={{ backgroundColor: "#EFE6D6" }}>
-      <Paper darken={mode === "full" && has(t, "s6l1") ? interpolate(f, [t.f("s6l1") - 15, t.f("s6l1"), t.f("s7l5@end"), t.f("s7l5@end") + 15], [0, 0.07, 0.07, 0], clamp) : 0} />
+      <Paper darken={tension * 0.7} />
       {bounds.map(({ id, a, b }) => {
-        const S = SCENES[id];
         if (f < a - 8 || f > b + 8) return null;
+        const S = SCENES[id].C;
         return (
           <Camera key={id} from={a} to={b}>
-            {S ? <S t={t} /> : null}
+            <S t={t} />
           </Camera>
         );
       })}
@@ -107,20 +117,30 @@ export const Ep01: React.FC<Ep01Props> = ({ timing, mode }) => {
       <Tray items={tray} />
       <Badge pulses={pulses} />
       <SeriesTag text="#الأدوية" />
+      {mode === "full" && active.includes(9) && <Outro t={t} logoAt={logoAt} />}
 
-      {/* audio: voice, music (curiosity from 1 s), sfx */}
+      {/* audio: voice, music themes, sfx */}
       <Audio src={staticFile(`voice/${timing!.audio}`)} />
-      <Sequence from={FPS} durationInFrames={curiosityEnd - FPS}>
-        <Audio
-          src={staticFile("audio/music/curiosity.mp3")}
-          volume={(fr) => musicVol(fr + FPS) * interpolate(fr, [0, 30, curiosityEnd - FPS - 30, curiosityEnd - FPS], [0, 1, 1, 0], clamp)}
-        />
-      </Sequence>
+      {themes.map(([name, a, b]) =>
+        b - a > 30 ? (
+          <Sequence key={name} from={a} durationInFrames={b - a + 20}>
+            <Audio
+              src={staticFile(`audio/music/${name}.mp3`)}
+              volume={(fr) => musicVol(fr + a) * interpolate(fr, [0, 30, b - a - 10, b - a + 20], [0, 1, 1, 0], clamp)}
+            />
+          </Sequence>
+        ) : null,
+      )}
       {cues.map((c, i) => (
         <Sequence key={i} from={Math.round(c.at * FPS)} durationInFrames={2 * FPS}>
           <Audio src={staticFile(`audio/sfx/${c.sfx}.wav`)} volume={c.vol} />
         </Sequence>
       ))}
+      {mode === "full" && (
+        <Sequence from={logoAt} durationInFrames={Math.ceil(OUTRO * FPS)}>
+          <Audio src={staticFile("audio/sfx/heartbeat.wav")} volume={0.35} />
+        </Sequence>
+      )}
     </AbsoluteFill>
   );
 };

@@ -122,6 +122,41 @@ def drip():
     return np.sin(2 * np.pi * np.cumsum(f) / SR) * env(0.18, 0.002, None, 10)
 
 
+def motor():
+    d = 1.6; t = t_(d); f = 38 + 4 * np.sin(2 * np.pi * 1.5 * t)
+    x = signal.sawtooth(2 * np.pi * np.cumsum(f) / SR) * (0.6 + 0.4 * (np.sin(2 * np.pi * 9 * t) > 0))
+    return lp(x, 300) * env(d, 0.15, 0.4)
+
+def chirp():
+    x = np.zeros(int(0.5 * SR))
+    for o in (0.0, 0.16):
+        d = 0.09; tt = t_(d); f = 2400 + 1500 * np.sin(np.pi * tt / d)
+        c = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.sin(np.pi * tt / d) ** 2
+        s = int(o * SR); x[s:s + len(c)] += c
+    return lp(x, 5000)
+
+def bump():
+    tt = t_(0.35); f = 120 * np.exp(-tt * 8) + 50
+    x = np.sin(2 * np.pi * np.cumsum(f) / SR) * np.exp(-tt * 12) + 0.3 * lp(noise(0.35), 900) * np.exp(-tt * 30)
+    return x
+
+def metal():
+    d = 0.8; t = t_(d); x = np.zeros_like(t)
+    for f, k in [(523, 5), (1187, 7), (1912, 9), (2731, 12)]:
+        x += np.sin(2 * np.pi * f * t) * np.exp(-k * t)
+    return lp(x * np.minimum(1, t / 0.002), 4000)
+
+def snip():
+    x = np.zeros(int(0.3 * SR))
+    for o in (0.0, 0.12):
+        c = hp(noise(0.05), 3000) * np.exp(-t_(0.05) * 90); s = int(o * SR); x[s:s + len(c)] += c
+    return x
+
+def door():
+    tt = t_(0.5)
+    return lp(noise(0.5), 400) * np.exp(-tt * 14) + 0.6 * np.sin(2 * np.pi * 70 * tt) * np.exp(-tt * 10)
+
+
 # ------------------------------------------------------------------------------------- music
 NOTE = {n: i for i, n in enumerate("C C# D D# E F F# G G# A A# B".split())}
 def hz(name, octv): return 440 * 2 ** ((NOTE[name] + 12 * (octv + 1) - 69) / 12)
@@ -180,7 +215,8 @@ if __name__ == "__main__":
     for name, fn, db in [("heartbeat", heartbeat, -3), ("pop", pop, -6), ("paper", paper, -8), ("scribble", scribble, -9),
                          ("whoosh", whoosh, -6), ("glass", glass, -10), ("ding", ding, -8), ("bubbles", bubbles, -8),
                          ("shimmer", shimmer, -10), ("crack", crack, -10), ("click", click, -6), ("tick", tick, -8),
-                         ("drip", drip, -8)]:
+                         ("drip", drip, -8), ("motor", motor, -6), ("chirp", chirp, -10), ("bump", bump, -6),
+                         ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6)]:
         save(name, fn(), db)
     # 1) curiosity (hook -> explanation): C major / A minor colour, 88 BPM, questioning motif
     music([("C", [("C", 3), ("E", 3), ("G", 3), ("B", 3)]), ("A", [("A", 2), ("C", 3), ("E", 3), ("G", 3)]),

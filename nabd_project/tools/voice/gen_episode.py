@@ -346,13 +346,18 @@ def main():
                     import librosa
                     _, (_, off) = librosa.effects.trim(y, top_db=35)
                     t1 = max(t1, off / sr - 0.03)
-                base, r2, st = y, None, 0
+                base = y
+                r0 = pitch_rise(base, sr, t0, t1 + 0.05)
+                best_y, best_r, best_st = base, (r0 if r0 is not None else -99), 0.0
                 for st in (4.0, 5.5, 7.0):
-                    y = glide_up(base, sr, t0, t1, st)
-                    r2 = pitch_rise(y, sr, t0, t1 + 0.05)
+                    z = glide_up(base, sr, t0, t1, st)
+                    r2 = pitch_rise(z, sr, t0, t1 + 0.05)
+                    if r2 is not None and r2 > best_r:
+                        best_y, best_r, best_st = z, r2, st
                     if r2 is not None and r2 >= 0.8:
                         break
-                glided.append((words[qi]["w"], r, None if r2 is None else round(r2, 1), st))
+                y = best_y
+                glided.append((words[qi]["w"], r, round(best_r, 1), best_st))
         flagged = best["flagged"]
         z, nt = shape_line(y, sr, words, best["times"])
         shaped.append(dict(L=L, words=words, audio=z, times=nt))
