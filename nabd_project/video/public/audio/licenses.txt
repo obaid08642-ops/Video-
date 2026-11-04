@@ -1,0 +1,5 @@
+All files in sfx/ and music/ were synthesised from scratch with numpy/scipy by
+nabd_project/tools/audio/make_audio.py (no samples, no third-party audio).
+Owner: Nabd channel. Licence: proprietary, free for any commercial use by the channel.
+Voice: VoiceTut-TTS (Apache-2.0, mohammedaly22/VoiceTut-TTS, base k2-fsa/OmniVoice Apache-2.0).
+Font: IBM Plex Sans Arabic (SIL OFL 1.1, see public/fonts/OFL.txt).
