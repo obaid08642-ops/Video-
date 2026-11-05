@@ -65,15 +65,17 @@ function partition(line: Line, max: number): [number, number][] {
   return out;
 }
 
-/** break a list of tokens into <= 2 rows of <= 7, preferring punctuation near the middle */
+/** break a list of tokens into <= 2 rows of <= 7 words, balanced by characters, preferring punctuation */
 function toRows(tokens: Token[], puncts: string[]): Token[][] {
   const n = tokens.length;
-  if (n <= 4) return [tokens];
+  const len = (a: Token[]) => a.reduce((k, t) => k + t.text.length + 1, 0);
+  if (n <= 3 || len(tokens) <= 20) return [tokens];
   let bestI = Math.ceil(n / 2);
   let bestScore = -1e9;
   for (let i = Math.max(1, n - 7); i <= Math.min(7, n - 1); i++) {
     const p = puncts[i - 1] ?? "";
-    const score = (BREAK.test(p) ? 3 : 0) + (p.includes("،") ? 1 : 0) - Math.abs(i - n / 2) * 0.8;
+    const diff = Math.abs(len(tokens.slice(0, i)) - len(tokens.slice(i)));
+    const score = (BREAK.test(p) ? 1.5 : 0) + (p.includes("،") ? 0.5 : 0) - diff / 5;
     if (score > bestScore) {
       bestScore = score;
       bestI = i;
@@ -145,7 +147,7 @@ export function buildCards(timing: Timing, data: CaptionData): Card[] {
         id: `${line.id}c${k + 1}`,
         lineId: line.id,
         scene: line.scene,
-        start: Math.min(...rows.flat().map((t) => t.t)) - 0.15,
+        start: Math.min(...rows.flat().map((t) => t.t)) - 0.04,
         end: 0,
         rows,
         note: spec.note ? { text: spec.note, t: line.words[Math.max(0, noteIdx)].start } : undefined,

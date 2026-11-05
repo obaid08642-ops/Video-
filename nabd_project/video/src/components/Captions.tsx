@@ -35,7 +35,7 @@ const CardView: React.FC<{ card: Card; f: number }> = ({ card, f }) => {
   const y = cover ? 0 : (1 - enter) * 34 - exit * 24;
   const s = cover ? 1 : 0.95 + 0.05 * enter;
   const longest = Math.max(...card.rows.map((r) => r.reduce((n, t) => n + t.text.length + 1, 0)));
-  const fs = Math.max(58, Math.min(90, 1780 / Math.max(10, longest)));
+  const fs = Math.max(40, Math.min(88, 1420 / Math.max(10, longest))); // ~0.5em per char, 730px text box
   return (
     <div
       style={{

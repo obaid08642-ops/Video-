@@ -51,7 +51,7 @@ export const Scene7: React.FC<{ t: T }> = ({ t }) => {
   const lockOpen = prog(f, b.number + 4, 12, easeOut);
   const grid6 = inOut(f, b.l2 + 2, b.l3 + 4, 12, 8);
   const red6 = prog(f, b.six, 8);
-  const map = inOut(f, b.region - 6, b.l4 + 2, 14, 8);
+  const map = inOut(f, b.region - 6, b.nine - 2, 14, 8);
   const grid3 = pop(f, b.one - 4, 12);
   const red3 = prog(f, b.three, 8);
   const counterIn = inOut(f, b.nine - 6, b.l5 + 4, 10, 8);

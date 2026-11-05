@@ -87,6 +87,34 @@ def gen_text(words):
 
 
 # ----------------------------------------------------------------------------- text compare
+_U = "واحد اتنين تلاتة اربعة خمسة ستة سبعة تمانية تسعة".split()
+_T = "عشرة حداشر اتناشر تلاتاشر اربعتاشر خمستاشر ستاشر سبعتاشر تمنتاشر تسعتاشر".split()
+_D = {2: "عشرين", 3: "تلاتين", 4: "اربعين", 5: "خمسين", 6: "ستين", 7: "سبعين", 8: "تمانين", 9: "تسعين"}
+_H = {1: "مية", 2: "ميتين", 3: "تلتمية", 4: "ربعمية", 5: "خمسمية", 6: "ستمية", 7: "سبعمية", 8: "تمنمية", 9: "تسعمية"}
+
+
+def egy_number(n):
+    """Egyptian spoken form of 0..9999 (whisper writes numbers as digits)."""
+    out = []
+    if n >= 1000:
+        k = n // 1000
+        out.append({1: "الف", 2: "الفين"}.get(k, (_U[k - 1] + " تلاف") if k <= 9 else str(k)))
+        n %= 1000
+    if n >= 100:
+        out.append(_H[n // 100]); n %= 100
+    if n >= 20:
+        out.append((_U[n % 10 - 1] + " و" + _D[n // 10]) if n % 10 else _D[n // 10])
+    elif n >= 10:
+        out.append(_T[n - 10])
+    elif n > 0:
+        out.append(_U[n - 1])
+    return " ".join(out)
+
+
+def digits_to_words(s):
+    return re.sub(r"\d+", lambda m: " " + egy_number(int(m.group())) + " ", s)
+
+
 def norm(s):
     s = AR_DIAC.sub("", s.lower())
     for a, b in [("أ", "ا"), ("إ", "ا"), ("آ", "ا"), ("ٱ", "ا"), ("ة", "ه"), ("ى", "ي"),
@@ -300,7 +328,7 @@ def main():
         y16, _ = librosa.load(path, sr=16000, mono=True)
         segs, _ = asr.transcribe(y16, language="ar", word_timestamps=True, beam_size=5,
                                  vad_filter=False, condition_on_previous_text=False)
-        hyp = [dict(word=w.word.strip(), start=w.start, end=w.end) for s in segs for w in s.words]
+        hyp = [dict(word=digits_to_words(w.word.strip()), start=w.start, end=w.end) for s in segs for w in s.words]
         return hyp, " ".join(h["word"] for h in hyp)
 
     report, shaped = [], []
