@@ -1,0 +1,212 @@
+[
+ {
+  "after": "صغير",
+  "before": "طب",
+  "line": "s1l5",
+  "kind": "between",
+  "gap_before": 0.58,
+  "cut_from": 10.37,
+  "cut_to": 10.47,
+  "gap_after": 0.48
+ },
+ {
+  "after": "المضاد",
+  "before": "وفي",
+  "line": "s1l6",
+  "kind": "between",
+  "gap_before": 0.58,
+  "cut_from": 12.74,
+  "cut_to": 12.83,
+  "gap_after": 0.49
+ },
+ {
+  "after": "صادمة",
+  "before": "عشان",
+  "line": "s2l1",
+  "kind": "between",
+  "gap_before": 0.89,
+  "cut_from": 18.46,
+  "cut_to": 18.85,
+  "gap_after": 0.5
+ },
+ {
+  "after": "سنة",
+  "before": "خربوش",
+  "line": "s2l2",
+  "kind": "between",
+  "gap_before": 0.58,
+  "cut_from": 21.29,
+  "cut_to": 21.33,
+  "gap_after": 0.54
+ },
+ {
+  "after": "ده",
+  "before": "كان",
+  "line": "s2l5",
+  "kind": "within",
+  "gap_before": 0.41,
+  "cut_from": 35.15,
+  "cut_to": 35.18,
+  "gap_after": 0.38
+ },
+ {
+  "after": "حاجة",
+  "before": "ناس",
+  "line": "s3l1",
+  "kind": "within",
+  "gap_before": 0.58,
+  "cut_from": 43.05,
+  "cut_to": 43.22,
+  "gap_after": 0.41
+ },
+ {
+  "after": "بعضها",
+  "before": "منظمة",
+  "line": "s3l2",
+  "kind": "between",
+  "gap_before": 0.89,
+  "cut_from": 46.74,
+  "cut_to": 47.11,
+  "gap_after": 0.52
+ },
+ {
+  "after": "مجموعات",
+  "before": "مضادات",
+  "line": "s3l3",
+  "kind": "between",
+  "gap_before": 0.59,
+  "cut_from": 49.57,
+  "cut_to": 49.66,
+  "gap_after": 0.5
+ },
+ {
+  "after": "برد",
+  "before": "بنحرق",
+  "line": "s3l5",
+  "kind": "within",
+  "gap_before": 0.45,
+  "cut_from": 64.04,
+  "cut_to": 64.17,
+  "gap_after": 0.32
+ },
+ {
+  "after": "الفاضي",
+  "before": "وده",
+  "line": "s4l1",
+  "kind": "between",
+  "gap_before": 0.6,
+  "cut_from": 66.68,
+  "cut_to": 66.82,
+  "gap_after": 0.46
+ },
+ {
+  "after": "بطنك",
+  "before": "والأخطر",
+  "line": "s5l1",
+  "kind": "between",
+  "gap_before": 0.6,
+  "cut_from": 83.02,
+  "cut_to": 83.18,
+  "gap_after": 0.44
+ },
+ {
+  "after": "الدرع",
+  "before": "ومش",
+  "line": "s5l5",
+  "kind": "between",
+  "gap_before": 0.78,
+  "cut_from": 95.27,
+  "cut_to": 95.57,
+  "gap_after": 0.48
+ },
+ {
+  "after": "خالص",
+  "before": "وهنا",
+  "line": "s6l1",
+  "kind": "between",
+  "gap_before": 0.63,
+  "cut_from": 99.66,
+  "cut_to": 99.8,
+  "gap_after": 0.49
+ },
+ {
+  "after": "عدوى",
+  "before": "بكتيرية",
+  "line": "s6l5",
+  "kind": "within",
+  "gap_before": 0.42,
+  "cut_from": 117.24,
+  "cut_to": 117.31,
+  "gap_after": 0.35
+ },
+ {
+  "after": "مضاد",
+  "before": "ولا",
+  "line": "s6l6",
+  "kind": "within",
+  "gap_before": 0.44,
+  "cut_from": 122.1,
+  "cut_to": 122.2,
+  "gap_after": 0.34
+ },
+ {
+  "after": "علاج",
+  "before": "وهي",
+  "line": "s7l1",
+  "kind": "between",
+  "gap_before": 0.61,
+  "cut_from": 126.1,
+  "cut_to": 126.19,
+  "gap_after": 0.52
+ },
+ {
+  "after": "الملاريا",
+  "before": "ولو",
+  "line": "s7l2",
+  "kind": "between",
+  "gap_before": 0.56,
+  "cut_from": 136.93,
+  "cut_to": 136.99,
+  "gap_after": 0.5
+ },
+ {
+  "after": "تشتغل",
+  "before": "الولادة",
+  "line": "s7l2",
+  "kind": "within",
+  "gap_before": 0.44,
+  "cut_from": 139.54,
+  "cut_to": 139.66,
+  "gap_after": 0.32
+ },
+ {
+  "after": "كبير",
+  "before": "فافتكر",
+  "line": "s8l1",
+  "kind": "between",
+  "gap_before": 0.85,
+  "cut_from": 144.9,
+  "cut_to": 145.25,
+  "gap_after": 0.5
+ },
+ {
+  "after": "اتنين",
+  "before": "البرد",
+  "line": "s8l3",
+  "kind": "within",
+  "gap_before": 0.43,
+  "cut_from": 150.69,
+  "cut_to": 150.8,
+  "gap_after": 0.32
+ },
+ {
+  "after": "خفيت",
+  "before": "متوقفش",
+  "line": "s8l4",
+  "kind": "within",
+  "gap_before": 0.52,
+  "cut_from": 156.92,
+  "cut_to": 157.11,
+  "gap_after": 0.33
+ }
+]
