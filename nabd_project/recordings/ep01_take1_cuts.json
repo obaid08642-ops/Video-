@@ -1,0 +1,12 @@
+{
+  "_note": "Energy-verified spans (seconds, source) of the restarts to cut. The cut points sit in silence or in the dip between two words (<= -40 dBFS, i.e. >= 25 dB under the speech peaks), never inside a word.",
+  "restarts": {
+    "أهم": [7.11, 7.43],
+    "اتصر": [78.655, 79.07],
+    "التسع": [113.60, 114.04],
+    "البكتيريا اتجربت": [145.39, 146.41]
+  },
+  "not_cut": {
+    "الأرو (ملايين الأرو الأرواح، 42.7-43.1)": "connected speech, no silence on either side (energy stays -17 to -37 dB): cutting would land inside the words"
+  }
+}

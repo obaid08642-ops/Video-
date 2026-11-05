@@ -1,0 +1,442 @@
+[
+ {
+  "t": 9.62,
+  "end": 9.72,
+  "peak": -43.6,
+  "kind": "background voice",
+  "out_t": 7.931,
+  "in_output": false
+ },
+ {
+  "t": 9.73,
+  "end": 9.9,
+  "peak": -33.0,
+  "kind": "breath",
+  "out_t": 7.95,
+  "in_output": true
+ },
+ {
+  "t": 12.22,
+  "end": 12.38,
+  "peak": -34.1,
+  "kind": "breath",
+  "out_t": 10.44,
+  "in_output": true
+ },
+ {
+  "t": 14.8,
+  "end": 14.9,
+  "peak": -40.6,
+  "kind": "breath",
+  "out_t": 12.86,
+  "in_output": true
+ },
+ {
+  "t": 20.59,
+  "end": 20.79,
+  "peak": -37.7,
+  "kind": "breath",
+  "out_t": 18.35,
+  "in_output": true
+ },
+ {
+  "t": 24.01,
+  "end": 24.08,
+  "peak": -41.9,
+  "kind": "word tail (kept)",
+  "out_t": 21.22,
+  "in_output": true
+ },
+ {
+  "t": 29.48,
+  "end": 29.76,
+  "peak": -33.9,
+  "kind": "breath",
+  "out_t": 26.54,
+  "in_output": true
+ },
+ {
+  "t": 33.32,
+  "end": 33.34,
+  "peak": -33.6,
+  "kind": "mouth click",
+  "out_t": 30.38,
+  "in_output": true
+ },
+ {
+  "t": 33.35,
+  "end": 33.42,
+  "peak": -42.8,
+  "kind": "word tail (kept)",
+  "out_t": 30.41,
+  "in_output": true
+ },
+ {
+  "t": 46.41,
+  "end": 46.43,
+  "peak": -46.4,
+  "kind": "word tail (kept)",
+  "out_t": 43.47,
+  "in_output": true
+ },
+ {
+  "t": 51.06,
+  "end": 51.09,
+  "peak": -46.7,
+  "kind": "background voice",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 51.7,
+  "end": 51.94,
+  "peak": -36.8,
+  "kind": "breath",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 52.18,
+  "end": 52.21,
+  "peak": -42.5,
+  "kind": "mouth click",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 52.24,
+  "end": 52.26,
+  "peak": -46.7,
+  "kind": "mouth click",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 53.5,
+  "end": 53.54,
+  "peak": -36.4,
+  "kind": "mouth click",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 53.59,
+  "end": 53.61,
+  "peak": -46.3,
+  "kind": "mouth click",
+  "out_t": 45.34,
+  "in_output": false
+ },
+ {
+  "t": 58.37,
+  "end": 58.59,
+  "peak": -33.3,
+  "kind": "breath",
+  "out_t": 45.4,
+  "in_output": true
+ },
+ {
+  "t": 60.55,
+  "end": 60.57,
+  "peak": -45.7,
+  "kind": "background voice",
+  "out_t": 45.65,
+  "in_output": false
+ },
+ {
+  "t": 60.61,
+  "end": 60.63,
+  "peak": -46.0,
+  "kind": "background voice",
+  "out_t": 45.65,
+  "in_output": false
+ },
+ {
+  "t": 60.68,
+  "end": 60.71,
+  "peak": -41.8,
+  "kind": "background voice",
+  "out_t": 45.65,
+  "in_output": false
+ },
+ {
+  "t": 63.27,
+  "end": 63.29,
+  "peak": -42.7,
+  "kind": "mouth click",
+  "out_t": 45.65,
+  "in_output": false
+ },
+ {
+  "t": 75.25,
+  "end": 75.28,
+  "peak": -45.4,
+  "kind": "mouth click",
+  "out_t": 56.669,
+  "in_output": true
+ },
+ {
+  "t": 78.23,
+  "end": 78.34,
+  "peak": -32.2,
+  "kind": "breath",
+  "out_t": 59.649,
+  "in_output": true
+ },
+ {
+  "t": 79.79,
+  "end": 79.82,
+  "peak": -45.4,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.22,
+  "end": 80.24,
+  "peak": -46.6,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.35,
+  "end": 80.39,
+  "peak": -45.4,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.52,
+  "end": 80.54,
+  "peak": -45.4,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.58,
+  "end": 80.79,
+  "peak": -42.7,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.8,
+  "end": 80.85,
+  "peak": -43.0,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.86,
+  "end": 80.94,
+  "peak": -43.7,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.95,
+  "end": 80.97,
+  "peak": -42.5,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 80.98,
+  "end": 81.0,
+  "peak": -46.1,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 81.02,
+  "end": 81.29,
+  "peak": -42.5,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 81.32,
+  "end": 81.34,
+  "peak": -45.6,
+  "kind": "background voice",
+  "out_t": 60.665,
+  "in_output": false
+ },
+ {
+  "t": 83.48,
+  "end": 83.5,
+  "peak": -45.9,
+  "kind": "mouth click",
+  "out_t": 62.693,
+  "in_output": true
+ },
+ {
+  "t": 83.51,
+  "end": 83.56,
+  "peak": -45.9,
+  "kind": "mouth click",
+  "out_t": 62.723,
+  "in_output": true
+ },
+ {
+  "t": 84.91,
+  "end": 84.95,
+  "peak": -39.0,
+  "kind": "mouth click",
+  "out_t": 64.123,
+  "in_output": true
+ },
+ {
+  "t": 87.34,
+  "end": 87.47,
+  "peak": -36.1,
+  "kind": "breath",
+  "out_t": 65.083,
+  "in_output": true
+ },
+ {
+  "t": 90.47,
+  "end": 90.52,
+  "peak": -44.6,
+  "kind": "background voice",
+  "out_t": 67.733,
+  "in_output": false
+ },
+ {
+  "t": 90.55,
+  "end": 90.61,
+  "peak": -39.9,
+  "kind": "mouth click",
+  "out_t": 67.733,
+  "in_output": false
+ },
+ {
+  "t": 93.83,
+  "end": 93.85,
+  "peak": -47.1,
+  "kind": "word tail (kept)",
+  "out_t": 70.852,
+  "in_output": true
+ },
+ {
+  "t": 105.94,
+  "end": 106.08,
+  "peak": -29.2,
+  "kind": "breath",
+  "out_t": 81.841,
+  "in_output": true
+ },
+ {
+  "t": 118.96,
+  "end": 119.3,
+  "peak": -33.5,
+  "kind": "breath",
+  "out_t": 93.923,
+  "in_output": true
+ },
+ {
+  "t": 127.56,
+  "end": 127.67,
+  "peak": -43.7,
+  "kind": "background voice",
+  "out_t": 100.853,
+  "in_output": true
+ },
+ {
+  "t": 137.99,
+  "end": 138.03,
+  "peak": -45.6,
+  "kind": "word tail (kept)",
+  "out_t": 111.142,
+  "in_output": true
+ },
+ {
+  "t": 142.46,
+  "end": 142.75,
+  "peak": -7.0,
+  "kind": "knock/handling",
+  "out_t": 114.742,
+  "in_output": false
+ },
+ {
+  "t": 145.2,
+  "end": 145.22,
+  "peak": -45.1,
+  "kind": "mouth click",
+  "out_t": 116.76,
+  "in_output": false
+ },
+ {
+  "t": 146.57,
+  "end": 146.62,
+  "peak": -39.7,
+  "kind": "mouth click",
+  "out_t": 116.76,
+  "in_output": false
+ },
+ {
+  "t": 154.23,
+  "end": 154.66,
+  "peak": -32.6,
+  "kind": "breath",
+  "out_t": 122.917,
+  "in_output": true
+ },
+ {
+  "t": 156.33,
+  "end": 156.48,
+  "peak": -37.0,
+  "kind": "breath",
+  "out_t": 124.816,
+  "in_output": true
+ },
+ {
+  "t": 165.65,
+  "end": 165.8,
+  "peak": -40.9,
+  "kind": "breath",
+  "out_t": 134.136,
+  "in_output": true
+ },
+ {
+  "t": 171.5,
+  "end": 171.8,
+  "peak": -34.2,
+  "kind": "breath",
+  "out_t": 139.826,
+  "in_output": true
+ },
+ {
+  "t": 177.65,
+  "end": 177.77,
+  "peak": -42.0,
+  "kind": "breath",
+  "out_t": 145.555,
+  "in_output": true
+ },
+ {
+  "t": 177.78,
+  "end": 177.8,
+  "peak": -46.1,
+  "kind": "mouth click",
+  "out_t": 145.685,
+  "in_output": true
+ },
+ {
+  "t": 184.94,
+  "end": 184.97,
+  "peak": -44.1,
+  "kind": "word tail (kept)",
+  "out_t": 152.845,
+  "in_output": true
+ }
+]
