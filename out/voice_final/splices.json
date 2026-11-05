@@ -1,0 +1,52 @@
+[
+ {
+  "name": "S1 البكتيريا تدخل من الجرح",
+  "orig_from": 25.66,
+  "orig_to": 29.24,
+  "take_from": 47.26,
+  "take_to": 52.05,
+  "gain_db": 3.0,
+  "new_len": 4.79,
+  "old_len": 3.58
+ },
+ {
+  "name": "S2 ومع الأربعينات",
+  "orig_from": 41.01,
+  "orig_to": 43.89,
+  "take_from": 91.02,
+  "take_to": 93.8,
+  "gain_db": 1.8,
+  "new_len": 2.78,
+  "old_len": 2.88
+ },
+ {
+  "name": "S3 وماتت من عدوى ملهاش علاج",
+  "orig_from": 153.22,
+  "orig_to": 155.92,
+  "take_from": 110.5,
+  "take_to": 113.03,
+  "gain_db": 3.3,
+  "new_len": 2.88,
+  "old_len": 2.7
+ },
+ {
+  "name": "S4 حسب دراسة في لانسيت",
+  "orig_from": 157.51,
+  "orig_to": 165.6,
+  "take_from": 117.37,
+  "take_to": 128.14,
+  "gain_db": 1.7,
+  "new_len": 10.77,
+  "old_len": 8.09
+ },
+ {
+  "name": "S5 ولو المضادات بطلت تشتغل",
+  "orig_from": 165.86,
+  "orig_to": 171.3,
+  "take_from": 157.9,
+  "take_to": 165.88,
+  "gain_db": 0.7,
+  "new_len": 7.98,
+  "old_len": 5.44
+ }
+]

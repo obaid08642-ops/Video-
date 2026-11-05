@@ -15,16 +15,19 @@ the edited file), events.json (classified non-speech sounds).
 import json, sys
 import numpy as np, soundfile as sf, librosa
 
-sys.path.insert(0, "/opt/nabd/edit")
+import os
+# the aligner must read the CTC log-probs of THIS input file (NABD_ALIGN_DIR holds align.py + logits.npy for it)
+sys.path.insert(0, os.environ.get("NABD_ALIGN_DIR", "/opt/nabd/edit"))
 from align import align  # noqa: E402
 
 RAW, VERB, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
 CUTS = json.load(open(sys.argv[4], encoding="utf-8")) if len(sys.argv) > 4 else {"restarts": {}}
+if "roomtone" in CUTS: ROOMTONE = tuple(CUTS["roomtone"])
 XF = 0.030                       # crossfade (s)
 BREATH_DB = -12.0
 T_SCENE, T_IMPORTANT, T_LINE, T_WITHIN = 0.60, 0.55, 0.45, 0.35
 LONG = 0.60
-ROOMTONE = (54.0, 58.0)          # quietest stretch inside the long silence (no events)
+ROOMTONE = (54.0, 58.0)          # quietest stretch inside the long silence (no events); overridable in the cuts file
 
 y, sr = sf.read(RAW, dtype="float64")
 HOP = int(0.01 * sr)

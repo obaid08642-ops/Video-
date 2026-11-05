@@ -1,10 +1,13 @@
 // SRT from the same timing JSON + caption cards used on screen (spoken words, exact timings).
-// usage: node tools/make_srt.mjs public/voice/ep01_youssef_timing.json out.srt [sceneId]
+// usage: node tools/make_srt.mjs TIMING.json OUT.srt [--captions src/data/ep01_captions_v9.json] [--scene N] [--cards cards.json]
 import fs from "node:fs";
 import { buildCards } from "../src/lib/captions.ts";
-const [, , timingPath, outPath, onlyScene] = process.argv;
+const [, , timingPath, outPath, ...rest] = process.argv;
+const opt = (k) => { const i = rest.indexOf(k); return i >= 0 ? rest[i + 1] : undefined; };
+const onlyScene = opt("--scene");
 const timing = JSON.parse(fs.readFileSync(timingPath, "utf8"));
-const data = JSON.parse(fs.readFileSync(new URL("../src/data/ep01_captions.json", import.meta.url), "utf8"));
+const capPath = opt("--captions") ?? new URL("../src/data/ep01_captions.json", import.meta.url);
+const data = JSON.parse(fs.readFileSync(capPath, "utf8"));
 let cards = buildCards(timing, data);
 if (onlyScene) cards = cards.filter((c) => c.scene === Number(onlyScene));
 const ts = (s) => {
@@ -17,4 +20,5 @@ const out = cards.map((c, i) => {
   return `${i + 1}\n${ts(c.spokenStart - 0.05)} --> ${ts(end)}\n${c.spoken}\n`;
 });
 fs.writeFileSync(outPath, out.join("\n"), "utf8");
+if (opt("--cards")) fs.writeFileSync(opt("--cards"), JSON.stringify(cards.map((c) => ({ id: c.id, start: +c.start.toFixed(2), end: +c.end.toFixed(2), rows: c.rows.map((r) => r.map((t) => (t.kw ? `[${t.text}]` : t.text)).join(" ")), note: c.note?.text, source: c.source })), null, 1), "utf8");
 console.log(`${cards.length} cues -> ${outPath}`);
