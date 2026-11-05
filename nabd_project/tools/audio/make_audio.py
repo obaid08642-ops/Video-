@@ -157,6 +157,17 @@ def door():
     return lp(noise(0.5), 400) * np.exp(-tt * 14) + 0.6 * np.sin(2 * np.pi * 70 * tt) * np.exp(-tt * 10)
 
 
+def swell():
+    """soft rising C-major pad chord (music transition accent, same key as the themes)"""
+    d = 2.2; t = t_(d); x = np.zeros_like(t)
+    for f, a in [(130.81, 1.0), (196.0, 0.7), (261.63, 0.55), (329.63, 0.4)]:
+        for det in (-0.15, 0.15):
+            x += a * signal.sawtooth(2 * np.pi * f * (1 + det / 100) * t + rng.uniform(0, 6))
+    x = lp(x, 1400, 2)
+    e = np.clip(t / 0.9, 0, 1) ** 1.5 * np.clip((d - t) / 1.1, 0, 1)
+    return reverb(x * e, dur=1.6, mix=0.35)
+
+
 # ------------------------------------------------------------------------------------- music
 NOTE = {n: i for i, n in enumerate("C C# D D# E F F# G G# A A# B".split())}
 def hz(name, octv): return 440 * 2 ** ((NOTE[name] + 12 * (octv + 1) - 69) / 12)
@@ -216,7 +227,7 @@ if __name__ == "__main__":
                          ("whoosh", whoosh, -6), ("glass", glass, -10), ("ding", ding, -8), ("bubbles", bubbles, -8),
                          ("shimmer", shimmer, -10), ("crack", crack, -10), ("click", click, -6), ("tick", tick, -8),
                          ("drip", drip, -8), ("motor", motor, -6), ("chirp", chirp, -10), ("bump", bump, -6),
-                         ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6)]:
+                         ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6), ("swell", swell, -10)]:
         save(name, fn(), db)
     # 1) curiosity (hook -> explanation): C major / A minor colour, 88 BPM, questioning motif
     music([("C", [("C", 3), ("E", 3), ("G", 3), ("B", 3)]), ("A", [("A", 2), ("C", 3), ("E", 3), ("G", 3)]),

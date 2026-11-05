@@ -1,0 +1,28 @@
+# مصادر الحلقة 01 (v9، تسجيل صاحب القناة) — اتراجعت نوفمبر 2026
+
+الـ DOI بتاع The Lancet 2022 و CDC MMWR 2017 اتأكد منه عن طريق Crossref.
+
+📚 المصادر:
+• The Lancet (2022)، دراسة GRAM: العبء العالمي لمقاومة البكتيريا للمضادات في 2019 (حوالي 1.27 مليون وفاة، أكتر من الإيدز والملاريا):
+  https://doi.org/10.1016/S0140-6736(21)02724-0
+• CDC، تقرير MMWR بتاريخ 13 يناير 2017: بكتيريا Klebsiella pneumoniae مقاومة لكل المضادات، ولاية نيفادا، أمريكا (2016):
+  https://www.cdc.gov/mmwr/volumes/66/wr/mm6601a7.htm
+• منظمة الصحة العالمية، تصنيف AWaRe للمضادات الحيوية (2023):
+  https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04
+• منظمة الصحة العالمية، كتاب AWaRe للمضادات الحيوية (2022):
+  https://www.who.int/publications/i/item/9789240062382
+• منظمة الصحة العالمية، صحيفة وقائع مقاومة مضادات الميكروبات (العمليات، والولادة القيصرية، والعلاج الكيماوي):
+  https://www.who.int/ar/news-room/fact-sheets/detail/antimicrobial-resistance
+• منظمة الصحة العالمية، تقرير GLASS 2025: 1 من كل 6 عدوى بكتيرية اتأكدت معملياً سنة 2023 كانت مقاومة، و1 من كل 3 في منطقة شرق المتوسط:
+  https://www.who.int/news/item/13-10-2025-who-warns-of-widespread-resistance-to-common-antibiotics-worldwide
+• CDC، الاستخدام الصح للمضادات الحيوية (المضاد مش بيعالج البرد والإنفلونزا):
+  https://www.cdc.gov/antibiotic-use/about/index.html
+• الجمعية الكيميائية الأمريكية، اكتشاف فليمنج للبنسلين:
+  https://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html
+
+ℹ️ افتكر:
+• متطلبش مضاد من نفسك، ولو الصيدلي رفض يصرفه… اشكره.
+• البرد والإنفلونزا ملهمش مضاد حيوي.
+• لو الدكتور كتبلك مضاد: التزم بالجرعة والمدة، ومتوقفش من نفسك… ارجع للدكتور.
+
+⚠️ شرح مبسط للتوعية، مش بديل لاستشارة الطبيب أو الصيدلي.

@@ -1,29 +1,34 @@
 === الوصف (يوتيوب / فيسبوك) ===
-المضاد الحيوي من أعظم اكتشافات الطب… بس ممكن يخسر قوته بسبب استخدامنا الغلط.
-في الحلقة دي: قصة البنسلين، المضاد بيشتغل إزاي، ليه مش علاج للبرد، وإيه هي مقاومة المضادات.
+أول حاجة بنطلبها من الصيدلي في دور البرد: «اديني مضاد حيوي»… وده بالظبط اللي ممكن يخسّرنا واحد من أهم اكتشافات الطب.
+في الحلقة دي: قصة البنسلين، وإزاي منظمة الصحة العالمية قسّمت المضادات لتلات مجموعات (أساسية، وتحت المراقبة، واحتياطي)، وليه المضاد مش علاج للبرد والإنفلونزا، وإزاي البكتيريا بتتعلم تقاوم، وقصة الست اللي البكتيريا بتاعتها قاومت 26 مضاد.
 
 📚 المصادر:
-• منظمة الصحة العالمية، تقرير مقاومة المضادات 2025: https://www.who.int/news/item/13-10-2025-who-warns-of-widespread-resistance-to-common-antibiotics-worldwide
-• منظمة الصحة العالمية، صحيفة وقائع مقاومة مضادات الميكروبات (عربي): https://www.who.int/ar/news-room/fact-sheets/detail/antimicrobial-resistance
-• The Lancet، دراسة GRAM 2024: https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(24)01867-1/fulltext
-• CDC، استخدام المضادات الحيوية: https://www.cdc.gov/antibiotic-use/about/index.html
-• CDC، مقاومة المضادات: https://www.cdc.gov/antimicrobial-resistance/about/index.html
-• FDA، إمتى وإزاي تستخدم المضاد: https://www.fda.gov/consumers/consumer-updates/know-when-and-how-use-antibiotics-and-when-skip-them
-• MedlinePlus، المضادات الحيوية: https://medlineplus.gov/antibiotics.html
-• جامعة أكسفورد، اكتشاف البنسلين: https://www.path.ox.ac.uk/centenary/our-history/the-discovery-of-penicillin
-• الجمعية الكيميائية الأمريكية، اكتشاف البنسلين: https://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html
+• The Lancet (2022)، دراسة GRAM: العبء العالمي لمقاومة البكتيريا للمضادات في 2019 (حوالي 1.27 مليون وفاة، أكتر من الإيدز والملاريا):
+  https://doi.org/10.1016/S0140-6736(21)02724-0
+• CDC، تقرير MMWR بتاريخ 13 يناير 2017: بكتيريا Klebsiella pneumoniae مقاومة لكل المضادات، ولاية نيفادا، أمريكا (2016):
+  https://www.cdc.gov/mmwr/volumes/66/wr/mm6601a7.htm
+• منظمة الصحة العالمية، تصنيف AWaRe للمضادات الحيوية (2023):
+  https://www.who.int/publications/i/item/WHO-MHP-HPS-EML-2023.04
+• منظمة الصحة العالمية، كتاب AWaRe للمضادات الحيوية (2022):
+  https://www.who.int/publications/i/item/9789240062382
+• منظمة الصحة العالمية، صحيفة وقائع مقاومة مضادات الميكروبات (العمليات، والولادة القيصرية، والعلاج الكيماوي):
+  https://www.who.int/ar/news-room/fact-sheets/detail/antimicrobial-resistance
+• منظمة الصحة العالمية، تقرير GLASS 2025: 1 من كل 6 عدوى بكتيرية اتأكدت معملياً سنة 2023 كانت مقاومة، و1 من كل 3 في منطقة شرق المتوسط:
+  https://www.who.int/news/item/13-10-2025-who-warns-of-widespread-resistance-to-common-antibiotics-worldwide
+• CDC، الاستخدام الصح للمضادات الحيوية (المضاد مش بيعالج البرد والإنفلونزا):
+  https://www.cdc.gov/antibiotic-use/about/index.html
+• الجمعية الكيميائية الأمريكية، اكتشاف فليمنج للبنسلين:
+  https://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html
 
-ℹ️ معلومات زيادة:
-• فليمنج وفلوري وتشين خدوا جايزة نوبل في الطب سنة 1945 على اكتشاف البنسلين وتحويله لدوا.
-• المضاد الحيوي ممكن تكون ليه آثار جانبية، زي الإسهال والحساسية.
-• البكتيريا ممكن تنقل مقاومتها لبكتيريا تانية.
-• متاخدش روشتة حد تاني، حتى لو الأعراض شبه بعض.
-• متوقفش العلاج ولا تغيّره من نفسك، وارجع لطبيبك أو الصيدلي.
+ℹ️ افتكر:
+• متطلبش مضاد من نفسك، ولو الصيدلي رفض يصرفه… اشكره.
+• البرد والإنفلونزا ملهمش مضاد حيوي.
+• لو الدكتور كتبلك مضاد: التزم بالجرعة والمدة، ومتوقفش من نفسك… ارجع للدكتور.
 
-⚠️ المعلومات دي للتوعية فقط، ومش بديل عن استشارة الطبيب أو الصيدلي.
+⚠️ شرح مبسط للتوعية، مش بديل لاستشارة الطبيب أو الصيدلي.
 
 === تعليق مثبّت (تيك توك / إنستجرام / ريلز) ===
 المصادر 📚
-منظمة الصحة العالمية (2025) • The Lancet (2024) • CDC • FDA • MedlinePlus • جامعة أكسفورد
+The Lancet (2022) • CDC MMWR (يناير 2017) • منظمة الصحة العالمية: تصنيف AWaRe (2023) وتقرير GLASS (2025) وصحيفة وقائع مقاومة المضادات
 الروابط كاملة في الوصف على يوتيوب / اللينك في البايو.
-وإنت؟ أخدت مضاد للبرد قبل كده؟ 👇
+وإنت؟ طلبت مضاد للبرد قبل كده؟ 👇

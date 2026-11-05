@@ -163,11 +163,8 @@ export function buildCards(timing: Timing, data: CaptionData): Card[] {
   cards.forEach((c, i) => {
     const next = cards[i + 1];
     const hold = c.spokenEnd + 1.2;
-    c.end = next
-      ? next.scene === c.scene
-        ? next.start
-        : Math.min(next.start, Math.max(sceneEnd(c.scene) + 0.25, c.spokenEnd + 0.3))
-      : Math.max(hold, sceneEnd(c.scene) + 0.6);
+    // every card stays until the next one starts (enough reading time, also across scene changes)
+    c.end = next ? next.start : Math.max(hold, sceneEnd(c.scene) + 0.6);
   });
   if (cards[0]) cards[0].karaoke = true;
   return cards;
