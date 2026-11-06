@@ -157,6 +157,26 @@ def door():
     return lp(noise(0.5), 400) * np.exp(-tt * 14) + 0.6 * np.sin(2 * np.pi * 70 * tt) * np.exp(-tt * 10)
 
 
+def penclick():
+    """injection-pen cap: soft plastic click (body thump + short bright tick), quieter family member of click()"""
+    r = np.random.default_rng(21); x = np.zeros(int(0.22 * SR))
+    for o, a in [(0, 1.0), (0.055, 0.45)]:
+        tt = t_(0.04)
+        c = (np.sin(2 * np.pi * 1700 * tt) + 0.4 * np.sin(2 * np.pi * 2900 * tt)) * np.exp(-tt * 220)
+        c += 0.35 * lp(r.standard_normal(len(tt)), 1200) * np.exp(-tt * 120)
+        s = int(o * SR); x[s:s + len(c)] += a * c
+    return lp(x, 6000)
+
+def sand():
+    """light sand rustle (lizard steps): many tiny filtered grains under a soft swell"""
+    r = np.random.default_rng(22); d = 0.8; x = np.zeros(int(d * SR))
+    for _ in range(140):
+        g = int(r.uniform(0.002, 0.008) * SR); s = int(r.uniform(0, d - 0.01) * SR)
+        x[s:s + g] += r.standard_normal(g) * np.hanning(g) * r.uniform(0.2, 1)
+    x = bp(x, 1500, 6500)
+    return x * np.sin(np.pi * np.clip(t_(d) / d, 0, 1)) ** 1.2
+
+
 def swell():
     """soft rising C-major pad chord (music transition accent, same key as the themes)"""
     d = 2.2; t = t_(d); x = np.zeros_like(t)
@@ -223,11 +243,17 @@ def music(chords, bpm, bars, pattern, out_name, bright=1.0, pulse=False, heart_e
 
 
 if __name__ == "__main__":
+    if "--only" in sys.argv:   # add new sounds without regenerating (and changing) the existing ones
+        names = sys.argv[sys.argv.index("--only") + 1:]
+        for name, fn, db in [("penclick", penclick, -8), ("sand", sand, -12)]:
+            if name in names: save(name, fn(), db)
+        print("ok"); sys.exit(0)
     for name, fn, db in [("heartbeat", heartbeat, -3), ("pop", pop, -6), ("paper", paper, -8), ("scribble", scribble, -9),
                          ("whoosh", whoosh, -6), ("glass", glass, -10), ("ding", ding, -8), ("bubbles", bubbles, -8),
                          ("shimmer", shimmer, -10), ("crack", crack, -10), ("click", click, -6), ("tick", tick, -8),
                          ("drip", drip, -8), ("motor", motor, -6), ("chirp", chirp, -10), ("bump", bump, -6),
-                         ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6), ("swell", swell, -10)]:
+                         ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6), ("swell", swell, -10),
+                         ("penclick", penclick, -8), ("sand", sand, -12)]:
         save(name, fn(), db)
     # 1) curiosity (hook -> explanation): C major / A minor colour, 88 BPM, questioning motif
     music([("C", [("C", 3), ("E", 3), ("G", 3), ("B", 3)]), ("A", [("A", 2), ("C", 3), ("E", 3), ("G", 3)]),

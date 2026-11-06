@@ -110,12 +110,9 @@ const S1: React.FC<{ t: T }> = ({ t }) => {
 const s1: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s1l1:جعان") - 0.2, sfx: "tick", vol: 0.14 },
-    { at: t.s("s1l2:سحلية") - 0.3, sfx: "paper", vol: 0.15 },
-    { at: t.s("s1l2:تلات") - 0.2, sfx: "pop", vol: 0.14 },
-    { at: t.s("s1l2:فتح") - 0.1, sfx: "door", vol: 0.13 },
-    { at: t.s("s1l2:حقن") - 0.25, sfx: "shimmer", vol: 0.12 },
+    { at: t.s("s1l2:سحلية") - 0.3, sfx: "sand", vol: 0.22 },
+    { at: t.s("s1l2:حقن") - 0.15, sfx: "penclick", vol: 0.18 },
     { at: t.s("s1l3:تمانية@end") + 0.05, sfx: "ding", vol: 0.12 },
-    { at: t.s("s1l4:إرادة") - 0.25, sfx: "bump", vol: 0.13 },
     { at: t.s("s1l5:معلومة") - 0.25, sfx: "pop", vol: 0.14 },
   ],
   pulses: (t) => [t.f("s1l3:تمانية@end"), t.f("s1l5:فايتاك@end")],
@@ -188,8 +185,6 @@ const s2: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s2l1") - 0.1, sfx: "whoosh", vol: 0.18 },
     { at: t.s("s2l1:الجي") - 0.25, sfx: "pop", vol: 0.14 },
-    { at: t.s("s2l2:تلات") - 0.2, sfx: "ding", vol: 0.12 },
-    { at: t.s("s2l4:بيبطأ") - 0.2, sfx: "tick", vol: 0.12 },
     { at: t.s("s2l5:يعلى") - 0.1, sfx: "drip", vol: 0.13 },
     { at: t.s("s2l6:دقايق") - 0.25, sfx: "tick", vol: 0.14 },
   ],
@@ -269,17 +264,29 @@ const S3: React.FC<{ t: T }> = ({ t }) => {
 };
 const s3: Omit<SceneDef, "C"> = {
   cues: (t) => [
-    { at: t.s("s3l1") - 0.15, sfx: "whoosh", vol: 0.17 },
+    { at: t.s("s3l1") - 0.25, sfx: "sand", vol: 0.24 },
     { at: t.s("s3l2:ألف") - 0.25, sfx: "paper", vol: 0.14 },
     { at: t.s("s3l2:سم") - 0.15, sfx: "drip", vol: 0.13 },
-    { at: t.s("s3l3:ساعات") - 0.25, sfx: "pop", vol: 0.13 },
     { at: t.s("s3l4:أول") - 0.25, sfx: "ding", vol: 0.12 },
     { at: t.s("s3l5:مش") - 0.2, sfx: "scribble", vol: 0.13 },
-    { at: t.s("s3l5:فتحت") - 0.1, sfx: "door", vol: 0.12 },
   ],
   pulses: (t) => [t.f("s3l2:مونستر@end"), t.f("s3l5:السحلية@end")],
   tray: (t) => [{ id: "liz", arrive: t.f("s3l2@end") + 4, from: { x: 780, y: 1300, s: 1.4 }, icon: icon(<g transform="scale(0.14)"><Lizard /></g>) }],
 };
+
+/** SURMOUNT-5 comparison, on screen only (owner's decision): numbers + source, no "better/stronger" */
+const CompareCard: React.FC<{ p: number; o: number }> = ({ p, o }) => (
+  <div style={{ position: "absolute", left: 110, width: 820, top: 1150, opacity: o * Math.min(1, p * 1.5), transform: `translateY(${(1 - p) * 40}px) scale(${0.94 + 0.06 * p})`, direction: "rtl", fontFamily: FONT, textAlign: "center" }}>
+    <div style={{ position: "absolute", inset: 0, transform: "translate(-9px, 11px)", background: C.cardShadow, borderRadius: 34 }} />
+    <div style={{ position: "relative", background: C.card, border: `5px solid ${C.ink}`, borderRadius: 34, padding: "22px 30px 20px", color: C.ink, fontWeight: 700, lineHeight: 1.38 }}>
+      <div style={{ fontSize: 36 }}>لو وزنك 100 كجم:</div>
+      <div style={{ fontSize: 46 }}>~20 كجم (تيرزيباتيد)</div>
+      <div style={{ fontSize: 46 }}>مقابل ~14 كجم (سيماجلوتيد)</div>
+      <div style={{ fontSize: 36 }}>في سنة ونص</div>
+      <div style={{ fontSize: 23, fontWeight: 500, color: C.source, marginTop: 8 }}>SURMOUNT-5، NEJM 2025، ممولة من الشركة المنتجة لتيرزيباتيد</div>
+    </div>
+  </div>
+);
 
 // ============================================================ 4. Ozempic / Wegovy / Mounjaro
 const S4: React.FC<{ t: T }> = ({ t }) => {
@@ -297,7 +304,9 @@ const S4: React.FC<{ t: T }> = ({ t }) => {
   const mj = inOut(f, F("s4l3") - 4, F("s4l3@end") + 30, 12, 8);
   const tz = pop(f, F("s4l3:مونجارو") + 4, 12);
   const dual = [pop(f, F("s4l3:هرمونين") - 4, 12), pop(f, F("s4l3:هرمونين") + 2, 12)];
+  const card = pop(f, F("s4l3") - 2, 12);
   return (
+    <>
     <Svg>
       {oz > 0 && (
         <g opacity={oz}>
@@ -333,23 +342,23 @@ const S4: React.FC<{ t: T }> = ({ t }) => {
       )}
       {mj > 0 && (
         <g opacity={mj}>
-          <Place x={540} y={880} s={0.95} r={-8}><InjPen label="مونجارو" /></Place>
-          {tz > 0 && <Place x={540} y={1130} s={tz}><Chip text={TIRZ} w={600} size={44} /></Place>}
-          {dual[0] > 0 && <Place x={330} y={1420} s={0.6 * dual[0]}><Molecule label="GLP-1" /></Place>}
-          {dual[1] > 0 && <Place x={760} y={1420} s={0.6 * dual[1]}><Molecule label="GIP" color="#9DC9E8" /></Place>}
-          <Label x={540} y={1440} text="+" size={90} color={C.key} dir="ltr" o={dual[1]} />
+          <Place x={540} y={700} s={0.68} r={-6}><InjPen label="مونجارو" /></Place>
+          {tz > 0 && <Place x={540} y={865} s={0.82 * tz}><Chip text={TIRZ} w={600} size={44} /></Place>}
+          {dual[0] > 0 && <Place x={380} y={1020} s={0.42 * dual[0]}><Molecule label="GLP-1" /></Place>}
+          {dual[1] > 0 && <Place x={700} y={1020} s={0.42 * dual[1]}><Molecule label="GIP" color="#9DC9E8" /></Place>}
+          <Label x={540} y={1040} text="+" size={70} color={C.key} dir="ltr" o={dual[1]} />
         </g>
       )}
     </Svg>
+    {mj > 0 && card > 0 && <CompareCard p={card} o={mj} />}
+    </>
   );
 };
 const s4: Omit<SceneDef, "C"> = {
   cues: (t) => [
-    { at: t.s("s4l1") - 0.1, sfx: "whoosh", vol: 0.17 },
-    { at: t.s("s4l1:سيماجلوتايد") - 0.25, sfx: "pop", vol: 0.13 },
-    { at: t.s("s4l1:أسبوع") - 0.25, sfx: "tick", vol: 0.12 },
+    { at: t.s("s4l1") - 0.12, sfx: "penclick", vol: 0.18 },
     { at: t.s("s4l2:نفس") - 0.2, sfx: "ding", vol: 0.12 },
-    { at: t.s("s4l3:هرمونين") - 0.25, sfx: "pop", vol: 0.13 },
+    { at: t.s("s4l3") - 0.15, sfx: "paper", vol: 0.15 },
   ],
   pulses: (t) => [t.f("s4l2:بالظبط@end"), t.f("s4l3:هرمونين@end")],
 };
@@ -412,10 +421,8 @@ const S5: React.FC<{ t: T }> = ({ t }) => {
 const s5: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s5l1") - 0.1, sfx: "heartbeat", vol: 0.2 },
-    { at: t.s("s5l1:سبعتاشر") - 0.3, sfx: "tick", vol: 0.12 },
     { at: t.s("s5l2:الخمس@end") + 0.05, sfx: "ding", vol: 0.13 },
     { at: t.s("s5l3:ممولة") - 0.25, sfx: "metal", vol: 0.12 },
-    { at: t.s("s5l3:وعد") - 0.25, sfx: "pop", vol: 0.12 },
   ],
   pulses: (t) => [t.f("s5l2:الخمس@end"), t.f("s5l3:وعد@end")],
 };
@@ -482,10 +489,7 @@ const s6: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s6l1") - 0.1, sfx: "bump", vol: 0.15 },
     { at: t.s("s6l1:تلتين") - 0.25, sfx: "scribble", vol: 0.12 },
-    { at: t.s("s6l2:عضل") - 0.25, sfx: "pop", vol: 0.12 },
     { at: t.s("s6l3:غثيان") - 0.25, sfx: "pop", vol: 0.12 },
-    { at: t.s("s6l3:البنكرياس") - 0.25, sfx: "click", vol: 0.12 },
-    { at: t.s("s6l4:للحوامل") - 0.25, sfx: "pop", vol: 0.12 },
     { at: t.s("s6l4:سرطان") - 0.25, sfx: "heartbeat", vol: 0.18 },
   ],
   pulses: (t) => [t.f("s6l1:تلتين@end"), t.f("s6l4:الدرقية@end")],
@@ -530,10 +534,7 @@ const s7: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s7l1") - 0.1, sfx: "paper", vol: 0.15 },
     { at: t.s("s7l1:بروتين") - 0.2, sfx: "pop", vol: 0.12 },
-    { at: t.s("s7l1:مقاومة") - 0.2, sfx: "pop", vol: 0.12 },
-    { at: t.s("s7l1:مغذي") - 0.2, sfx: "pop", vol: 0.12 },
     { at: t.s("s7l1:كفاية") - 0.2, sfx: "drip", vol: 0.12 },
-    { at: t.s("s7l1:صغيرة") - 0.2, sfx: "pop", vol: 0.12 },
   ],
   pulses: () => [],
 };
@@ -611,9 +612,9 @@ const S8: React.FC<{ t: T }> = ({ t }) => {
       )}
       {chat > 0 && (
         <g opacity={chat}>
-          <Place x={360} y={860} s={0.9 * b[0]}><Bubble /></Place>
-          <Place x={720} y={1000} s={0.8 * b[1]}><Bubble w={220} /></Place>
-          <Place x={430} y={1150} s={0.95 * b[2]}><Bubble w={300} /></Place>
+          <Place x={360} y={800} s={0.9 * b[0]}><Bubble /></Place>
+          <Place x={720} y={930} s={0.8 * b[1]}><Bubble w={220} /></Place>
+          <Place x={430} y={1070} s={0.95 * b[2]}><Bubble w={300} /></Place>
         </g>
       )}
     </Svg>
@@ -622,15 +623,12 @@ const S8: React.FC<{ t: T }> = ({ t }) => {
 const s8: Omit<SceneDef, "C"> = {
   cues: (t) => [
     { at: t.s("s8l1:ألفين") - 0.25, sfx: "paper", vol: 0.14 },
-    { at: t.s("s8l2:حقنوا") - 0.2, sfx: "click", vol: 0.12 },
-    { at: t.s("s8l2:وقع") - 0.15, sfx: "whoosh", vol: 0.14 },
-    { at: t.s("s8l2:ومستشفى") - 0.2, sfx: "heartbeat", vol: 0.2 },
+    { at: t.s("s8l2:حقنوا") - 0.2, sfx: "penclick", vol: 0.18 },
+    { at: t.s("s8l2:ومستشفى") - 0.2, sfx: "heartbeat", vol: 0.22 },
     { at: t.s("s8l3:مغشوشة") - 0.2, sfx: "bump", vol: 0.14 },
     { at: t.s("s8l3:إنسولين@end") + 0.05, sfx: "heartbeat", vol: 0.26, prio: true },
-    { at: t.s("s8l4:الدكتور") - 0.1, sfx: "ding", vol: 0.11 },
     { at: t.s("s8l4:متستخدموش") - 0.25, sfx: "scribble", vol: 0.12 },
     { at: t.s("s8l5:ابعتله") - 0.2, sfx: "whoosh", vol: 0.13 },
-    { at: t.s("s8l6:الكومنتات") - 0.25, sfx: "pop", vol: 0.13 },
   ],
   pulses: (t) => [t.f("s8l3:إنسولين@end"), t.f("s8l5:ده@end")],
   // music stops 1 s before «إنسولين» (owner's decision) and 1 s before the closing request

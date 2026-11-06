@@ -15,6 +15,22 @@ import { C, FONT } from "../../theme";
 export type Ep02Props = { voice: string; timing?: Timing };
 export const OUTRO = 1.5;
 const PROMISE = ["في الآخر:", "قلم أوزمبيك ودّى ناس المستشفى"];
+// closing screen: source names + years, small, under the disclaimer (no extra time)
+const SOURCES = ["WHO 2022", "WHO 2024", "WHO Alert 2/2024", "Lancet 2024", "U.S. NPS", "J Biol Chem 1992", "FDA 2005", "NEJM 2021 (STEP 1)",
+  "NEJM 2023 (SELECT)", "NEJM 2025 (SURMOUNT-5)", "DOM 2022 (STEP 1 ext.)", "Obesity 2025", "BASG 2023", "النشرات الرسمية (FDA)"];
+const EndText: React.FC<{ color: string; sub: string }> = ({ color, sub }) => (
+  <div style={{ position: "absolute", left: 92, width: 826, top: 1240, textAlign: "center", fontFamily: FONT, direction: "rtl" }}>
+    <div style={{ fontSize: 30, fontWeight: 600, color, lineHeight: 1.45 }}>{DISCLAIMER_EP02}</div>
+    <div style={{ marginTop: 14, fontSize: 21, fontWeight: 500, color: sub, lineHeight: 1.45 }}>
+      {"المصادر: "}
+      {SOURCES.map((x, i) => (
+        <span key={i} style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+          <bdi>{x}</bdi>{i < SOURCES.length - 1 ? "\u00A0•\u00A0" : ""}
+        </span>
+      ))}
+    </div>
+  </div>
+);
 
 export const calcEp02: CalculateMetadataFunction<Ep02Props> = async ({ props }) => {
   const timing = (await (await fetch(staticFile(`voice/ep02_${props.voice}_timing.json`))).json()) as Timing;
@@ -112,13 +128,11 @@ export const Ep02: React.FC<Ep02Props> = ({ timing }) => {
       <Promise t={t} />
       <Badge pulses={pulses} />
       <SeriesTag text="#الأدوية" />
-      <div style={{ position: "absolute", left: 92, width: 826, top: 1370, textAlign: "center", fontFamily: FONT, direction: "rtl", opacity: discOn * (1 - logo), fontSize: 30, fontWeight: 600, color: C.source, lineHeight: 1.45 }}>
-        {DISCLAIMER_EP02}
-      </div>
+      <div style={{ opacity: discOn * (1 - logo) }}><EndText color={C.source} sub={C.source} /></div>
       {f >= voiceEnd && (
         <AbsoluteFill style={{ opacity: logo }}>
           <OffthreadVideo src={staticFile("brand/nabd_intro_vertical_9x16.mp4")} muted playbackRate={2.5} />
-          <div style={{ position: "absolute", left: 92, width: 826, top: 1380, textAlign: "center", fontFamily: FONT, fontSize: 30, fontWeight: 600, color: "#fff", direction: "rtl", lineHeight: 1.45 }}>{DISCLAIMER_EP02}</div>
+          <EndText color="#fff" sub="#FFE3DC" />
         </AbsoluteFill>
       )}
 
