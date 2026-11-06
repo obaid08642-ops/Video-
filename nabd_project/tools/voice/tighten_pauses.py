@@ -1,7 +1,10 @@
 """
 Tighten pauses on an edited voice (only shortens; cuts in silence, 30 ms equal-power crossfades).
 
-    python -I tighten_pauses.py EDITED.wav TIMING.json OUT_DIR
+    python -I tighten_pauses.py EDITED.wav TIMING.json OUT_DIR [CONFIG.json]
+
+CONFIG (optional, per episode): {"num_start": [...], "special_before": [words], "special_after_lines": [line ids],
+"last_line": true|false}. Without it the ep01 rules apply.
 
 Rules: inside a sentence <= 0.35-0.4 s (target 0.35); between sentences 0.45-0.55 s (target 0.50);
 up to 0.8 s only before numbers, before «وماتت» and before the last sentence. A breath right before the
@@ -16,9 +19,13 @@ T = json.load(open(TJ, encoding="utf-8"))
 H = int(0.01 * sr)
 db = 20 * np.log10(np.sqrt((y[: len(y) // H * H].reshape(-1, H) ** 2).mean(1)) + 1e-12)
 FLOOR = float(np.percentile(db, 5))
-NUM_START = {"مية", "ألف", "ألفين", "التسعمية", "واحد", "اتنين", "تلاتة"}
+CFG = json.load(open(sys.argv[4], encoding="utf-8")) if len(sys.argv) > 4 else {}
+NUM_START = set(CFG.get("num_start", ["مية", "ألف", "ألفين", "التسعمية", "واحد", "اتنين", "تلاتة"]))
+SPECIAL_BEFORE = set(CFG.get("special_before", ["وماتت"]))
+SPECIAL_AFTER = set(CFG.get("special_after_lines", []))
 ws = [(l["id"], i, w) for l in T["lines"] for i, w in enumerate(l["words"])]
-last_line = T["lines"][-2]["id"]       # "المضاد الحيوي مش قوة خارقة…" is the closing sentence before the outro question
+# ep01: "المضاد الحيوي مش قوة خارقة…" is the closing sentence before the outro question
+last_line = T["lines"][-2]["id"] if CFG.get("last_line", True) else None
 
 def is_number_next(lid, i, words_line):
     w = words_line[i]["w"]
@@ -31,7 +38,8 @@ plan = []
 for (la, ia, a), (lb, ib, b) in zip(ws, ws[1:]):
     g = b["start"] - a["end"]
     same = la == lb
-    special = is_number_next(lb, ib, lines[lb]) or b["w"] == "وماتت" or (lb == last_line and ib == 0)
+    special = is_number_next(lb, ib, lines[lb]) or b["w"] in SPECIAL_BEFORE or (lb == last_line and ib == 0) \
+        or (la in SPECIAL_AFTER and la != lb)
     if special: lim, target = 0.80, 0.70
     elif same: lim, target = 0.40, 0.35
     else: lim, target = 0.55, 0.50

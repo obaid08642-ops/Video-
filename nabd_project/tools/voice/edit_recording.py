@@ -22,12 +22,12 @@ from align import align  # noqa: E402
 
 RAW, VERB, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
 CUTS = json.load(open(sys.argv[4], encoding="utf-8")) if len(sys.argv) > 4 else {"restarts": {}}
-if "roomtone" in CUTS: ROOMTONE = tuple(CUTS["roomtone"])
 XF = 0.030                       # crossfade (s)
 BREATH_DB = -12.0
 T_SCENE, T_IMPORTANT, T_LINE, T_WITHIN = 0.60, 0.55, 0.45, 0.35
 LONG = 0.60
 ROOMTONE = (54.0, 58.0)          # quietest stretch inside the long silence (no events); overridable in the cuts file
+if "roomtone" in CUTS: ROOMTONE = tuple(CUTS["roomtone"])   # must come AFTER the default (ep01 value)
 
 y, sr = sf.read(RAW, dtype="float64")
 HOP = int(0.01 * sr)
@@ -105,11 +105,15 @@ for k, v in enumerate(list(act) + [False]):
             near = min(min(abs(t0 - w["e"]), abs(w["s"] - t1)) for w in words)
             if kind in ("background voice", "mouth click", "noise") and pk < -40 and near < 0.12:
                 kind = "word tail (kept)"
+            if any(k0 < t1 and t0 < k1 for k0, k1 in CUTS.get("keep", [])):
+                kind = "word tail (kept)"   # listened/decoded: part of a word (e.g. an unvoiced onset), never replace
             events.append(dict(t=round(t0, 2), end=round(t1, 2), peak=round(pk, 1), kind=kind))
         s = None
 
 # ------------------------------------------------------------------ room tone + cleaned source
 rt_src = y[int(ROOMTONE[0] * sr): int(ROOMTONE[1] * sr)]
+_rt_db = db[fidx(ROOMTONE[0]): fidx(ROOMTONE[1])]
+assert _rt_db.max() < FLOOR + 12, f"room-tone source {ROOMTONE} is not silent (peak {_rt_db.max():.1f} dBFS, floor {FLOOR:.1f})"
 rng = np.random.default_rng(3)
 def roomtone(n):
     out = np.zeros(n); pos = 0; L = int(0.5 * sr); x = int(0.05 * sr)
