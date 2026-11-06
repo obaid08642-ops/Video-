@@ -26,6 +26,8 @@ export type CaptionData = {
   maxWords: number;
   overrides: Record<string, CardSpec[]>;
   sources: Record<string, string>;
+  /** spoken form -> written form, on screen and in the SRT (e.g. a drug name with its English name) */
+  rename?: Record<string, string>;
 };
 
 const DIAC = /[ً-ْٰـ]/g;
@@ -130,6 +132,7 @@ function parseDisplay(rowsText: string[], line: Line, range: [number, number]): 
 
 export function buildCards(timing: Timing, data: CaptionData): Card[] {
   const cards: Card[] = [];
+  const rn = (w: string) => data.rename?.[w] ?? w;
   for (const line of timing.lines) {
     const specs: CardSpec[] =
       data.overrides[line.id] ?? partition(line, data.maxWords).map((r) => ({ words: r }));
@@ -139,7 +142,7 @@ export function buildCards(timing: Timing, data: CaptionData): Card[] {
       const rows = spec.text
         ? parseDisplay(spec.text, line, range)
         : toRows(
-            ws.map((w) => ({ text: w.w + w.punct, kw: w.kw, t: w.start })),
+            ws.map((w) => ({ text: rn(w.w) + w.punct, kw: w.kw, t: w.start })),
             ws.map((w) => w.punct),
           );
       const noteIdx = spec.noteAt ? line.words.findIndex((w) => nrm(w.w) === nrm(spec.noteAt!)) : range[0];
@@ -152,7 +155,7 @@ export function buildCards(timing: Timing, data: CaptionData): Card[] {
         rows,
         note: spec.note ? { text: spec.note, t: line.words[Math.max(0, noteIdx)].start } : undefined,
         source: data.sources[line.id],
-        spoken: ws.map((w) => w.w + w.punct).join(" "),
+        spoken: ws.map((w) => rn(w.w) + w.punct).join(" "),
         spokenStart: ws[0].start,
         spokenEnd: ws[ws.length - 1].end,
       });
