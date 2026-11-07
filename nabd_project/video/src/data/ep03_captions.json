@@ -1,0 +1,89 @@
+{
+ "maxWords": 9,
+ "renamePhrase": {
+  "الإف دي إيه": "الـ FDA"
+ },
+ "overrides": {
+  "s1l1": [
+   {
+    "words": [
+     0,
+     8
+    ],
+    "text": [
+     "من أكتر من **120@مية سنة**…",
+     "في أمريكا…"
+    ]
+   },
+   {
+    "words": [
+     8,
+     17
+    ]
+   }
+  ],
+  "s4l9": [
+   {
+    "words": [
+     0,
+     5
+    ],
+    "note": "Xylometazoline · Oxymetazoline",
+    "noteAt": "زايلوميتازولين"
+   }
+  ],
+  "s5l8": [
+   {
+    "words": [
+     0,
+     4
+    ],
+    "note": "Rhinitis medicamentosa",
+    "noteAt": "الاحتقان"
+   }
+  ],
+  "s5l9": [
+   {
+    "words": [
+     0,
+     8
+    ],
+    "text": [
+     "وغالبا بيبدأ بعد **5@خمس لـ7@لسبع أيام**…",
+     "وممكن بدري."
+    ]
+   }
+  ],
+  "s6l6": [
+   {
+    "words": [
+     0,
+     10
+    ],
+    "text": [
+     "**الـ@الإف FDA@الإف** الأمريكية بتقول",
+     "إنها **مش آمنة** لغسيل الأنف."
+    ]
+   }
+  ]
+ },
+ "sources": {
+  "s1l1": "مصدر تاريخي: Spillane، Johns Hopkins University Press 2000",
+  "s1l2": "مصدر تاريخي: Spillane، Johns Hopkins University Press 2000",
+  "s2l3": "Hasegawa & Kern، Mayo Clin Proc 1977",
+  "s2l4": "Hasegawa & Kern، Mayo Clin Proc 1977",
+  "s3l2": "CDC",
+  "s3l3": "NHS",
+  "s3l4": "NHS",
+  "s4l3": "NHS",
+  "s4l11": "StatPearls (NCBI)",
+  "s4l13": "BSACI • NHS",
+  "s4l14": "BSACI",
+  "s5l8": "StatPearls (NCBI)",
+  "s5l9": "StatPearls (NCBI)",
+  "s6l6": "FDA",
+  "s6l7": "CDC: Naegleria fowleri",
+  "s6l8": "FDA • CDC",
+  "s6l9": "النشرات الرسمية • NHS"
+ }
+}

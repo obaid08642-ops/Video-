@@ -179,3 +179,63 @@ export const MysteryCard: React.FC<{ open?: number; text?: string; sub?: string 
     )}
   </g>
 );
+
+/** the rebound loop: 4 steps on a circle, a marker travels around (p = turns) */
+export const CycleLoop: React.FC<{ p?: number; lit?: number }> = ({ p = 0, lit = 4 }) => {
+  const steps = ["بخ", "فتح", "يرجع أسوأ", "بخ تاني"];
+  const R = 230;
+  return (
+    <g>
+      <circle r={R} fill="none" stroke={C.ink} strokeWidth={6} strokeDasharray="18 16" />
+      {steps.map((s, i) => {
+        const a = -Math.PI / 2 + (i * Math.PI) / 2; const x = Math.cos(a) * R, y = Math.sin(a) * R;
+        const on = i < lit;
+        return (
+          <g key={i} transform={`translate(${x} ${y})`} opacity={on ? 1 : 0.25}>
+            <rect x={-120} y={-46} width={240} height={92} rx={46} fill={i === 2 ? "#F6D2CC" : C.card} {...sk} />
+            <T y={14} size={38} fill={i === 2 ? C.warn : C.ink}>{s}</T>
+          </g>
+        );
+      })}
+      {(() => { const a = -Math.PI / 2 + p * Math.PI * 2 + Math.PI / 4; return <circle cx={Math.cos(a) * R} cy={Math.sin(a) * R} r={20} fill={C.key} {...sk} strokeWidth={4} />; })()}
+    </g>
+  );
+};
+
+/** front view of a nose with a spray tip in one nostril: good = aim outward (toward the ear), bad = toward the septum */
+export const NostrilAim: React.FC<{ good?: number; bad?: number }> = ({ good = 0, bad = 0 }) => (
+  <g>
+    <path d="M0 -260 C-40 -120 -90 -20 -150 60 C-200 130 -150 190 -80 180 C-50 210 50 210 80 180 C150 190 200 130 150 60 C90 -20 40 -120 0 -260 Z" fill={C.skin} {...sk} />
+    <ellipse cx={-70} cy={150} rx={42} ry={26} fill="#B9776A" {...sk} strokeWidth={5} />
+    <ellipse cx={70} cy={150} rx={42} ry={26} fill="#B9776A" {...sk} strokeWidth={5} />
+    <path d="M0 120 V190" {...sk} strokeWidth={5} opacity={0.6} />
+    <g transform="translate(-70 330) rotate(8)">
+      <rect x={-44} y={-60} width={88} height={160} rx={30} fill="#CFC6E6" {...sk} />
+      <path d="M-14 -60 L-10 -170 H10 L14 -60 Z" fill={C.paper} {...sk} />
+    </g>
+    {good > 0 && (
+      <g opacity={good}>
+        <path d="M-75 120 C-110 20 -200 -40 -300 -60" fill="none" stroke="#3FA34D" strokeWidth={12} strokeDasharray="24 14" strokeLinecap="round" />
+        <path d="M-300 -60 l26 -22 m-26 22 l30 14" stroke="#3FA34D" strokeWidth={12} strokeLinecap="round" />
+      </g>
+    )}
+    {bad > 0 && (
+      <g opacity={bad}>
+        <path d="M-65 120 C-50 60 -20 20 -6 -20" fill="none" stroke={C.warn} strokeWidth={12} strokeDasharray="24 14" strokeLinecap="round" />
+      </g>
+    )}
+  </g>
+);
+
+/** simple timeline: hard days -> better */
+export const Timeline: React.FC<{ p?: number }> = ({ p = 1 }) => (
+  <g>
+    <path d="M-380 0 H380" stroke={C.ink} strokeWidth={8} strokeLinecap="round" />
+    <path d={`M-380 0 H${-380 + 760 * p}`} stroke={C.key} strokeWidth={14} strokeLinecap="round" />
+    <rect x={-400} y={-150} width={330} height={100} rx={26} fill="#F6D2CC" {...sk} />
+    <T x={-235} y={-86} size={40} fill={C.warn}>أيام صعبة</T>
+    <rect x={80} y={-150} width={300} height={100} rx={26} fill="#E7F2DD" {...sk} opacity={p > 0.6 ? 1 : 0.3} />
+    <T x={230} y={-86} size={40} fill="#3F8F4A">تحسن ✓</T>
+    {[0, 1, 2, 3, 4, 5, 6].map((i) => (<circle key={i} cx={-380 + i * 126} cy={0} r={12} fill={i / 6 <= p ? C.key : C.paper} {...sk} strokeWidth={4} />))}
+  </g>
+);

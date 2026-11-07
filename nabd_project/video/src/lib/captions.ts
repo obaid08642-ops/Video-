@@ -28,6 +28,8 @@ export type CaptionData = {
   sources: Record<string, string>;
   /** spoken form -> written form, on screen and in the SRT (e.g. a drug name with its English name) */
   rename?: Record<string, string>;
+  /** multi-word spoken phrase -> written form, in the SRT text (e.g. «الإف دي إيه» -> «الـ FDA») */
+  renamePhrase?: Record<string, string>;
 };
 
 const DIAC = /[ً-ْٰـ]/g;
@@ -155,7 +157,7 @@ export function buildCards(timing: Timing, data: CaptionData): Card[] {
         rows,
         note: spec.note ? { text: spec.note, t: line.words[Math.max(0, noteIdx)].start } : undefined,
         source: data.sources[line.id],
-        spoken: ws.map((w) => rn(w.w) + w.punct).join(" "),
+        spoken: Object.entries(data.renamePhrase ?? {}).reduce((acc, [k, v]) => acc.split(k).join(v), ws.map((w) => rn(w.w) + w.punct).join(" ")),
         spokenStart: ws[0].start,
         spokenEnd: ws[ws.length - 1].end,
       });

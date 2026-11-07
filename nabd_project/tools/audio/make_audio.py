@@ -177,6 +177,13 @@ def sand():
     return x * np.sin(np.pi * np.clip(t_(d) / d, 0, 1)) ** 1.2
 
 
+def spray():
+    """nasal-spray puff: short soft filtered air burst"""
+    r = np.random.default_rng(23); d = 0.32; t = t_(d)
+    x = bp(r.standard_normal(len(t)), 2500, 9000) * (np.clip(t / 0.01, 0, 1) * np.exp(-t * 11))
+    return lp(x, 9000)
+
+
 def swell():
     """soft rising C-major pad chord (music transition accent, same key as the themes)"""
     d = 2.2; t = t_(d); x = np.zeros_like(t)
@@ -245,7 +252,7 @@ def music(chords, bpm, bars, pattern, out_name, bright=1.0, pulse=False, heart_e
 if __name__ == "__main__":
     if "--only" in sys.argv:   # add new sounds without regenerating (and changing) the existing ones
         names = sys.argv[sys.argv.index("--only") + 1:]
-        for name, fn, db in [("penclick", penclick, -8), ("sand", sand, -12)]:
+        for name, fn, db in [("penclick", penclick, -8), ("sand", sand, -12), ("spray", spray, -12)]:
             if name in names: save(name, fn(), db)
         print("ok"); sys.exit(0)
     for name, fn, db in [("heartbeat", heartbeat, -3), ("pop", pop, -6), ("paper", paper, -8), ("scribble", scribble, -9),
@@ -253,7 +260,7 @@ if __name__ == "__main__":
                          ("shimmer", shimmer, -10), ("crack", crack, -10), ("click", click, -6), ("tick", tick, -8),
                          ("drip", drip, -8), ("motor", motor, -6), ("chirp", chirp, -10), ("bump", bump, -6),
                          ("metal", metal, -10), ("snip", snip, -8), ("door", door, -6), ("swell", swell, -10),
-                         ("penclick", penclick, -8), ("sand", sand, -12)]:
+                         ("penclick", penclick, -8), ("sand", sand, -12), ("spray", spray, -12)]:
         save(name, fn(), db)
     # 1) curiosity (hook -> explanation): C major / A minor colour, 88 BPM, questioning motif
     music([("C", [("C", 3), ("E", 3), ("G", 3), ("B", 3)]), ("A", [("A", 2), ("C", 3), ("E", 3), ("G", 3)]),
