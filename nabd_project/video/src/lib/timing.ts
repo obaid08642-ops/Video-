@@ -49,6 +49,11 @@ export class T {
     return l;
   }
 
+  /** does the timing contain this line? (Shorts only carry some lines of a scene) */
+  has(id: string): boolean {
+    return this.timing.lines.some((x) => x.id === id);
+  }
+
   word(id: string, key: number | string): Word {
     const l = this.line(id);
     if (typeof key === "number") return l.words[key < 0 ? l.words.length + key : key];

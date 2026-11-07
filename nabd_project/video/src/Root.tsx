@@ -9,6 +9,8 @@ import { Ep03Cover } from "./videos/ep03/Cover";
 import { Ep03, calcEp03, type Ep03Props } from "./videos/ep03/Ep03";
 import { Ep03LongTail, TAIL_FRAMES as TAIL_FRAMES_03 } from "./videos/ep03/LongTail";
 import { Ep02LongTail, TAIL_FRAMES } from "./videos/ep02/LongTail";
+import { Ep04, calcEp04, type Ep04Props } from "./videos/ep04/Ep04";
+import { Ep04Cover } from "./videos/ep04/Cover";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
 const fontHandle = delayRender("fonts");
@@ -40,6 +42,13 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep03LongTail" component={Ep03LongTail} fps={30} width={1080} height={1920} durationInFrames={TAIL_FRAMES_03} />
     <Composition id="Ep03Cover" component={Ep03Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep03AssetSheet" component={Ep03AssetSheet} fps={30} width={1080} height={1920} durationInFrames={1} />
+    {/* episode 04 (paracetamol): one recording -> long video + 2 Shorts (voice = long | short1 | short2) */}
+    <Composition id="Ep04Long" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "long" } as Ep04Props} />
+    <Composition id="Ep04Short1" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short1" } as Ep04Props} />
+    <Composition id="Ep04Short2" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short2" } as Ep04Props} />
+    <Composition id="Ep04CoverLong" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "long" as const }} />
+    <Composition id="Ep04CoverShort1" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
+    <Composition id="Ep04CoverShort2" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
     <Composition id="Ep02Cover" component={Ep02Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep02Final" component={Ep02} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp02} defaultProps={{ voice: "recording" } as Ep02Props} />
   </>

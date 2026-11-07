@@ -1,35 +1,30 @@
 {
  "voice": "recording",
  "audio": "ep04.wav",
- "duration": 78.09,
+ "duration": 75.18,
  "sampleRate": 48000,
  "pauseScale": 1.0,
  "scenes": [
   {
-   "id": 1,
-   "start": 0.131,
-   "end": 7.478
+   "id": 12,
+   "start": 0.12,
+   "end": 7.185
   },
   {
-   "id": 2,
-   "start": 8.024,
-   "end": 36.426
+   "id": 6,
+   "start": 7.747,
+   "end": 69.837
   },
   {
-   "id": 3,
-   "start": 36.947,
-   "end": 72.598
-  },
-  {
-   "id": 4,
-   "start": 73.187,
-   "end": 77.861
+   "id": 13,
+   "start": 70.437,
+   "end": 74.932
   }
  ],
  "lines": [
   {
-   "id": "s1l1",
-   "scene": 1,
+   "id": "s12l1",
+   "scene": 12,
    "raw": "الرئيس الأمريكي دونالد ترامب بنفسه… طلع يحذر الحوامل منه…",
    "words": [
     {
@@ -37,81 +32,81 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 0.131,
-     "end": 0.501
+     "start": 0.12,
+     "end": 0.476
     },
     {
      "w": "الأمريكي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 0.501,
-     "end": 0.912
+     "start": 0.476,
+     "end": 0.871
     },
     {
      "w": "دونالد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 0.912,
-     "end": 1.302
+     "start": 0.871,
+     "end": 1.246
     },
     {
      "w": "ترامب",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 1.302,
-     "end": 1.752
+     "start": 1.246,
+     "end": 1.679
     },
     {
      "w": "بنفسه",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 2.113,
-     "end": 2.543
+     "start": 2.026,
+     "end": 2.439
     },
     {
      "w": "طلع",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 2.543,
-     "end": 2.813
+     "start": 2.439,
+     "end": 2.699
     },
     {
      "w": "يحذر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 2.813,
-     "end": 3.214
+     "start": 2.699,
+     "end": 3.085
     },
     {
      "w": "الحوامل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 3.214,
-     "end": 3.674
+     "start": 3.085,
+     "end": 3.527
     },
     {
      "w": "منه",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 3.674,
-     "end": 4.065
+     "start": 3.527,
+     "end": 3.903
     }
    ],
-   "start": 0.131,
-   "end": 4.065,
+   "start": 0.12,
+   "end": 3.903,
    "src": "s1l6"
   },
   {
-   "id": "s1l2",
-   "scene": 1,
+   "id": "s12l2",
+   "scene": 12,
    "raw": "وربط استخدامه بالتوحد!",
    "words": [
     {
@@ -119,33 +114,33 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 4.525,
-     "end": 4.966
+     "start": 4.345,
+     "end": 4.769
     },
     {
      "w": "استخدامه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 4.966,
-     "end": 5.496
+     "start": 4.769,
+     "end": 5.279
     },
     {
      "w": "بالتوحد",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 5.496,
-     "end": 6.167
+     "start": 5.279,
+     "end": 5.924
     }
    ],
-   "start": 4.525,
-   "end": 6.167,
+   "start": 4.345,
+   "end": 5.924,
    "src": "s1l7"
   },
   {
-   "id": "s1l3",
-   "scene": 1,
+   "id": "s12l3",
+   "scene": 12,
    "raw": "طب إيه الحقيقة؟",
    "words": [
     {
@@ -153,33 +148,33 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.657,
-     "end": 6.837
+     "start": 6.395,
+     "end": 6.568
     },
     {
      "w": "إيه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.837,
-     "end": 6.977
+     "start": 6.568,
+     "end": 6.703
     },
     {
      "w": "الحقيقة",
      "punct": "؟",
      "kw": true,
      "tags": [],
-     "start": 6.977,
-     "end": 7.478
+     "start": 6.703,
+     "end": 7.185
     }
    ],
-   "start": 6.657,
-   "end": 7.478,
+   "start": 6.395,
+   "end": 7.185,
    "src": "s1l8"
   },
   {
-   "id": "s2l1",
-   "scene": 2,
+   "id": "s6l2",
+   "scene": 6,
    "raw": "في اتنين وعشرين سبتمبر ألفين خمسة وعشرين…",
    "words": [
     {
@@ -187,65 +182,65 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 8.024,
-     "end": 8.144
+     "start": 7.747,
+     "end": 7.862
     },
     {
      "w": "اتنين",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 8.144,
-     "end": 8.384
+     "start": 7.862,
+     "end": 8.093
     },
     {
      "w": "وعشرين",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 8.384,
-     "end": 8.765
+     "start": 8.093,
+     "end": 8.459
     },
     {
      "w": "سبتمبر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 8.765,
-     "end": 9.445
+     "start": 8.459,
+     "end": 9.113
     },
     {
      "w": "ألفين",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 9.545,
-     "end": 9.866
+     "start": 9.209,
+     "end": 9.518
     },
     {
      "w": "خمسة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 9.866,
-     "end": 10.166
+     "start": 9.518,
+     "end": 9.807
     },
     {
      "w": "وعشرين",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 10.166,
-     "end": 10.706
+     "start": 9.807,
+     "end": 10.326
     }
    ],
-   "start": 8.024,
-   "end": 10.706,
+   "start": 7.747,
+   "end": 10.326,
    "src": "s6l2"
   },
   {
-   "id": "s2l2",
-   "scene": 2,
+   "id": "s6l3",
+   "scene": 6,
    "raw": "الرئيس الأمريكي دونالد ترامب طلع في مؤتمر بالبيت الأبيض…",
    "words": [
     {
@@ -253,81 +248,81 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 11.156,
-     "end": 11.527
+     "start": 10.758,
+     "end": 11.115
     },
     {
      "w": "الأمريكي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 11.527,
-     "end": 11.987
+     "start": 11.115,
+     "end": 11.558
     },
     {
      "w": "دونالد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 11.987,
-     "end": 12.388
+     "start": 11.558,
+     "end": 11.943
     },
     {
      "w": "ترامب",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 12.388,
-     "end": 12.778
+     "start": 11.943,
+     "end": 12.318
     },
     {
      "w": "طلع",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 13.059,
-     "end": 13.299
+     "start": 12.588,
+     "end": 12.819
     },
     {
      "w": "في",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 13.299,
-     "end": 13.429
+     "start": 12.819,
+     "end": 12.944
     },
     {
      "w": "مؤتمر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 13.429,
-     "end": 13.889
+     "start": 12.944,
+     "end": 13.386
     },
     {
      "w": "بالبيت",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 13.889,
-     "end": 14.27
+     "start": 13.386,
+     "end": 13.753
     },
     {
      "w": "الأبيض",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 14.27,
-     "end": 14.79
+     "start": 13.753,
+     "end": 14.253
     }
    ],
-   "start": 11.156,
-   "end": 14.79,
+   "start": 10.758,
+   "end": 14.253,
    "src": "s6l3"
   },
   {
-   "id": "s2l3",
-   "scene": 2,
+   "id": "s6l4",
+   "scene": 6,
    "raw": "وتكلم عن استخدام التايلينول…",
    "words": [
     {
@@ -335,41 +330,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 15.041,
-     "end": 15.551
+     "start": 14.494,
+     "end": 14.984
     },
     {
      "w": "عن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 15.551,
-     "end": 15.711
+     "start": 14.984,
+     "end": 15.138
     },
     {
      "w": "استخدام",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 15.711,
-     "end": 16.362
+     "start": 15.138,
+     "end": 15.764
     },
     {
      "w": "التايلينول",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 16.673,
-     "end": 17.443
+     "start": 16.063,
+     "end": 16.804
     }
    ],
-   "start": 15.041,
-   "end": 17.443,
+   "start": 14.494,
+   "end": 16.804,
    "src": "s6l4"
   },
   {
-   "id": "s2l4",
-   "scene": 2,
+   "id": "s6l5",
+   "scene": 6,
    "raw": "هو البرستمول… أثناء الحمل.",
    "words": [
     {
@@ -377,41 +372,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 17.935,
-     "end": 18.115
+     "start": 17.277,
+     "end": 17.45
     },
     {
      "w": "البرستمول",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 18.115,
-     "end": 18.846
+     "start": 17.45,
+     "end": 18.153
     },
     {
      "w": "أثناء",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 18.846,
-     "end": 19.146
+     "start": 18.153,
+     "end": 18.441
     },
     {
      "w": "الحمل",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 19.146,
-     "end": 19.596
+     "start": 18.441,
+     "end": 18.874
     }
    ],
-   "start": 17.935,
-   "end": 19.596,
+   "start": 17.277,
+   "end": 18.874,
    "src": "s6l5"
   },
   {
-   "id": "s2l5",
-   "scene": 2,
+   "id": "s6l6",
+   "scene": 6,
    "raw": "وحذر الحوامل من استخدامه…",
    "words": [
     {
@@ -419,41 +414,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 20.05,
-     "end": 20.54
+     "start": 19.31,
+     "end": 19.782
     },
     {
      "w": "الحوامل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 20.54,
-     "end": 21.011
+     "start": 19.782,
+     "end": 20.234
     },
     {
      "w": "من",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 21.011,
-     "end": 21.151
+     "start": 20.234,
+     "end": 20.369
     },
     {
      "w": "استخدامه",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 21.151,
-     "end": 21.982
+     "start": 20.369,
+     "end": 21.168
     }
    ],
-   "start": 20.05,
-   "end": 21.982,
+   "start": 19.31,
+   "end": 21.168,
    "src": "s6l6"
   },
   {
-   "id": "s2l6",
-   "scene": 2,
+   "id": "s6l7",
+   "scene": 6,
    "raw": "وربطه بزيادة خطر التوحد عند الأطفال.",
    "words": [
     {
@@ -461,57 +456,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 22.062,
-     "end": 22.552
+     "start": 21.245,
+     "end": 21.716
     },
     {
      "w": "بزيادة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 22.552,
-     "end": 23.083
+     "start": 21.716,
+     "end": 22.227
     },
     {
      "w": "خطر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 23.083,
-     "end": 23.393
+     "start": 22.227,
+     "end": 22.525
     },
     {
      "w": "التوحد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 23.393,
-     "end": 23.874
+     "start": 22.525,
+     "end": 22.987
     },
     {
      "w": "عند",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 23.874,
-     "end": 24.064
+     "start": 22.987,
+     "end": 23.17
     },
     {
      "w": "الأطفال",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 24.064,
-     "end": 24.584
+     "start": 23.17,
+     "end": 23.67
     }
    ],
-   "start": 22.062,
-   "end": 24.584,
+   "start": 21.245,
+   "end": 23.67,
    "src": "s6l7"
   },
   {
-   "id": "s2l7",
-   "scene": 2,
+   "id": "s6l8",
+   "scene": 6,
    "raw": "لكن هنا لازم نقف!",
    "words": [
     {
@@ -519,41 +514,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 25.025,
-     "end": 25.255
+     "start": 24.094,
+     "end": 24.315
     },
     {
      "w": "هنا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 25.255,
-     "end": 25.455
+     "start": 24.315,
+     "end": 24.508
     },
     {
      "w": "لازم",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 25.455,
-     "end": 25.736
+     "start": 24.508,
+     "end": 24.778
     },
     {
      "w": "نقف",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 25.736,
-     "end": 26.136
+     "start": 24.778,
+     "end": 25.162
     }
    ],
-   "start": 25.025,
-   "end": 26.136,
+   "start": 24.094,
+   "end": 25.162,
    "src": "s6l8"
   },
   {
-   "id": "s2l8",
-   "scene": 2,
+   "id": "s6l9",
+   "scene": 6,
    "raw": "الارتباط مش معناه السببية!",
    "words": [
     {
@@ -561,41 +556,41 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 26.587,
-     "end": 27.148
+     "start": 25.596,
+     "end": 26.135
     },
     {
      "w": "مش",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 27.148,
-     "end": 27.318
+     "start": 26.135,
+     "end": 26.299
     },
     {
      "w": "معناه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 27.318,
-     "end": 27.658
+     "start": 26.299,
+     "end": 26.626
     },
     {
      "w": "السببية",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 27.658,
-     "end": 28.289
+     "start": 26.626,
+     "end": 27.233
     }
    ],
-   "start": 26.587,
-   "end": 28.289,
+   "start": 25.596,
+   "end": 27.233,
    "src": "s6l9"
   },
   {
-   "id": "s2l9",
-   "scene": 2,
+   "id": "s6l10",
+   "scene": 6,
    "raw": "يعني لو دراسة لاحظت ارتباط بين استخدام دوا ونتيجة معينة…",
    "words": [
     {
@@ -603,89 +598,89 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 28.739,
-     "end": 28.979
+     "start": 27.665,
+     "end": 27.896
     },
     {
      "w": "لو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 28.979,
-     "end": 29.139
+     "start": 27.896,
+     "end": 28.05
     },
     {
      "w": "دراسة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 29.139,
-     "end": 29.53
+     "start": 28.05,
+     "end": 28.426
     },
     {
      "w": "لاحظت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 29.53,
-     "end": 29.91
+     "start": 28.426,
+     "end": 28.791
     },
     {
      "w": "ارتباط",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 29.91,
-     "end": 30.491
+     "start": 28.791,
+     "end": 29.35
     },
     {
      "w": "بين",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 30.531,
-     "end": 30.771
+     "start": 29.388,
+     "end": 29.619
     },
     {
      "w": "استخدام",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 30.771,
-     "end": 31.301
+     "start": 29.619,
+     "end": 30.129
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 31.301,
-     "end": 31.662
+     "start": 30.129,
+     "end": 30.476
     },
     {
      "w": "ونتيجة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 31.802,
-     "end": 32.342
+     "start": 30.61,
+     "end": 31.13
     },
     {
      "w": "معينة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 32.342,
-     "end": 32.823
+     "start": 31.13,
+     "end": 31.592
     }
    ],
-   "start": 28.739,
-   "end": 32.823,
+   "start": 27.665,
+   "end": 31.592,
    "src": "s6l10"
   },
   {
-   "id": "s2l10",
-   "scene": 2,
+   "id": "s6l11",
+   "scene": 6,
    "raw": "ده مش معناه بالضرورة إن الدوا هو اللي سبب النتيجة.",
    "words": [
     {
@@ -693,89 +688,89 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 33.183,
-     "end": 33.323
+     "start": 31.938,
+     "end": 32.073
     },
     {
      "w": "مش",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 33.323,
-     "end": 33.504
+     "start": 32.073,
+     "end": 32.247
     },
     {
      "w": "معناه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 33.504,
-     "end": 33.874
+     "start": 32.247,
+     "end": 32.603
     },
     {
      "w": "بالضرورة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 33.874,
-     "end": 34.484
+     "start": 32.603,
+     "end": 33.189
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 34.585,
-     "end": 34.785
+     "start": 33.286,
+     "end": 33.479
     },
     {
      "w": "الدوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 34.785,
-     "end": 35.195
+     "start": 33.479,
+     "end": 33.873
     },
     {
      "w": "هو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 35.195,
-     "end": 35.415
+     "start": 33.873,
+     "end": 34.084
     },
     {
      "w": "اللي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 35.415,
-     "end": 35.596
+     "start": 34.084,
+     "end": 34.258
     },
     {
      "w": "سبب",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 35.596,
-     "end": 35.846
+     "start": 34.258,
+     "end": 34.499
     },
     {
      "w": "النتيجة",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 35.846,
-     "end": 36.426
+     "start": 34.499,
+     "end": 35.057
     }
    ],
-   "start": 33.183,
-   "end": 36.426,
+   "start": 31.938,
+   "end": 35.057,
    "src": "s6l11"
   },
   {
-   "id": "s3l1",
-   "scene": 3,
+   "id": "s6l12",
+   "scene": 6,
    "raw": "والمنظمات الطبية المتخصصة…",
    "words": [
     {
@@ -783,33 +778,33 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 36.947,
-     "end": 37.718
+     "start": 35.557,
+     "end": 36.299
     },
     {
      "w": "الطبية",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 37.718,
-     "end": 38.138
+     "start": 36.299,
+     "end": 36.703
     },
     {
      "w": "المتخصصة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 38.138,
-     "end": 38.939
+     "start": 36.703,
+     "end": 37.473
     }
    ],
-   "start": 36.947,
-   "end": 38.939,
+   "start": 35.557,
+   "end": 37.473,
    "src": "s6l12"
   },
   {
-   "id": "s3l2",
-   "scene": 3,
+   "id": "s6l13",
+   "scene": 6,
    "raw": "ومنها الإيه سي أو جي… أكدت إن الأدلة الحالية لا تثبت إن استخدام البرستمول أثناء الحمل بيسبب التوحد.",
    "words": [
     {
@@ -817,153 +812,153 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 39.392,
-     "end": 39.923
+     "start": 37.908,
+     "end": 38.419
     },
     {
      "w": "الإيه",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 40.213,
-     "end": 40.604
+     "start": 38.698,
+     "end": 39.074
     },
     {
      "w": "سي",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 40.604,
-     "end": 40.874
+     "start": 39.074,
+     "end": 39.333
     },
     {
      "w": "أو",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 40.874,
-     "end": 41.114
+     "start": 39.333,
+     "end": 39.564
     },
     {
      "w": "جي",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 41.114,
-     "end": 41.454
+     "start": 39.564,
+     "end": 39.891
     },
     {
      "w": "أكدت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 41.725,
-     "end": 42.245
+     "start": 40.152,
+     "end": 40.652
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 42.245,
-     "end": 42.345
+     "start": 40.652,
+     "end": 40.748
     },
     {
      "w": "الأدلة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 42.345,
-     "end": 42.886
+     "start": 40.748,
+     "end": 41.268
     },
     {
      "w": "الحالية",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 42.886,
-     "end": 43.436
+     "start": 41.268,
+     "end": 41.797
     },
     {
      "w": "لا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 43.517,
-     "end": 43.687
+     "start": 41.875,
+     "end": 42.038
     },
     {
      "w": "تثبت",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 43.687,
-     "end": 44.177
+     "start": 42.038,
+     "end": 42.509
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 44.317,
-     "end": 44.498
+     "start": 42.644,
+     "end": 42.818
     },
     {
      "w": "استخدام",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 44.498,
-     "end": 44.988
+     "start": 42.818,
+     "end": 43.289
     },
     {
      "w": "البرستمول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 44.988,
-     "end": 45.759
+     "start": 43.289,
+     "end": 44.031
     },
     {
      "w": "أثناء",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 45.759,
-     "end": 46.109
+     "start": 44.031,
+     "end": 44.367
     },
     {
      "w": "الحمل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 46.109,
-     "end": 46.54
+     "start": 44.367,
+     "end": 44.782
     },
     {
      "w": "بيسبب",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 46.86,
-     "end": 47.35
+     "start": 45.089,
+     "end": 45.56
     },
     {
      "w": "التوحد",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 47.35,
-     "end": 47.881
+     "start": 45.56,
+     "end": 46.071
     }
    ],
-   "start": 39.392,
-   "end": 47.881,
+   "start": 37.908,
+   "end": 46.071,
    "src": "s6l13"
   },
   {
-   "id": "s3l3",
-   "scene": 3,
+   "id": "s6l14",
+   "scene": 6,
    "raw": "والدراسات الأقوى والأكتر دقة… ما أثبتتش علاقة سببية بالشكل اللي اتقال في المؤتمر.",
    "words": [
     {
@@ -971,113 +966,113 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 48.42,
-     "end": 48.981
+     "start": 46.589,
+     "end": 47.129
     },
     {
      "w": "الأقوى",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 48.981,
-     "end": 49.471
+     "start": 47.129,
+     "end": 47.6
     },
     {
      "w": "والأكتر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 49.471,
-     "end": 49.912
+     "start": 47.6,
+     "end": 48.024
     },
     {
      "w": "دقة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 49.912,
-     "end": 50.342
+     "start": 48.024,
+     "end": 48.437
     },
     {
      "w": "ما",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 50.412,
-     "end": 50.572
+     "start": 48.505,
+     "end": 48.658
     },
     {
      "w": "أثبتتش",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 50.572,
-     "end": 51.253
+     "start": 48.658,
+     "end": 49.313
     },
     {
      "w": "علاقة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 51.534,
-     "end": 51.944
+     "start": 49.583,
+     "end": 49.978
     },
     {
      "w": "سببية",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 51.944,
-     "end": 52.465
+     "start": 49.978,
+     "end": 50.479
     },
     {
      "w": "بالشكل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 52.465,
-     "end": 52.915
+     "start": 50.479,
+     "end": 50.911
     },
     {
      "w": "اللي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 52.915,
-     "end": 53.075
+     "start": 50.911,
+     "end": 51.065
     },
     {
      "w": "اتقال",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 53.075,
-     "end": 53.316
+     "start": 51.065,
+     "end": 51.297
     },
     {
      "w": "في",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 53.316,
-     "end": 53.426
+     "start": 51.297,
+     "end": 51.403
     },
     {
      "w": "المؤتمر",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 53.426,
-     "end": 54.016
+     "start": 51.403,
+     "end": 51.97
     }
    ],
-   "start": 48.42,
-   "end": 54.016,
+   "start": 46.589,
+   "end": 51.97,
    "src": "s6l14"
   },
   {
-   "id": "s3l4",
-   "scene": 3,
+   "id": "s6l15",
+   "scene": 6,
    "raw": "والبرستمول ما زال من الخيارات الأساسية لتخفيف الآلام وخفض الحرارة أثناء الحمل… بل أأمنهم…",
    "words": [
     {
@@ -1085,121 +1080,121 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 54.487,
-     "end": 55.288
+     "start": 52.423,
+     "end": 53.193
     },
     {
      "w": "ما",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 55.288,
-     "end": 55.418
+     "start": 53.193,
+     "end": 53.318
     },
     {
      "w": "زال",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 55.418,
-     "end": 55.618
+     "start": 53.318,
+     "end": 53.51
     },
     {
      "w": "من",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 55.618,
-     "end": 55.768
+     "start": 53.51,
+     "end": 53.655
     },
     {
      "w": "الخيارات",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 55.768,
-     "end": 56.279
+     "start": 53.655,
+     "end": 54.146
     },
     {
      "w": "الأساسية",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 56.279,
-     "end": 56.829
+     "start": 54.146,
+     "end": 54.675
     },
     {
      "w": "لتخفيف",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 56.829,
-     "end": 57.31
+     "start": 54.675,
+     "end": 55.137
     },
     {
      "w": "الآلام",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 57.31,
-     "end": 57.72
+     "start": 55.137,
+     "end": 55.532
     },
     {
      "w": "وخفض",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 57.72,
-     "end": 58.07
+     "start": 55.532,
+     "end": 55.868
     },
     {
      "w": "الحرارة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 58.07,
-     "end": 58.551
+     "start": 55.868,
+     "end": 56.331
     },
     {
      "w": "أثناء",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 58.551,
-     "end": 58.901
+     "start": 56.331,
+     "end": 56.667
     },
     {
      "w": "الحمل",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 58.901,
-     "end": 59.322
+     "start": 56.667,
+     "end": 57.072
     },
     {
      "w": "بل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 59.562,
-     "end": 59.802
+     "start": 57.303,
+     "end": 57.533
     },
     {
      "w": "أأمنهم",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 59.802,
-     "end": 60.463
+     "start": 57.533,
+     "end": 58.169
     }
    ],
-   "start": 54.487,
-   "end": 60.463,
+   "start": 52.423,
+   "end": 58.169,
    "src": "s6l15"
   },
   {
-   "id": "s3l5",
-   "scene": 3,
+   "id": "s6l16",
+   "scene": 6,
    "raw": "عند الحاجة طبعا… وبالجرعة المناسبة… ولأقصر مدة ممكنة…",
    "words": [
     {
@@ -1207,73 +1202,73 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 60.904,
-     "end": 61.134
+     "start": 58.593,
+     "end": 58.814
     },
     {
      "w": "الحاجة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 61.134,
-     "end": 61.514
+     "start": 58.814,
+     "end": 59.18
     },
     {
      "w": "طبعا",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 61.514,
-     "end": 61.885
+     "start": 59.18,
+     "end": 59.536
     },
     {
      "w": "وبالجرعة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 61.885,
-     "end": 62.375
+     "start": 59.536,
+     "end": 60.007
     },
     {
      "w": "المناسبة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 62.375,
-     "end": 62.956
+     "start": 60.007,
+     "end": 60.566
     },
     {
      "w": "ولأقصر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 63.106,
-     "end": 63.677
+     "start": 60.71,
+     "end": 61.259
     },
     {
      "w": "مدة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 63.677,
-     "end": 63.977
+     "start": 61.259,
+     "end": 61.548
     },
     {
      "w": "ممكنة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 63.977,
-     "end": 64.467
+     "start": 61.548,
+     "end": 62.019
     }
    ],
-   "start": 60.904,
-   "end": 64.467,
+   "start": 58.593,
+   "end": 62.019,
    "src": "s6l16"
   },
   {
-   "id": "s3l6",
-   "scene": 3,
+   "id": "s6l17",
+   "scene": 6,
    "raw": "وأكيد بعد استشارة الطبيب.",
    "words": [
     {
@@ -1281,41 +1276,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 64.968,
-     "end": 65.378
+     "start": 62.501,
+     "end": 62.895
     },
     {
      "w": "بعد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 65.378,
-     "end": 65.589
+     "start": 62.895,
+     "end": 63.098
     },
     {
      "w": "استشارة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 65.589,
-     "end": 66.039
+     "start": 63.098,
+     "end": 63.531
     },
     {
      "w": "الطبيب",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 66.039,
-     "end": 66.429
+     "start": 63.531,
+     "end": 63.906
     }
    ],
-   "start": 64.968,
-   "end": 66.429,
+   "start": 62.501,
+   "end": 63.906,
    "src": "s6l17"
   },
   {
-   "id": "s3l7",
-   "scene": 3,
+   "id": "s6l18",
+   "scene": 6,
    "raw": "لأن كمان… ترك الألم أو الحرارة من غير علاج مناسب…",
    "words": [
     {
@@ -1323,89 +1318,89 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 66.922,
-     "end": 67.273
+     "start": 64.38,
+     "end": 64.717
     },
     {
      "w": "كمان",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 67.273,
-     "end": 67.673
+     "start": 64.717,
+     "end": 65.102
     },
     {
      "w": "ترك",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 67.683,
-     "end": 67.974
+     "start": 65.111,
+     "end": 65.391
     },
     {
      "w": "الألم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 67.974,
-     "end": 68.394
+     "start": 65.391,
+     "end": 65.795
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 68.394,
-     "end": 68.554
+     "start": 65.795,
+     "end": 65.949
     },
     {
      "w": "الحرارة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 68.554,
-     "end": 69.155
+     "start": 65.949,
+     "end": 66.527
     },
     {
      "w": "من",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 69.155,
-     "end": 69.315
+     "start": 66.527,
+     "end": 66.681
     },
     {
      "w": "غير",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 69.315,
-     "end": 69.525
+     "start": 66.681,
+     "end": 66.882
     },
     {
      "w": "علاج",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 69.525,
-     "end": 69.825
+     "start": 66.882,
+     "end": 67.171
     },
     {
      "w": "مناسب",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 69.825,
-     "end": 70.326
+     "start": 67.171,
+     "end": 67.653
     }
    ],
-   "start": 66.922,
-   "end": 70.326,
+   "start": 64.38,
+   "end": 67.653,
    "src": "s6l18"
   },
   {
-   "id": "s3l8",
-   "scene": 3,
+   "id": "s6l19",
+   "scene": 6,
    "raw": "مش بالضرورة يكون الاختيار الأكتر أمانا!",
    "words": [
     {
@@ -1413,57 +1408,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 70.326,
-     "end": 70.526
+     "start": 67.653,
+     "end": 67.845
     },
     {
      "w": "بالضرورة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 70.526,
-     "end": 71.057
+     "start": 67.845,
+     "end": 68.356
     },
     {
      "w": "يكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 71.057,
-     "end": 71.327
+     "start": 68.356,
+     "end": 68.615
     },
     {
      "w": "الاختيار",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 71.327,
-     "end": 71.817
+     "start": 68.615,
+     "end": 69.086
     },
     {
      "w": "الأكتر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 71.817,
-     "end": 72.238
+     "start": 69.086,
+     "end": 69.491
     },
     {
      "w": "أمانا",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 72.238,
-     "end": 72.598
+     "start": 69.491,
+     "end": 69.837
     }
    ],
-   "start": 70.326,
-   "end": 72.598,
+   "start": 67.653,
+   "end": 69.837,
    "src": "s6l19"
   },
   {
-   "id": "s4l1",
-   "scene": 4,
+   "id": "s13l1",
+   "scene": 13,
    "raw": "وفي النهاية… افتكر دايما:",
    "words": [
     {
@@ -1471,41 +1466,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 73.187,
-     "end": 73.377
+     "start": 70.437,
+     "end": 70.62
     },
     {
      "w": "النهاية",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 73.377,
-     "end": 73.727
+     "start": 70.62,
+     "end": 70.956
     },
     {
      "w": "افتكر",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 73.727,
-     "end": 74.088
+     "start": 70.956,
+     "end": 71.303
     },
     {
      "w": "دايما",
      "punct": ":",
      "kw": false,
      "tags": [],
-     "start": 74.088,
-     "end": 74.518
+     "start": 71.303,
+     "end": 71.717
     }
    ],
-   "start": 73.187,
-   "end": 74.518,
+   "start": 70.437,
+   "end": 71.717,
    "src": "s9l8"
   },
   {
-   "id": "s4l2",
-   "scene": 4,
+   "id": "s13l2",
+   "scene": 13,
    "raw": "مش كل دوا مشهور… معناه إننا عارفين عنه كل حاجة!",
    "words": [
     {
@@ -1513,86 +1508,87 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 74.658,
-     "end": 74.868
+     "start": 71.852,
+     "end": 72.054
     },
     {
      "w": "كل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 74.888,
-     "end": 75.078
+     "start": 72.074,
+     "end": 72.256
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 75.078,
-     "end": 75.279
+     "start": 72.256,
+     "end": 72.449
     },
     {
      "w": "مشهور",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 75.279,
-     "end": 75.809
+     "start": 72.449,
+     "end": 72.958
     },
     {
      "w": "معناه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 76.06,
-     "end": 76.49
+     "start": 73.2,
+     "end": 73.613
     },
     {
      "w": "إننا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 76.49,
-     "end": 76.65
+     "start": 73.613,
+     "end": 73.767
     },
     {
      "w": "عارفين",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 76.65,
-     "end": 77.02
+     "start": 73.767,
+     "end": 74.124
     },
     {
      "w": "عنه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 77.02,
-     "end": 77.281
+     "start": 74.124,
+     "end": 74.374
     },
     {
      "w": "كل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 77.281,
-     "end": 77.531
+     "start": 74.374,
+     "end": 74.614
     },
     {
      "w": "حاجة",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 77.531,
-     "end": 77.861
+     "start": 74.614,
+     "end": 74.932
     }
    ],
-   "start": 74.658,
-   "end": 77.861,
+   "start": 71.852,
+   "end": 74.932,
    "src": "s9l9"
   }
  ],
- "trim_head": 7.588
+ "trim_head": 7.588,
+ "global_speed": 1.04
 }

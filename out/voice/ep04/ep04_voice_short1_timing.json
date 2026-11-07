@@ -1,35 +1,35 @@
 {
  "voice": "recording",
  "audio": "ep04.wav",
- "duration": 161.28,
+ "duration": 154.01,
  "sampleRate": 48000,
  "pauseScale": 1.0,
  "scenes": [
   {
+   "id": 11,
+   "start": 0.116,
+   "end": 5.198
+  },
+  {
    "id": 2,
-   "start": 6.108,
-   "end": 44.738
+   "start": 5.905,
+   "end": 43.068
   },
   {
-   "id": 3,
-   "start": 45.308,
-   "end": 99.141
+   "id": 7,
+   "start": 43.652,
+   "end": 141.596
   },
   {
-   "id": 4,
-   "start": 0.115,
-   "end": 148.422
-  },
-  {
-   "id": 5,
-   "start": 149.076,
-   "end": 160.917
+   "id": 14,
+   "start": 142.245,
+   "end": 153.643
   }
  ],
  "lines": [
   {
-   "id": "s4l1",
-   "scene": 4,
+   "id": "s11l1",
+   "scene": 11,
    "raw": "أخطر حاجة هنا إنك ممكن تكون أخدت جرعة زيادة…",
    "words": [
     {
@@ -37,81 +37,81 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 0.115,
-     "end": 0.455
+     "start": 0.116,
+     "end": 0.443
     },
     {
      "w": "حاجة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 0.455,
-     "end": 0.705
+     "start": 0.443,
+     "end": 0.683
     },
     {
      "w": "هنا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 0.705,
-     "end": 1.016
+     "start": 0.683,
+     "end": 0.982
     },
     {
      "w": "إنك",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 1.296,
-     "end": 1.666
+     "start": 1.252,
+     "end": 1.607
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 1.666,
-     "end": 2.077
+     "start": 1.607,
+     "end": 2.002
     },
     {
      "w": "تكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 2.077,
-     "end": 2.437
+     "start": 2.002,
+     "end": 2.349
     },
     {
      "w": "أخدت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 2.437,
-     "end": 2.828
+     "start": 2.349,
+     "end": 2.725
     },
     {
      "w": "جرعة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 2.828,
-     "end": 3.148
+     "start": 2.725,
+     "end": 3.032
     },
     {
      "w": "زيادة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 3.148,
-     "end": 3.598
+     "start": 3.032,
+     "end": 3.465
     }
    ],
-   "start": 0.115,
-   "end": 3.598,
+   "start": 0.116,
+   "end": 3.465,
    "src": "s7l17"
   },
   {
-   "id": "s4l2",
-   "scene": 4,
+   "id": "s11l2",
+   "scene": 11,
    "raw": "ومش حاسس بأي حاجة!",
    "words": [
     {
@@ -119,36 +119,36 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 4.059,
-     "end": 4.329
+     "start": 3.908,
+     "end": 4.168
     },
     {
      "w": "حاسس",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 4.329,
-     "end": 4.75
+     "start": 4.168,
+     "end": 4.573
     },
     {
      "w": "بأي",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 4.75,
-     "end": 5.06
+     "start": 4.573,
+     "end": 4.871
     },
     {
      "w": "حاجة",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 5.06,
-     "end": 5.4
+     "start": 4.871,
+     "end": 5.198
     }
    ],
-   "start": 4.059,
-   "end": 5.4,
+   "start": 3.908,
+   "end": 5.198,
    "src": "s7l18"
   },
   {
@@ -161,68 +161,68 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.108,
-     "end": 6.298
+     "start": 5.905,
+     "end": 6.088
     },
     {
      "w": "خلينا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.298,
-     "end": 6.688
+     "start": 6.088,
+     "end": 6.463
     },
     {
      "w": "نبدأ",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.688,
-     "end": 6.919
+     "start": 6.463,
+     "end": 6.685
     },
     {
      "w": "بموقف",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 6.919,
-     "end": 7.569
+     "start": 6.685,
+     "end": 7.31
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 7.76,
-     "end": 8.1
+     "start": 7.493,
+     "end": 7.82
     },
     {
      "w": "يحصل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 8.1,
-     "end": 8.45
+     "start": 7.82,
+     "end": 8.157
     },
     {
      "w": "لأي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 8.45,
-     "end": 8.7
+     "start": 8.157,
+     "end": 8.397
     },
     {
      "w": "حد",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 8.7,
-     "end": 8.981
+     "start": 8.397,
+     "end": 8.667
     }
    ],
-   "start": 6.108,
-   "end": 8.981,
+   "start": 5.905,
+   "end": 8.667,
    "src": "s2l1"
   },
   {
@@ -235,44 +235,44 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 9.441,
-     "end": 9.651
+     "start": 9.11,
+     "end": 9.312
     },
     {
      "w": "عندك",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 9.651,
-     "end": 10.022
+     "start": 9.312,
+     "end": 9.668
     },
     {
      "w": "برد",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 10.022,
-     "end": 10.332
+     "start": 9.668,
+     "end": 9.967
     },
     {
      "w": "وصداع",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 10.602,
-     "end": 11.133
+     "start": 10.226,
+     "end": 10.737
     },
     {
      "w": "وحرارة",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 11.133,
-     "end": 11.673
+     "start": 10.737,
+     "end": 11.256
     }
    ],
-   "start": 9.441,
-   "end": 11.673,
+   "start": 9.11,
+   "end": 11.256,
    "src": "s2l2"
   },
   {
@@ -285,52 +285,52 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 11.956,
-     "end": 12.266
+     "start": 11.528,
+     "end": 11.826
     },
     {
      "w": "تاخد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 12.266,
-     "end": 12.913
+     "start": 11.826,
+     "end": 12.448
     },
     {
      "w": "قرص",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 12.913,
-     "end": 13.301
+     "start": 12.448,
+     "end": 12.821
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 13.301,
-     "end": 13.473
+     "start": 12.821,
+     "end": 12.987
     },
     {
      "w": "قرصين",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 13.473,
-     "end": 13.802
+     "start": 12.987,
+     "end": 13.303
     },
     {
      "w": "بنادول",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 13.802,
-     "end": 14.293
+     "start": 13.303,
+     "end": 13.775
     }
    ],
-   "start": 11.956,
-   "end": 14.293,
+   "start": 11.528,
+   "end": 13.775,
    "src": "s2l3"
   },
   {
@@ -343,76 +343,76 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 14.682,
-     "end": 15.043
+     "start": 14.149,
+     "end": 14.496
     },
     {
      "w": "شوية",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 15.043,
-     "end": 15.483
+     "start": 14.496,
+     "end": 14.919
     },
     {
      "w": "قلت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 15.483,
-     "end": 15.763
+     "start": 14.919,
+     "end": 15.189
     },
     {
      "w": "آخد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 15.763,
-     "end": 15.994
+     "start": 15.189,
+     "end": 15.411
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 15.994,
-     "end": 16.274
+     "start": 15.411,
+     "end": 15.68
     },
     {
      "w": "للبرد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 16.274,
-     "end": 16.654
+     "start": 15.68,
+     "end": 16.045
     },
     {
      "w": "عشان",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 16.654,
-     "end": 16.934
+     "start": 16.045,
+     "end": 16.315
     },
     {
      "w": "الأعراض",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 16.934,
-     "end": 17.335
+     "start": 16.315,
+     "end": 16.7
     },
     {
      "w": "كلها",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 17.365,
-     "end": 17.775
+     "start": 16.729,
+     "end": 17.123
     }
    ],
-   "start": 14.682,
-   "end": 17.775,
+   "start": 14.149,
+   "end": 17.123,
    "src": "s2l4"
   },
   {
@@ -425,36 +425,36 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 18.268,
-     "end": 18.689
+     "start": 17.597,
+     "end": 18.002
     },
     {
      "w": "الصداع",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 18.689,
-     "end": 19.129
+     "start": 18.002,
+     "end": 18.425
     },
     {
      "w": "لسه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 19.129,
-     "end": 19.339
+     "start": 18.425,
+     "end": 18.627
     },
     {
      "w": "موجود",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 19.339,
-     "end": 19.75
+     "start": 18.627,
+     "end": 19.022
     }
    ],
-   "start": 18.268,
-   "end": 19.75,
+   "start": 17.597,
+   "end": 19.022,
    "src": "s2l5"
   },
   {
@@ -467,36 +467,36 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 19.99,
-     "end": 20.38
+     "start": 19.253,
+     "end": 19.628
     },
     {
      "w": "واخد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 20.38,
-     "end": 20.761
+     "start": 19.628,
+     "end": 19.994
     },
     {
      "w": "قرص",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 20.761,
-     "end": 21.071
+     "start": 19.994,
+     "end": 20.292
     },
     {
      "w": "تاني",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 21.071,
-     "end": 21.501
+     "start": 20.292,
+     "end": 20.706
     }
    ],
-   "start": 19.99,
-   "end": 21.501,
+   "start": 19.253,
+   "end": 20.706,
    "src": "s2l6"
   },
   {
@@ -509,20 +509,20 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 21.951,
-     "end": 22.112
+     "start": 21.139,
+     "end": 21.293
     },
     {
      "w": "استنى",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 22.112,
-     "end": 22.562
+     "start": 21.293,
+     "end": 21.726
     }
    ],
-   "start": 21.951,
-   "end": 22.562,
+   "start": 21.139,
+   "end": 21.726,
    "src": "s2l7"
   },
   {
@@ -535,76 +535,76 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 23.012,
-     "end": 23.202
+     "start": 22.159,
+     "end": 22.342
     },
     {
      "w": "متأكد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 23.202,
-     "end": 23.713
+     "start": 22.342,
+     "end": 22.833
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 23.713,
-     "end": 23.873
+     "start": 22.833,
+     "end": 22.987
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 23.873,
-     "end": 24.083
+     "start": 22.987,
+     "end": 23.189
     },
     {
      "w": "البرد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 24.083,
-     "end": 24.504
+     "start": 23.189,
+     "end": 23.593
     },
     {
      "w": "ده",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 24.624,
-     "end": 24.664
+     "start": 23.709,
+     "end": 23.747
     },
     {
      "w": "مفيهوش",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 24.674,
-     "end": 25.054
+     "start": 23.757,
+     "end": 24.122
     },
     {
      "w": "برستمول",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 25.054,
-     "end": 25.625
+     "start": 24.122,
+     "end": 24.671
     },
     {
      "w": "أصلا",
      "punct": "؟",
      "kw": false,
      "tags": [],
-     "start": 25.625,
-     "end": 26.055
+     "start": 24.671,
+     "end": 25.085
     }
    ],
-   "start": 23.012,
-   "end": 26.055,
+   "start": 22.159,
+   "end": 25.085,
    "src": "s2l8"
   },
   {
@@ -617,108 +617,108 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 26.505,
-     "end": 26.775
+     "start": 25.518,
+     "end": 25.777
     },
     {
      "w": "المفاجأة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 26.775,
-     "end": 27.366
+     "start": 25.777,
+     "end": 26.345
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 27.366,
-     "end": 27.456
+     "start": 26.345,
+     "end": 26.432
     },
     {
      "w": "فيه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 27.456,
-     "end": 27.666
+     "start": 26.432,
+     "end": 26.634
     },
     {
      "w": "أدوية",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 27.666,
-     "end": 28.077
+     "start": 26.634,
+     "end": 27.029
     },
     {
      "w": "برد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 28.077,
-     "end": 28.367
+     "start": 27.029,
+     "end": 27.308
     },
     {
      "w": "كتير",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 28.367,
-     "end": 28.847
+     "start": 27.308,
+     "end": 27.769
     },
     {
      "w": "بتحتوي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 28.857,
-     "end": 29.308
+     "start": 27.779,
+     "end": 28.213
     },
     {
      "w": "على",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 29.308,
-     "end": 29.488
+     "start": 28.213,
+     "end": 28.386
     },
     {
      "w": "نفس",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 29.488,
-     "end": 29.738
+     "start": 28.386,
+     "end": 28.626
     },
     {
      "w": "المادة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 29.738,
-     "end": 30.139
+     "start": 28.626,
+     "end": 29.012
     },
     {
      "w": "الفعالة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 30.139,
-     "end": 30.639
+     "start": 29.012,
+     "end": 29.492
     },
     {
      "w": "البرستمول",
      "punct": "!",
      "kw": false,
      "tags": [],
-     "start": 30.899,
-     "end": 31.68
+     "start": 29.743,
+     "end": 30.493
     }
    ],
-   "start": 26.505,
-   "end": 31.68,
+   "start": 25.518,
+   "end": 30.493,
    "src": "s2l9"
   },
   {
@@ -731,84 +731,84 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 32.161,
-     "end": 32.401
+     "start": 30.975,
+     "end": 31.206
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 32.401,
-     "end": 32.672
+     "start": 31.206,
+     "end": 31.467
     },
     {
      "w": "تكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 32.672,
-     "end": 32.922
+     "start": 31.467,
+     "end": 31.707
     },
     {
      "w": "أخدت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 32.922,
-     "end": 33.272
+     "start": 31.707,
+     "end": 32.043
     },
     {
      "w": "نفس",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 33.272,
-     "end": 33.532
+     "start": 32.043,
+     "end": 32.293
     },
     {
      "w": "الدوا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 33.532,
-     "end": 33.823
+     "start": 32.293,
+     "end": 32.573
     },
     {
      "w": "مرتين",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 33.823,
-     "end": 34.403
+     "start": 32.573,
+     "end": 33.131
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 34.433,
-     "end": 34.604
+     "start": 33.16,
+     "end": 33.324
     },
     {
      "w": "تلاتة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 34.604,
-     "end": 35.024
+     "start": 33.324,
+     "end": 33.728
     },
     {
      "w": "كمان",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 35.024,
-     "end": 35.414
+     "start": 33.728,
+     "end": 34.103
     }
    ],
-   "start": 32.161,
-   "end": 35.414,
+   "start": 30.975,
+   "end": 34.103,
    "src": "s2l10"
   },
   {
@@ -821,52 +821,52 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 35.866,
-     "end": 36.106
+     "start": 34.538,
+     "end": 34.768
     },
     {
      "w": "فاكر",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 36.106,
-     "end": 36.456
+     "start": 34.768,
+     "end": 35.105
     },
     {
      "w": "إنك",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 36.456,
-     "end": 36.706
+     "start": 35.105,
+     "end": 35.345
     },
     {
      "w": "أخدت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 36.706,
-     "end": 37.017
+     "start": 35.345,
+     "end": 35.644
     },
     {
      "w": "دواءين",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 37.017,
-     "end": 37.387
+     "start": 35.644,
+     "end": 36.0
     },
     {
      "w": "مختلفين",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 37.387,
-     "end": 38.108
+     "start": 36.0,
+     "end": 36.693
     }
    ],
-   "start": 35.866,
-   "end": 38.108,
+   "start": 34.538,
+   "end": 36.693,
    "src": "s2l11"
   },
   {
@@ -879,60 +879,60 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 38.418,
-     "end": 38.778
+     "start": 36.992,
+     "end": 37.338
     },
     {
      "w": "كده",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 38.778,
-     "end": 39.119
+     "start": 37.338,
+     "end": 37.666
     },
     {
      "w": "اسم",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 39.439,
-     "end": 39.689
+     "start": 37.973,
+     "end": 38.214
     },
     {
      "w": "الدوا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 39.689,
-     "end": 40.0
+     "start": 38.214,
+     "end": 38.513
     },
     {
      "w": "التجاري",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 40.0,
-     "end": 40.55
+     "start": 38.513,
+     "end": 39.042
     },
     {
      "w": "مش",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 40.58,
-     "end": 40.811
+     "start": 39.07,
+     "end": 39.292
     },
     {
      "w": "كفاية",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 40.811,
-     "end": 41.181
+     "start": 39.292,
+     "end": 39.648
     }
    ],
-   "start": 38.418,
-   "end": 41.181,
+   "start": 36.992,
+   "end": 39.648,
    "src": "s2l12"
   },
   {
@@ -945,73 +945,73 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 41.625,
-     "end": 41.885
+     "start": 40.075,
+     "end": 40.325
     },
     {
      "w": "تبص",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 41.885,
-     "end": 42.235
+     "start": 40.325,
+     "end": 40.662
     },
     {
      "w": "على",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 42.235,
-     "end": 42.426
+     "start": 40.662,
+     "end": 40.845
     },
     {
      "w": "المادة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 42.426,
-     "end": 42.756
+     "start": 40.845,
+     "end": 41.163
     },
     {
      "w": "الفعالة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 42.756,
-     "end": 43.236
+     "start": 41.163,
+     "end": 41.624
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 43.467,
-     "end": 43.607
+     "start": 41.846,
+     "end": 41.981
     },
     {
      "w": "تستشير",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 43.607,
-     "end": 44.177
+     "start": 41.981,
+     "end": 42.529
     },
     {
      "w": "الصيدلي",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 44.177,
-     "end": 44.738
+     "start": 42.529,
+     "end": 43.068
     }
    ],
-   "start": 41.625,
-   "end": 44.738,
+   "start": 40.075,
+   "end": 43.068,
    "src": "s2l13"
   },
   {
-   "id": "s3l1",
-   "scene": 3,
+   "id": "s7l1",
+   "scene": 7,
    "raw": "طيب… إحنا عرفنا إن البرستمول دوا مفيد… ومعروف بملف أمان جيد جدا…",
    "words": [
     {
@@ -1019,105 +1019,105 @@
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 45.308,
-     "end": 45.548
+     "start": 43.652,
+     "end": 43.883
     },
     {
      "w": "إحنا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 45.548,
-     "end": 45.739
+     "start": 43.883,
+     "end": 44.066
     },
     {
      "w": "عرفنا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 45.739,
-     "end": 46.059
+     "start": 44.066,
+     "end": 44.374
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 46.059,
-     "end": 46.139
+     "start": 44.374,
+     "end": 44.451
     },
     {
      "w": "البرستمول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 46.139,
-     "end": 46.84
+     "start": 44.451,
+     "end": 45.125
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 46.84,
-     "end": 47.06
+     "start": 45.125,
+     "end": 45.337
     },
     {
      "w": "مفيد",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 47.06,
-     "end": 47.53
+     "start": 45.337,
+     "end": 45.788
     },
     {
      "w": "ومعروف",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 47.53,
-     "end": 48.091
+     "start": 45.788,
+     "end": 46.328
     },
     {
      "w": "بملف",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 48.091,
-     "end": 48.611
+     "start": 46.328,
+     "end": 46.828
     },
     {
      "w": "أمان",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 48.611,
-     "end": 48.882
+     "start": 46.828,
+     "end": 47.088
     },
     {
      "w": "جيد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 48.882,
-     "end": 49.242
+     "start": 47.088,
+     "end": 47.435
     },
     {
      "w": "جدا",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 49.242,
-     "end": 49.742
+     "start": 47.435,
+     "end": 47.915
     }
    ],
-   "start": 45.308,
-   "end": 49.742,
+   "start": 43.652,
+   "end": 47.915,
    "src": "s7l1"
   },
   {
-   "id": "s3l2",
-   "scene": 3,
+   "id": "s7l2",
+   "scene": 7,
    "raw": "لكن ليه الجرعات الزايدة منه ممكن تكون خطيرة على الكبد؟",
    "words": [
     {
@@ -1125,89 +1125,89 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 50.23,
-     "end": 50.48
+     "start": 48.385,
+     "end": 48.625
     },
     {
      "w": "ليه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 50.48,
-     "end": 50.731
+     "start": 48.625,
+     "end": 48.866
     },
     {
      "w": "الجرعات",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 50.731,
-     "end": 51.051
+     "start": 48.866,
+     "end": 49.174
     },
     {
      "w": "الزايدة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 51.051,
-     "end": 51.471
+     "start": 49.174,
+     "end": 49.578
     },
     {
      "w": "منه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 51.471,
-     "end": 51.772
+     "start": 49.578,
+     "end": 49.867
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 51.772,
-     "end": 52.182
+     "start": 49.867,
+     "end": 50.262
     },
     {
      "w": "تكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 52.182,
-     "end": 52.482
+     "start": 50.262,
+     "end": 50.55
     },
     {
      "w": "خطيرة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 52.482,
-     "end": 52.913
+     "start": 50.55,
+     "end": 50.964
     },
     {
      "w": "على",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 52.913,
-     "end": 53.103
+     "start": 50.964,
+     "end": 51.147
     },
     {
      "w": "الكبد",
      "punct": "؟",
      "kw": true,
      "tags": [],
-     "start": 53.103,
-     "end": 53.533
+     "start": 51.147,
+     "end": 51.561
     }
    ],
-   "start": 50.23,
-   "end": 53.533,
+   "start": 48.385,
+   "end": 51.561,
    "src": "s7l2"
   },
   {
-   "id": "s3l3",
-   "scene": 3,
+   "id": "s7l3",
+   "scene": 7,
    "raw": "تعالى نفكك!",
    "words": [
     {
@@ -1215,25 +1215,25 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 53.924,
-     "end": 54.224
+     "start": 51.937,
+     "end": 52.225
     },
     {
      "w": "نفكك",
      "punct": "!",
      "kw": false,
      "tags": [],
-     "start": 54.224,
-     "end": 54.754
+     "start": 52.225,
+     "end": 52.735
     }
    ],
-   "start": 53.924,
-   "end": 54.754,
+   "start": 51.937,
+   "end": 52.735,
    "src": "s7l3"
   },
   {
-   "id": "s3l4",
-   "scene": 3,
+   "id": "s7l4",
+   "scene": 7,
    "raw": "لما البرستمول يدخل جسمك… الكبد بيبدأ يتعامل معاه ويحوله لمواد مختلفة…",
    "words": [
     {
@@ -1241,97 +1241,97 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 55.205,
-     "end": 55.425
+     "start": 53.168,
+     "end": 53.38
     },
     {
      "w": "البرستمول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 55.425,
-     "end": 56.076
+     "start": 53.38,
+     "end": 54.006
     },
     {
      "w": "يدخل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 56.076,
-     "end": 56.416
+     "start": 54.006,
+     "end": 54.333
     },
     {
      "w": "جسمك",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 56.416,
-     "end": 56.907
+     "start": 54.333,
+     "end": 54.805
     },
     {
      "w": "الكبد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 57.237,
-     "end": 57.738
+     "start": 55.122,
+     "end": 55.604
     },
     {
      "w": "بيبدأ",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 57.738,
-     "end": 58.108
+     "start": 55.604,
+     "end": 55.96
     },
     {
      "w": "يتعامل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 58.108,
-     "end": 58.639
+     "start": 55.96,
+     "end": 56.47
     },
     {
      "w": "معاه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 58.639,
-     "end": 59.019
+     "start": 56.47,
+     "end": 56.836
     },
     {
      "w": "ويحوله",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 59.349,
-     "end": 59.93
+     "start": 57.153,
+     "end": 57.712
     },
     {
      "w": "لمواد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 59.93,
-     "end": 60.39
+     "start": 57.712,
+     "end": 58.154
     },
     {
      "w": "مختلفة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 60.39,
-     "end": 60.901
+     "start": 58.154,
+     "end": 58.645
     }
    ],
-   "start": 55.205,
-   "end": 60.901,
+   "start": 53.168,
+   "end": 58.645,
    "src": "s7l4"
   },
   {
-   "id": "s3l5",
-   "scene": 3,
+   "id": "s7l5",
+   "scene": 7,
    "raw": "معظم الدوا بيتحول لمركبات آمنة ويتم التخلص منه… وده طبيعة أي دوا على فكرة.",
    "words": [
     {
@@ -1339,121 +1339,121 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 61.423,
-     "end": 61.834
+     "start": 59.147,
+     "end": 59.542
     },
     {
      "w": "الدوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 61.834,
-     "end": 62.144
+     "start": 59.542,
+     "end": 59.84
     },
     {
      "w": "بيتحول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 62.144,
-     "end": 62.715
+     "start": 59.84,
+     "end": 60.389
     },
     {
      "w": "لمركبات",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 62.715,
-     "end": 63.395
+     "start": 60.389,
+     "end": 61.043
     },
     {
      "w": "آمنة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 63.395,
-     "end": 63.816
+     "start": 61.043,
+     "end": 61.448
     },
     {
      "w": "ويتم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 63.846,
-     "end": 64.246
+     "start": 61.477,
+     "end": 61.862
     },
     {
      "w": "التخلص",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 64.246,
-     "end": 64.817
+     "start": 61.862,
+     "end": 62.411
     },
     {
      "w": "منه",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 64.817,
-     "end": 65.067
+     "start": 62.411,
+     "end": 62.651
     },
     {
      "w": "وده",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 65.357,
-     "end": 65.587
+     "start": 62.93,
+     "end": 63.151
     },
     {
      "w": "طبيعة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 65.587,
-     "end": 65.958
+     "start": 63.151,
+     "end": 63.508
     },
     {
      "w": "أي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 65.958,
-     "end": 66.168
+     "start": 63.508,
+     "end": 63.71
     },
     {
      "w": "دوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 66.168,
-     "end": 66.398
+     "start": 63.71,
+     "end": 63.931
     },
     {
      "w": "على",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 66.398,
-     "end": 66.578
+     "start": 63.931,
+     "end": 64.104
     },
     {
      "w": "فكرة",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 66.578,
-     "end": 66.879
+     "start": 64.104,
+     "end": 64.393
     }
    ],
-   "start": 61.423,
-   "end": 66.879,
+   "start": 59.147,
+   "end": 64.393,
    "src": "s7l5"
   },
   {
-   "id": "s3l6",
-   "scene": 3,
+   "id": "s7l6",
+   "scene": 7,
    "raw": "لكن فيه جزء صغير… بيتحول لمادة شديدة التفاعل اسمها نابكي.",
    "words": [
     {
@@ -1461,89 +1461,89 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 67.36,
-     "end": 67.67
+     "start": 64.856,
+     "end": 65.154
     },
     {
      "w": "فيه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 67.67,
-     "end": 67.89
+     "start": 65.154,
+     "end": 65.365
     },
     {
      "w": "جزء",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 67.89,
-     "end": 68.211
+     "start": 65.365,
+     "end": 65.674
     },
     {
      "w": "صغير",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 68.211,
-     "end": 68.661
+     "start": 65.674,
+     "end": 66.107
     },
     {
      "w": "بيتحول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 68.661,
-     "end": 69.152
+     "start": 66.107,
+     "end": 66.579
     },
     {
      "w": "لمادة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 69.152,
-     "end": 69.502
+     "start": 66.579,
+     "end": 66.915
     },
     {
      "w": "شديدة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 69.502,
-     "end": 69.962
+     "start": 66.915,
+     "end": 67.358
     },
     {
      "w": "التفاعل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 69.962,
-     "end": 70.513
+     "start": 67.358,
+     "end": 67.887
     },
     {
      "w": "اسمها",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 70.513,
-     "end": 70.973
+     "start": 67.887,
+     "end": 68.33
     },
     {
      "w": "نابكي",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 71.264,
-     "end": 71.914
+     "start": 68.61,
+     "end": 69.235
     }
    ],
-   "start": 67.36,
-   "end": 71.914,
+   "start": 64.856,
+   "end": 69.235,
    "src": "s7l6"
   },
   {
-   "id": "s3l7",
-   "scene": 3,
+   "id": "s7l7",
+   "scene": 7,
    "raw": "وهنا بقى الجسم عنده نظام حماية!",
    "words": [
     {
@@ -1551,57 +1551,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 72.345,
-     "end": 72.596
+     "start": 69.649,
+     "end": 69.89
     },
     {
      "w": "بقى",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 72.596,
-     "end": 72.776
+     "start": 69.89,
+     "end": 70.063
     },
     {
      "w": "الجسم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 72.776,
-     "end": 73.136
+     "start": 70.063,
+     "end": 70.41
     },
     {
      "w": "عنده",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 73.136,
-     "end": 73.426
+     "start": 70.41,
+     "end": 70.688
     },
     {
      "w": "نظام",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 73.426,
-     "end": 73.747
+     "start": 70.688,
+     "end": 70.997
     },
     {
      "w": "حماية",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 73.747,
-     "end": 74.187
+     "start": 70.997,
+     "end": 71.42
     }
    ],
-   "start": 72.345,
-   "end": 74.187,
+   "start": 69.649,
+   "end": 71.42,
    "src": "s7l7"
   },
   {
-   "id": "s3l8",
-   "scene": 3,
+   "id": "s7l8",
+   "scene": 7,
    "raw": "مادة اسمها الجلوتاثايون… بتشتغل كأنها فريق الإنقاذ…",
    "words": [
     {
@@ -1609,65 +1609,65 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 74.637,
-     "end": 74.937
+     "start": 71.853,
+     "end": 72.141
     },
     {
      "w": "اسمها",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 74.937,
-     "end": 75.228
+     "start": 72.141,
+     "end": 72.421
     },
     {
      "w": "الجلوتاثايون",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 75.228,
-     "end": 76.018
+     "start": 72.421,
+     "end": 73.181
     },
     {
      "w": "بتشتغل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 76.018,
-     "end": 76.639
+     "start": 73.181,
+     "end": 73.778
     },
     {
      "w": "كأنها",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 76.649,
-     "end": 76.989
+     "start": 73.788,
+     "end": 74.114
     },
     {
      "w": "فريق",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 76.989,
-     "end": 77.38
+     "start": 74.114,
+     "end": 74.49
     },
     {
      "w": "الإنقاذ",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 77.38,
-     "end": 77.93
+     "start": 74.49,
+     "end": 75.019
     }
    ],
-   "start": 74.637,
-   "end": 77.93,
+   "start": 71.853,
+   "end": 75.019,
    "src": "s7l8"
   },
   {
-   "id": "s3l9",
-   "scene": 3,
+   "id": "s7l9",
+   "scene": 7,
    "raw": "وتتعامل مع النابكي… وتحوله لمركب آمن.",
    "words": [
     {
@@ -1675,57 +1675,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 78.06,
-     "end": 78.591
+     "start": 75.144,
+     "end": 75.655
     },
     {
      "w": "مع",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 78.591,
-     "end": 78.751
+     "start": 75.655,
+     "end": 75.809
     },
     {
      "w": "النابكي",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 78.751,
-     "end": 79.322
+     "start": 75.809,
+     "end": 76.358
     },
     {
      "w": "وتحوله",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 79.592,
-     "end": 80.103
+     "start": 76.617,
+     "end": 77.109
     },
     {
      "w": "لمركب",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 80.103,
-     "end": 80.663
+     "start": 77.109,
+     "end": 77.647
     },
     {
      "w": "آمن",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 80.663,
-     "end": 81.063
+     "start": 77.647,
+     "end": 78.032
     }
    ],
-   "start": 78.06,
-   "end": 81.063,
+   "start": 75.144,
+   "end": 78.032,
    "src": "s7l9"
   },
   {
-   "id": "s3l10",
-   "scene": 3,
+   "id": "s7l10",
+   "scene": 7,
    "raw": "لكن… لما الجرعة تكون أكبر من قدرة الجسم على التعامل معاها…",
    "words": [
     {
@@ -1733,97 +1733,97 @@
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 81.484,
-     "end": 82.004
+     "start": 78.437,
+     "end": 78.937
     },
     {
      "w": "لما",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 82.315,
-     "end": 82.605
+     "start": 79.236,
+     "end": 79.514
     },
     {
      "w": "الجرعة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 82.605,
-     "end": 83.016
+     "start": 79.514,
+     "end": 79.91
     },
     {
      "w": "تكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 83.016,
-     "end": 83.336
+     "start": 79.91,
+     "end": 80.217
     },
     {
      "w": "أكبر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 83.336,
-     "end": 83.696
+     "start": 80.217,
+     "end": 80.563
     },
     {
      "w": "من",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 83.696,
-     "end": 83.856
+     "start": 80.563,
+     "end": 80.717
     },
     {
      "w": "قدرة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 83.856,
-     "end": 84.237
+     "start": 80.717,
+     "end": 81.084
     },
     {
      "w": "الجسم",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 84.237,
-     "end": 84.617
+     "start": 81.084,
+     "end": 81.449
     },
     {
      "w": "على",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 84.617,
-     "end": 84.807
+     "start": 81.449,
+     "end": 81.632
     },
     {
      "w": "التعامل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 84.807,
-     "end": 85.278
+     "start": 81.632,
+     "end": 82.085
     },
     {
      "w": "معاها",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 85.278,
-     "end": 85.728
+     "start": 82.085,
+     "end": 82.517
     }
    ],
-   "start": 81.484,
-   "end": 85.728,
+   "start": 78.437,
+   "end": 82.517,
    "src": "s7l10"
   },
   {
-   "id": "s3l11",
-   "scene": 3,
+   "id": "s7l11",
+   "scene": 7,
    "raw": "مخزون الجلوتاثايون ممكن يستنزف…",
    "words": [
     {
@@ -1831,41 +1831,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 86.179,
-     "end": 86.599
+     "start": 82.951,
+     "end": 83.355
     },
     {
      "w": "الجلوتاثايون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 86.599,
-     "end": 87.54
+     "start": 83.355,
+     "end": 84.26
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 87.89,
-     "end": 88.28
+     "start": 84.596,
+     "end": 84.971
     },
     {
      "w": "يستنزف",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 88.28,
-     "end": 88.901
+     "start": 84.971,
+     "end": 85.568
     }
    ],
-   "start": 86.179,
-   "end": 88.901,
+   "start": 82.951,
+   "end": 85.568,
    "src": "s7l11"
   },
   {
-   "id": "s3l12",
-   "scene": 3,
+   "id": "s7l12",
+   "scene": 7,
    "raw": "وساعتها النابكي يبدأ يتراكم… ويهاجم خلايا الكبد!",
    "words": [
     {
@@ -1873,65 +1873,65 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 89.351,
-     "end": 89.801
+     "start": 86.001,
+     "end": 86.434
     },
     {
      "w": "النابكي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 89.801,
-     "end": 90.262
+     "start": 86.434,
+     "end": 86.877
     },
     {
      "w": "يبدأ",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 90.262,
-     "end": 90.592
+     "start": 86.877,
+     "end": 87.194
     },
     {
      "w": "يتراكم",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 90.592,
-     "end": 91.153
+     "start": 87.194,
+     "end": 87.734
     },
     {
      "w": "ويهاجم",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 91.323,
-     "end": 91.853
+     "start": 87.897,
+     "end": 88.407
     },
     {
      "w": "خلايا",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 91.853,
-     "end": 92.214
+     "start": 88.407,
+     "end": 88.754
     },
     {
      "w": "الكبد",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 92.214,
-     "end": 92.674
+     "start": 88.754,
+     "end": 89.196
     }
    ],
-   "start": 89.351,
-   "end": 92.674,
+   "start": 86.001,
+   "end": 89.196,
    "src": "s7l12"
   },
   {
-   "id": "s3l13",
-   "scene": 3,
+   "id": "s7l13",
+   "scene": 7,
    "raw": "والنتيجة؟ النتيجة…",
    "words": [
     {
@@ -1939,25 +1939,25 @@
      "punct": "؟",
      "kw": false,
      "tags": [],
-     "start": 93.035,
-     "end": 93.725
+     "start": 89.543,
+     "end": 90.207
     },
     {
      "w": "النتيجة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 94.036,
-     "end": 94.446
+     "start": 90.506,
+     "end": 90.9
     }
    ],
-   "start": 93.035,
-   "end": 94.446,
+   "start": 89.543,
+   "end": 90.9,
    "src": "s7l13"
   },
   {
-   "id": "s3l14",
-   "scene": 3,
+   "id": "s7l14",
+   "scene": 7,
    "raw": "ممكن يحصل تلف شديد في الكبد…",
    "words": [
     {
@@ -1965,57 +1965,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 94.446,
-     "end": 94.767
+     "start": 90.9,
+     "end": 91.209
     },
     {
      "w": "يحصل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 94.767,
-     "end": 95.147
+     "start": 91.209,
+     "end": 91.574
     },
     {
      "w": "تلف",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 95.157,
-     "end": 95.417
+     "start": 91.584,
+     "end": 91.834
     },
     {
      "w": "شديد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 95.417,
-     "end": 95.808
+     "start": 91.834,
+     "end": 92.21
     },
     {
      "w": "في",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 95.808,
-     "end": 95.908
+     "start": 92.21,
+     "end": 92.306
     },
     {
      "w": "الكبد",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 95.908,
-     "end": 96.318
+     "start": 92.306,
+     "end": 92.7
     }
    ],
-   "start": 94.446,
-   "end": 96.318,
+   "start": 90.9,
+   "end": 92.7,
    "src": "s7l14"
   },
   {
-   "id": "s3l15",
-   "scene": 3,
+   "id": "s7l15",
+   "scene": 7,
    "raw": "وفي الحالات الخطيرة… فشل كبدي حاد!",
    "words": [
     {
@@ -2023,57 +2023,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 96.799,
-     "end": 96.969
+     "start": 93.162,
+     "end": 93.326
     },
     {
      "w": "الحالات",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 96.969,
-     "end": 97.309
+     "start": 93.326,
+     "end": 93.653
     },
     {
      "w": "الخطيرة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 97.309,
-     "end": 97.89
+     "start": 93.653,
+     "end": 94.212
     },
     {
      "w": "فشل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 98.07,
-     "end": 98.47
+     "start": 94.385,
+     "end": 94.769
     },
     {
      "w": "كبدي",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 98.48,
-     "end": 98.831
+     "start": 94.779,
+     "end": 95.116
     },
     {
      "w": "حاد",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 98.831,
-     "end": 99.141
+     "start": 95.116,
+     "end": 95.414
     }
    ],
-   "start": 96.799,
-   "end": 99.141,
+   "start": 93.162,
+   "end": 95.414,
    "src": "s7l15"
   },
   {
-   "id": "s4l3",
-   "scene": 4,
+   "id": "s7l16",
+   "scene": 7,
    "raw": "بس ركز معايا…",
    "words": [
     {
@@ -2081,33 +2081,33 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 99.673,
-     "end": 99.894
+     "start": 95.926,
+     "end": 96.138
     },
     {
      "w": "ركز",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 99.894,
-     "end": 100.234
+     "start": 96.138,
+     "end": 96.465
     },
     {
      "w": "معايا",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 100.234,
-     "end": 100.574
+     "start": 96.465,
+     "end": 96.792
     }
    ],
-   "start": 99.673,
-   "end": 100.574,
+   "start": 95.926,
+   "end": 96.792,
    "src": "s7l16"
   },
   {
-   "id": "s4l4",
-   "scene": 4,
+   "id": "s7l17",
+   "scene": 7,
    "raw": "أخطر حاجة هنا إنك ممكن تكون أخدت جرعة زيادة…",
    "words": [
     {
@@ -2115,81 +2115,81 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 101.025,
-     "end": 101.365
+     "start": 97.226,
+     "end": 97.553
     },
     {
      "w": "حاجة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 101.365,
-     "end": 101.615
+     "start": 97.553,
+     "end": 97.793
     },
     {
      "w": "هنا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 101.615,
-     "end": 101.926
+     "start": 97.793,
+     "end": 98.092
     },
     {
      "w": "إنك",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 102.206,
-     "end": 102.576
+     "start": 98.362,
+     "end": 98.717
     },
     {
      "w": "ممكن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 102.576,
-     "end": 102.987
+     "start": 98.717,
+     "end": 99.112
     },
     {
      "w": "تكون",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 102.987,
-     "end": 103.347
+     "start": 99.112,
+     "end": 99.459
     },
     {
      "w": "أخدت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 103.347,
-     "end": 103.738
+     "start": 99.459,
+     "end": 99.835
     },
     {
      "w": "جرعة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 103.738,
-     "end": 104.058
+     "start": 99.835,
+     "end": 100.142
     },
     {
      "w": "زيادة",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 104.058,
-     "end": 104.508
+     "start": 100.142,
+     "end": 100.575
     }
    ],
-   "start": 101.025,
-   "end": 104.508,
+   "start": 97.226,
+   "end": 100.575,
    "src": "s7l17"
   },
   {
-   "id": "s4l5",
-   "scene": 4,
+   "id": "s7l18",
+   "scene": 7,
    "raw": "ومش حاسس بأي حاجة!",
    "words": [
     {
@@ -2197,41 +2197,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 104.969,
-     "end": 105.239
+     "start": 101.018,
+     "end": 101.278
     },
     {
      "w": "حاسس",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 105.239,
-     "end": 105.66
+     "start": 101.278,
+     "end": 101.683
     },
     {
      "w": "بأي",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 105.66,
-     "end": 105.97
+     "start": 101.683,
+     "end": 101.981
     },
     {
      "w": "حاجة",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 105.97,
-     "end": 106.31
+     "start": 101.981,
+     "end": 102.308
     }
    ],
-   "start": 104.969,
-   "end": 106.31,
+   "start": 101.018,
+   "end": 102.308,
    "src": "s7l18"
   },
   {
-   "id": "s4l6",
-   "scene": 4,
+   "id": "s7l19",
+   "scene": 7,
    "raw": "يعني مش شرط تحس بألم في الكبد… ولا لازم تظهر أعراض واضحة في البداية.",
    "words": [
     {
@@ -2239,121 +2239,121 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 106.761,
-     "end": 106.981
+     "start": 102.741,
+     "end": 102.953
     },
     {
      "w": "مش",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 106.981,
-     "end": 107.131
+     "start": 102.953,
+     "end": 103.097
     },
     {
      "w": "شرط",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 107.131,
-     "end": 107.422
+     "start": 103.097,
+     "end": 103.377
     },
     {
      "w": "تحس",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 107.432,
-     "end": 107.732
+     "start": 103.387,
+     "end": 103.675
     },
     {
      "w": "بألم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 107.732,
-     "end": 108.072
+     "start": 103.675,
+     "end": 104.002
     },
     {
      "w": "في",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 108.072,
-     "end": 108.182
+     "start": 104.002,
+     "end": 104.108
     },
     {
      "w": "الكبد",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 108.182,
-     "end": 108.633
+     "start": 104.108,
+     "end": 104.541
     },
     {
      "w": "ولا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 108.893,
-     "end": 109.213
+     "start": 104.791,
+     "end": 105.099
     },
     {
      "w": "لازم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 109.213,
-     "end": 109.494
+     "start": 105.099,
+     "end": 105.369
     },
     {
      "w": "تظهر",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 109.494,
-     "end": 109.904
+     "start": 105.369,
+     "end": 105.763
     },
     {
      "w": "أعراض",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 109.904,
-     "end": 110.315
+     "start": 105.763,
+     "end": 106.159
     },
     {
      "w": "واضحة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 110.315,
-     "end": 110.625
+     "start": 106.159,
+     "end": 106.457
     },
     {
      "w": "في",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 110.625,
-     "end": 110.735
+     "start": 106.457,
+     "end": 106.562
     },
     {
      "w": "البداية",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 110.735,
-     "end": 111.215
+     "start": 106.562,
+     "end": 107.024
     }
    ],
-   "start": 106.761,
-   "end": 111.215,
+   "start": 102.741,
+   "end": 107.024,
    "src": "s7l19"
   },
   {
-   "id": "s4l7",
-   "scene": 4,
+   "id": "s7l20",
+   "scene": 7,
    "raw": "وممكن الإصابة تتطور خلال الساعات والأيام اللي بعدها.",
    "words": [
     {
@@ -2361,73 +2361,73 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 111.626,
-     "end": 112.056
+     "start": 107.419,
+     "end": 107.833
     },
     {
      "w": "الإصابة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 112.056,
-     "end": 112.567
+     "start": 107.833,
+     "end": 108.324
     },
     {
      "w": "تتطور",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 112.567,
-     "end": 113.017
+     "start": 108.324,
+     "end": 108.757
     },
     {
      "w": "خلال",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 113.017,
-     "end": 113.358
+     "start": 108.757,
+     "end": 109.085
     },
     {
      "w": "الساعات",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 113.358,
-     "end": 113.818
+     "start": 109.085,
+     "end": 109.527
     },
     {
      "w": "والأيام",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 113.818,
-     "end": 114.319
+     "start": 109.527,
+     "end": 110.009
     },
     {
      "w": "اللي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 114.319,
-     "end": 114.489
+     "start": 110.009,
+     "end": 110.172
     },
     {
      "w": "بعدها",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 114.489,
-     "end": 114.939
+     "start": 110.172,
+     "end": 110.605
     }
    ],
-   "start": 111.626,
-   "end": 114.939,
+   "start": 107.419,
+   "end": 110.605,
    "src": "s7l20"
   },
   {
-   "id": "s4l8",
-   "scene": 4,
+   "id": "s7l21",
+   "scene": 7,
    "raw": "وعشان كده…",
    "words": [
     {
@@ -2435,25 +2435,25 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 115.28,
-     "end": 115.68
+     "start": 110.933,
+     "end": 111.317
     },
     {
      "w": "كده",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 115.68,
-     "end": 115.99
+     "start": 111.317,
+     "end": 111.615
     }
    ],
-   "start": 115.28,
-   "end": 115.99,
+   "start": 110.933,
+   "end": 111.615,
    "src": "s7l21"
   },
   {
-   "id": "s4l9",
-   "scene": 4,
+   "id": "s7l22",
+   "scene": 7,
    "raw": "لو حصل جرعة زايدة… أو شك في تناول كمية أكبر من الموصى بها…",
    "words": [
     {
@@ -2461,113 +2461,113 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 116.44,
-     "end": 116.62
+     "start": 112.048,
+     "end": 112.221
     },
     {
      "w": "حصل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 116.62,
-     "end": 117.031
+     "start": 112.221,
+     "end": 112.616
     },
     {
      "w": "جرعة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 117.031,
-     "end": 117.401
+     "start": 112.616,
+     "end": 112.972
     },
     {
      "w": "زايدة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 117.401,
-     "end": 117.852
+     "start": 112.972,
+     "end": 113.406
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 118.172,
-     "end": 118.322
+     "start": 113.713,
+     "end": 113.858
     },
     {
      "w": "شك",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 118.322,
-     "end": 118.612
+     "start": 113.858,
+     "end": 114.137
     },
     {
      "w": "في",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 118.612,
-     "end": 118.702
+     "start": 114.137,
+     "end": 114.223
     },
     {
      "w": "تناول",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 118.732,
-     "end": 119.033
+     "start": 114.252,
+     "end": 114.541
     },
     {
      "w": "كمية",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 119.033,
-     "end": 119.453
+     "start": 114.541,
+     "end": 114.945
     },
     {
      "w": "أكبر",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 119.453,
-     "end": 119.773
+     "start": 114.945,
+     "end": 115.253
     },
     {
      "w": "من",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 119.773,
-     "end": 119.914
+     "start": 115.253,
+     "end": 115.388
     },
     {
      "w": "الموصى",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 119.914,
-     "end": 120.314
+     "start": 115.388,
+     "end": 115.773
     },
     {
      "w": "بها",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 120.314,
-     "end": 120.654
+     "start": 115.773,
+     "end": 116.1
     }
    ],
-   "start": 116.44,
-   "end": 120.654,
+   "start": 112.048,
+   "end": 116.1,
    "src": "s7l22"
   },
   {
-   "id": "s4l10",
-   "scene": 4,
+   "id": "s7l23",
+   "scene": 7,
    "raw": "ما تستناش ظهور الأعراض!",
    "words": [
     {
@@ -2575,41 +2575,41 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 121.104,
-     "end": 121.364
+     "start": 116.533,
+     "end": 116.783
     },
     {
      "w": "تستناش",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 121.364,
-     "end": 121.895
+     "start": 116.783,
+     "end": 117.293
     },
     {
      "w": "ظهور",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 121.895,
-     "end": 122.235
+     "start": 117.293,
+     "end": 117.62
     },
     {
      "w": "الأعراض",
      "punct": "!",
      "kw": false,
      "tags": [],
-     "start": 122.235,
-     "end": 122.696
+     "start": 117.62,
+     "end": 118.063
     }
    ],
-   "start": 121.104,
-   "end": 122.696,
+   "start": 116.533,
+   "end": 118.063,
    "src": "s7l23"
   },
   {
-   "id": "s4l11",
-   "scene": 4,
+   "id": "s7l24",
+   "scene": 7,
    "raw": "روح الطوارئ… أو كلم الصيدلي أو الطبيب…",
    "words": [
     {
@@ -2617,65 +2617,65 @@
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 122.886,
-     "end": 123.126
+     "start": 118.246,
+     "end": 118.477
     },
     {
      "w": "الطوارئ",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 123.126,
-     "end": 123.667
+     "start": 118.477,
+     "end": 118.997
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 123.747,
-     "end": 123.947
+     "start": 119.074,
+     "end": 119.266
     },
     {
      "w": "كلم",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 123.967,
-     "end": 124.287
+     "start": 119.286,
+     "end": 119.593
     },
     {
      "w": "الصيدلي",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 124.287,
-     "end": 124.818
+     "start": 119.593,
+     "end": 120.104
     },
     {
      "w": "أو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 124.818,
-     "end": 124.968
+     "start": 120.104,
+     "end": 120.248
     },
     {
      "w": "الطبيب",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 124.968,
-     "end": 125.668
+     "start": 120.248,
+     "end": 120.921
     }
    ],
-   "start": 122.886,
-   "end": 125.668,
+   "start": 118.246,
+   "end": 120.921,
    "src": "s7l24"
   },
   {
-   "id": "s4l12",
-   "scene": 4,
+   "id": "s7l25",
+   "scene": 7,
    "raw": "حتى لو إنت حاسس إنك كويس.",
    "words": [
     {
@@ -2683,189 +2683,155 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 125.679,
-     "end": 125.969
+     "start": 120.932,
+     "end": 121.211
     },
     {
      "w": "لو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 125.969,
-     "end": 126.069
+     "start": 121.211,
+     "end": 121.307
     },
     {
      "w": "إنت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 126.069,
-     "end": 126.269
+     "start": 121.307,
+     "end": 121.499
     },
     {
      "w": "حاسس",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 126.269,
-     "end": 126.6
+     "start": 121.499,
+     "end": 121.817
     },
     {
      "w": "إنك",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 126.6,
-     "end": 126.85
+     "start": 121.817,
+     "end": 122.058
     },
     {
      "w": "كويس",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 126.87,
-     "end": 127.23
+     "start": 122.077,
+     "end": 122.423
     }
    ],
-   "start": 125.679,
-   "end": 127.23,
+   "start": 120.932,
+   "end": 122.423,
    "src": "s7l25"
   },
   {
-   "id": "s4l13",
-   "scene": 4,
-   "raw": "لأن فيه علاج اسمه إن أسيتيل سيستين…",
+   "id": "s7l26",
+   "scene": 7,
+   "raw": "لأن فيه علاج اسمه إن أسيتيل سيستين… بيساعد على حماية الكبد…",
    "words": [
     {
      "w": "لأن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 127.647,
-     "end": 127.907
+     "start": 122.824,
+     "end": 123.074
     },
     {
      "w": "فيه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 127.907,
-     "end": 128.117
+     "start": 123.074,
+     "end": 123.276
     },
     {
      "w": "علاج",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 128.117,
-     "end": 128.408
+     "start": 123.276,
+     "end": 123.556
     },
     {
      "w": "اسمه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 128.408,
-     "end": 128.778
+     "start": 123.556,
+     "end": 123.912
     },
     {
      "w": "إن",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 128.868,
-     "end": 129.058
+     "start": 123.998,
+     "end": 124.181
     },
     {
      "w": "أسيتيل",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 129.058,
-     "end": 129.509
+     "start": 124.181,
+     "end": 124.614
     },
     {
      "w": "سيستين",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 129.509,
-     "end": 130.099
-    }
-   ],
-   "start": 127.647,
-   "end": 130.099,
-   "src": "s7l26"
-  },
-  {
-   "id": "s4l14",
-   "scene": 4,
-   "raw": "لأن إيه سي… بيساعد على حماية الكبد…",
-   "words": [
-    {
-     "w": "لأن",
-     "punct": "",
-     "kw": false,
-     "tags": [],
-     "start": 130.57,
-     "end": 130.92
-    },
-    {
-     "w": "إيه",
-     "punct": "",
-     "kw": false,
-     "tags": [],
-     "start": 130.92,
-     "end": 131.1
-    },
-    {
-     "w": "سي",
-     "punct": "…",
-     "kw": false,
-     "tags": [],
-     "start": 131.1,
-     "end": 131.38
+     "start": 124.614,
+     "end": 125.182
     },
     {
      "w": "بيساعد",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 131.671,
-     "end": 132.191
+     "start": 125.489,
+     "end": 125.99
     },
     {
      "w": "على",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 132.191,
-     "end": 132.372
+     "start": 125.99,
+     "end": 126.163
     },
     {
      "w": "حماية",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 132.372,
-     "end": 132.772
+     "start": 126.163,
+     "end": 126.548
     },
     {
      "w": "الكبد",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 132.772,
-     "end": 133.212
+     "start": 126.548,
+     "end": 126.972
     }
    ],
-   "start": 130.57,
-   "end": 133.212,
-   "src": "s7l27"
+   "start": 122.824,
+   "end": 126.972,
+   "src": "s7l26"
   },
   {
-   "id": "s4l15",
-   "scene": 4,
+   "id": "s7l27",
+   "scene": 7,
    "raw": "وكل ما بدأ بدري… خصوصا خلال أول تمن ساعات…",
    "words": [
     {
@@ -2873,81 +2839,81 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 133.715,
-     "end": 134.026
+     "start": 127.456,
+     "end": 127.754
     },
     {
      "w": "ما",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 134.026,
-     "end": 134.146
+     "start": 127.754,
+     "end": 127.869
     },
     {
      "w": "بدأ",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 134.146,
-     "end": 134.456
+     "start": 127.869,
+     "end": 128.168
     },
     {
      "w": "بدري",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 134.456,
-     "end": 134.847
+     "start": 128.168,
+     "end": 128.543
     },
     {
      "w": "خصوصا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 134.847,
-     "end": 135.367
+     "start": 128.543,
+     "end": 129.043
     },
     {
      "w": "خلال",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 135.367,
-     "end": 135.707
+     "start": 129.043,
+     "end": 129.371
     },
     {
      "w": "أول",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 135.707,
-     "end": 135.968
+     "start": 129.371,
+     "end": 129.621
     },
     {
      "w": "تمن",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 135.968,
-     "end": 136.248
+     "start": 129.621,
+     "end": 129.89
     },
     {
      "w": "ساعات",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 136.248,
-     "end": 136.638
+     "start": 129.89,
+     "end": 130.266
     }
    ],
-   "start": 133.715,
-   "end": 136.638,
-   "src": "s7l28"
+   "start": 127.456,
+   "end": 130.266,
+   "src": "s7l27"
   },
   {
-   "id": "s4l16",
-   "scene": 4,
+   "id": "s7l28",
+   "scene": 7,
    "raw": "كانت فرص الوقاية من الإصابة أفضل.",
    "words": [
     {
@@ -2955,57 +2921,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 136.819,
-     "end": 137.089
+     "start": 130.439,
+     "end": 130.699
     },
     {
      "w": "فرص",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 137.089,
-     "end": 137.399
+     "start": 130.699,
+     "end": 130.997
     },
     {
      "w": "الوقاية",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 137.399,
-     "end": 137.85
+     "start": 130.997,
+     "end": 131.431
     },
     {
      "w": "من",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 137.85,
-     "end": 137.95
+     "start": 131.431,
+     "end": 131.527
     },
     {
      "w": "الإصابة",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 137.95,
-     "end": 138.48
+     "start": 131.527,
+     "end": 132.037
     },
     {
      "w": "أفضل",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 138.48,
-     "end": 138.871
+     "start": 132.037,
+     "end": 132.412
     }
    ],
-   "start": 136.819,
-   "end": 138.871,
-   "src": "s7l29"
+   "start": 130.439,
+   "end": 132.412,
+   "src": "s7l28"
   },
   {
-   "id": "s4l17",
-   "scene": 4,
+   "id": "s7l29",
+   "scene": 7,
    "raw": "لكن حتى لو الوقت عدى… لسه التقييم والعلاج مهمين!",
    "words": [
     {
@@ -3013,81 +2979,81 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 139.321,
-     "end": 139.621
+     "start": 132.845,
+     "end": 133.134
     },
     {
      "w": "حتى",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 139.621,
-     "end": 139.921
+     "start": 133.134,
+     "end": 133.422
     },
     {
      "w": "لو",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 139.921,
-     "end": 140.061
+     "start": 133.422,
+     "end": 133.558
     },
     {
      "w": "الوقت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 140.061,
-     "end": 140.412
+     "start": 133.558,
+     "end": 133.894
     },
     {
      "w": "عدى",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 140.412,
-     "end": 140.832
+     "start": 133.894,
+     "end": 134.298
     },
     {
      "w": "لسه",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 141.052,
-     "end": 141.393
+     "start": 134.511,
+     "end": 134.837
     },
     {
      "w": "التقييم",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 141.393,
-     "end": 141.883
+     "start": 134.837,
+     "end": 135.309
     },
     {
      "w": "والعلاج",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 141.883,
-     "end": 142.384
+     "start": 135.309,
+     "end": 135.79
     },
     {
      "w": "مهمين",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 142.384,
-     "end": 143.024
+     "start": 135.79,
+     "end": 136.406
     }
    ],
-   "start": 139.321,
-   "end": 143.024,
-   "src": "s7l30"
+   "start": 132.845,
+   "end": 136.406,
+   "src": "s7l29"
   },
   {
-   "id": "s4l18",
-   "scene": 4,
+   "id": "s7l30",
+   "scene": 7,
    "raw": "لأن الإن أسيتيل سيستين ده الأنتيدوت بتاعه…",
    "words": [
     {
@@ -3095,65 +3061,65 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 143.477,
-     "end": 143.737
+     "start": 136.841,
+     "end": 137.091
     },
     {
      "w": "الإن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 143.737,
-     "end": 144.067
+     "start": 137.091,
+     "end": 137.41
     },
     {
      "w": "أسيتيل",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 144.067,
-     "end": 144.498
+     "start": 137.41,
+     "end": 137.823
     },
     {
      "w": "سيستين",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 144.498,
-     "end": 144.948
+     "start": 137.823,
+     "end": 138.257
     },
     {
      "w": "ده",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 144.948,
-     "end": 145.058
+     "start": 138.257,
+     "end": 138.362
     },
     {
      "w": "الأنتيدوت",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 145.058,
-     "end": 145.629
+     "start": 138.362,
+     "end": 138.911
     },
     {
      "w": "بتاعه",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 145.629,
-     "end": 146.069
+     "start": 138.911,
+     "end": 139.335
     }
    ],
-   "start": 143.477,
-   "end": 146.069,
-   "src": "s7l31"
+   "start": 136.841,
+   "end": 139.335,
+   "src": "s7l30"
   },
   {
-   "id": "s4l19",
-   "scene": 4,
+   "id": "s7l31",
+   "scene": 7,
    "raw": "أو العلاج المضاد بتاعه.",
    "words": [
     {
@@ -3161,41 +3127,41 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 146.57,
-     "end": 146.82
+     "start": 139.815,
+     "end": 140.057
     },
     {
      "w": "العلاج",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 146.82,
-     "end": 147.221
+     "start": 140.057,
+     "end": 140.441
     },
     {
      "w": "المضاد",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 147.221,
-     "end": 147.691
+     "start": 140.441,
+     "end": 140.894
     },
     {
      "w": "بتاعه",
      "punct": ".",
      "kw": false,
      "tags": [],
-     "start": 147.691,
-     "end": 148.422
+     "start": 140.894,
+     "end": 141.596
     }
    ],
-   "start": 146.57,
-   "end": 148.422,
-   "src": "s7l32"
+   "start": 139.815,
+   "end": 141.596,
+   "src": "s7l31"
   },
   {
-   "id": "s5l1",
-   "scene": 5,
+   "id": "s14l1",
+   "scene": 14,
    "raw": "لكن كلمة السر هنا… الاستخدام الصحيح!",
    "words": [
     {
@@ -3203,57 +3169,57 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 149.076,
-     "end": 149.406
+     "start": 142.245,
+     "end": 142.563
     },
     {
      "w": "كلمة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 149.406,
-     "end": 149.747
+     "start": 142.563,
+     "end": 142.89
     },
     {
      "w": "السر",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 149.747,
-     "end": 150.077
+     "start": 142.89,
+     "end": 143.207
     },
     {
      "w": "هنا",
      "punct": "…",
      "kw": false,
      "tags": [],
-     "start": 150.077,
-     "end": 150.387
+     "start": 143.207,
+     "end": 143.506
     },
     {
      "w": "الاستخدام",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 150.387,
-     "end": 151.148
+     "start": 143.506,
+     "end": 144.237
     },
     {
      "w": "الصحيح",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 151.148,
-     "end": 151.669
+     "start": 144.237,
+     "end": 144.738
     }
    ],
-   "start": 149.076,
-   "end": 151.669,
+   "start": 142.245,
+   "end": 144.738,
    "src": "s8l13"
   },
   {
-   "id": "s5l2",
-   "scene": 5,
+   "id": "s14l2",
+   "scene": 14,
    "raw": "مش معنى إن الدوا متاح من غير روشتة… إنه آمن مهما كانت الجرعة.",
    "words": [
     {
@@ -3261,113 +3227,113 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 151.979,
-     "end": 152.139
+     "start": 145.036,
+     "end": 145.19
     },
     {
      "w": "معنى",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 152.139,
-     "end": 152.449
+     "start": 145.19,
+     "end": 145.489
     },
     {
      "w": "إن",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 152.449,
-     "end": 152.52
+     "start": 145.489,
+     "end": 145.556
     },
     {
      "w": "الدوا",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 152.52,
-     "end": 152.9
+     "start": 145.556,
+     "end": 145.922
     },
     {
      "w": "متاح",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 152.9,
-     "end": 153.29
+     "start": 145.922,
+     "end": 146.297
     },
     {
      "w": "من",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 153.29,
-     "end": 153.45
+     "start": 146.297,
+     "end": 146.451
     },
     {
      "w": "غير",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 153.45,
-     "end": 153.661
+     "start": 146.451,
+     "end": 146.653
     },
     {
      "w": "روشتة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 153.661,
-     "end": 154.131
+     "start": 146.653,
+     "end": 147.105
     },
     {
      "w": "إنه",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 154.442,
-     "end": 154.652
+     "start": 147.404,
+     "end": 147.606
     },
     {
      "w": "آمن",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 154.652,
-     "end": 155.052
+     "start": 147.606,
+     "end": 147.991
     },
     {
      "w": "مهما",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 155.052,
-     "end": 155.372
+     "start": 147.991,
+     "end": 148.299
     },
     {
      "w": "كانت",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 155.372,
-     "end": 155.683
+     "start": 148.299,
+     "end": 148.597
     },
     {
      "w": "الجرعة",
      "punct": ".",
      "kw": true,
      "tags": [],
-     "start": 155.683,
-     "end": 156.143
+     "start": 148.597,
+     "end": 149.04
     }
    ],
-   "start": 151.979,
-   "end": 156.143,
+   "start": 145.036,
+   "end": 149.04,
    "src": "s8l14"
   },
   {
-   "id": "s5l3",
-   "scene": 5,
+   "id": "s14l3",
+   "scene": 14,
    "raw": "لو حصلت جرعة زيادة… ما تستناش الأعراض… روح على طول الطوارئ!",
    "words": [
     {
@@ -3375,94 +3341,95 @@
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 156.702,
-     "end": 156.893
+     "start": 149.591,
+     "end": 149.774
     },
     {
      "w": "حصلت",
      "punct": "",
      "kw": false,
      "tags": [],
-     "start": 156.893,
-     "end": 157.393
+     "start": 149.774,
+     "end": 150.254
     },
     {
      "w": "جرعة",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 157.393,
-     "end": 157.703
+     "start": 150.254,
+     "end": 150.553
     },
     {
      "w": "زيادة",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 157.703,
-     "end": 158.184
+     "start": 150.553,
+     "end": 151.015
     },
     {
      "w": "ما",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 158.464,
-     "end": 158.644
+     "start": 151.285,
+     "end": 151.458
     },
     {
      "w": "تستناش",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 158.644,
-     "end": 159.065
+     "start": 151.458,
+     "end": 151.862
     },
     {
      "w": "الأعراض",
      "punct": "…",
      "kw": true,
      "tags": [],
-     "start": 159.065,
-     "end": 159.565
+     "start": 151.862,
+     "end": 152.344
     },
     {
      "w": "روح",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 159.816,
-     "end": 160.056
+     "start": 152.584,
+     "end": 152.815
     },
     {
      "w": "على",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 160.056,
-     "end": 160.286
+     "start": 152.815,
+     "end": 153.036
     },
     {
      "w": "طول",
      "punct": "",
      "kw": true,
      "tags": [],
-     "start": 160.286,
-     "end": 160.406
+     "start": 153.036,
+     "end": 153.152
     },
     {
      "w": "الطوارئ",
      "punct": "!",
      "kw": true,
      "tags": [],
-     "start": 160.406,
-     "end": 160.917
+     "start": 153.152,
+     "end": 153.643
     }
    ],
-   "start": 156.702,
-   "end": 160.917,
+   "start": 149.591,
+   "end": 153.643,
    "src": "s9l7"
   }
  ],
- "trim_head": 7.588
+ "trim_head": 7.588,
+ "global_speed": 1.04
 }

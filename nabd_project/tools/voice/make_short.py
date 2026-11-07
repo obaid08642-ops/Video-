@@ -62,19 +62,23 @@ def roomtone(n):
     return out
 
 # runs of adjacent long lines
-seq = []   # (scene_no, line_index)
+# a scene entry is a list of ids (lines keep their LONG ids and scene numbers, so the long video's scene
+# components work unchanged) or {"id": 11, "lines": [...]} (lines renamed s11l1.. = a Short-only scene; needed for
+# repeated lines and for lines whose long scene is only partly used)
+seq = []   # (group_no, line_index, renamed_scene_or_None)
 for k, sc in enumerate(spec["scenes"], 1):
-    for it in sc:
-        for i in expand(it): seq.append((k, i))
+    items, ren = (sc["lines"], sc["id"]) if isinstance(sc, dict) else (sc, None)
+    for it in items:
+        for i in expand(it): seq.append((k, i, ren))
 runs = []
-for sc, i in seq:
-    if runs and runs[-1]["lines"][-1] + 1 == i and runs[-1]["scene"] == sc: runs[-1]["lines"].append(i)
-    elif runs and runs[-1]["lines"][-1] + 1 == i: runs[-1]["lines"].append(i); runs[-1].setdefault("scene_at", {})[i] = sc
-    else: runs.append(dict(scene=sc, lines=[i]))
+for sc, i, ren in seq:
+    if runs and runs[-1]["lines"][-1] + 1 == i and runs[-1]["group"] == sc: runs[-1]["lines"].append(i); runs[-1]["ren"].append(ren)
+    elif runs and runs[-1]["lines"][-1] + 1 == i and not ren and runs[-1]["ren"][-1] is None: runs[-1]["lines"].append(i); runs[-1]["ren"].append(ren)
+    else: runs.append(dict(group=sc, lines=[i], ren=[ren]))
 
 X = int(0.03 * sr); fade = np.sin(np.linspace(0, np.pi / 2, X)) ** 2
 pieces, parts, out_t = [], [], 0.0
-new_lines = []; scene_of = {i: sc for sc, i in seq}
+new_lines = []
 for r, run in enumerate(runs):
     first, last = L[run["lines"][0]], L[run["lines"][-1]]
     k0 = START.get(run["lines"][0], 0)
@@ -89,7 +93,7 @@ for r, run in enumerate(runs):
     seg = y[int(a * sr): int(b * sr)].copy()
     seg[:X] *= fade; seg[-X:] *= fade[::-1]
     if r:
-        g = SGAP if scene_of[run["lines"][0]] != scene_of[runs[r - 1]["lines"][-1]] else GAP
+        g = SGAP if (run["ren"][0] or L[run["lines"][0]]["scene"]) != (runs[r - 1]["ren"][-1] or L[runs[r - 1]["lines"][-1]]["scene"]) else GAP
         n = int((g - 0.06) * sr); rt = roomtone(n + 2 * X)
         # overlap-add room tone under the fades of both neighbours
         pieces[-1][-X:] += rt[:X] * fade
@@ -99,13 +103,13 @@ for r, run in enumerate(runs):
         lead = roomtone(int(0.08 * sr)); lead[-X:] *= 0; pieces.append(lead); out_t += 0.08
         seg[:X] += 0
     off = out_t - a
-    for i in run["lines"]:
+    for i, ren in zip(run["lines"], run["ren"]):
         l = json.loads(json.dumps(L[i]))
         if START.get(i):
             l["words"] = l["words"][START[i]:]; w0 = l["words"][0]["w"]
             l["raw"] = l["raw"][l["raw"].find(w0):] if w0 in l["raw"] else l["raw"]
         for w in l["words"]: w["start"] = round(w["start"] + off, 3); w["end"] = round(w["end"] + off, 3)
-        l["start"] = l["words"][0]["start"]; l["end"] = l["words"][-1]["end"]; l["src"] = l["id"]; l["scene"] = scene_of[i]
+        l["start"] = l["words"][0]["start"]; l["end"] = l["words"][-1]["end"]; l["src"] = l["id"]; l["ren"] = ren; l["scene"] = ren or l["scene"]
         new_lines.append(l)
     parts.append(dict(src_from=round(a, 3), src_to=round(b, 3), out_at=round(out_t, 3), lines=[L[i]["id"] for i in run["lines"]]))
     pieces.append(seg); out_t += len(seg) / sr
@@ -115,9 +119,9 @@ v = np.concatenate(pieces)
 # ids + scenes
 cnt = {}
 for l in new_lines:
-    cnt[l["scene"]] = cnt.get(l["scene"], 0) + 1; l["id"] = f"s{l['scene']}l{cnt[l['scene']]}"
+    if l.pop("ren"): cnt[l["scene"]] = cnt.get(l["scene"], 0) + 1; l["id"] = f"s{l['scene']}l{cnt[l['scene']]}"
 scenes = []
-for s in sorted(cnt):
+for s in dict.fromkeys(l["scene"] for l in new_lines):      # order of appearance
     ls = [l for l in new_lines if l["scene"] == s]
     scenes.append(dict(id=s, start=ls[0]["start"], end=ls[-1]["end"]))
 tmp = f"{OUT}/_raw.wav"; sf.write(tmp, v.astype(np.float32), sr, subtype="FLOAT")
