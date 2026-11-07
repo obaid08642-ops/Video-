@@ -49,7 +49,8 @@ if POLES == "b4":   # true 4th-order Butterworth (24 dB/oct) done in scipy: rumb
 else:
     src_for_chain = den
     hpf = f"highpass=f={HZ}:poles=2" + (f",highpass=f={HZ}:poles=2" if POLES == "4" else "")
-chain = f"{hpf},{TONE}{DEESS},{COMP}"
+PRE_EQ = os.environ.get("NABD_PRE_EQ", "")   # per-recording mic/room correction (e.g. ep03: phone farther away, boomy low end)
+chain = f"{hpf},{PRE_EQ + ',' if PRE_EQ else ''}{TONE}{DEESS},{COMP}"
 pre = f"{OUT}/_pre_{HPF}_{PRESET}.wav"
 sh("ffmpeg", "-v", "error", "-y", "-i", src_for_chain, "-af", chain, "-c:a", "pcm_f32le", pre)
 

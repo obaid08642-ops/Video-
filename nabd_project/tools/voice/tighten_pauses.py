@@ -41,8 +41,8 @@ for (la, ia, a), (lb, ib, b) in zip(ws, ws[1:]):
     special = is_number_next(lb, ib, lines[lb]) or b["w"] in SPECIAL_BEFORE or (lb == last_line and ib == 0) \
         or (la in SPECIAL_AFTER and la != lb)
     if special: lim, target = 0.80, 0.70
-    elif same: lim, target = 0.40, 0.35
-    else: lim, target = 0.55, 0.50
+    elif same: lim, target = CFG.get("within", [0.40, 0.35])   # [limit, target]; owner's range is 0.3-0.4
+    else: lim, target = CFG.get("between", [0.55, 0.50])   # [limit, target]; owner's range is 0.45-0.55
     if g <= lim + 1e-3: continue
     if g - target < 0.06: continue                    # barely over: not worth a cut
     A, B = a["end"], b["start"]

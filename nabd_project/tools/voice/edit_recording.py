@@ -50,7 +50,11 @@ for raw in open(VERB, encoding="utf-8"):
         if tok.startswith("["): rm = True
         words.append(dict(w=tok.strip("[]"), remove=rm, scene=scene, line=line, first=(k == 0), important=imp and k == 0))
         if tok.endswith("]"): rm = False
-res, _ = align([w["w"] for w in words])
+if "align_end" in CUTS:   # stop the alignment at the end of speech (noise after the last word must not stretch it)
+    import align as _al
+    res, _ = align([w["w"] for w in words], 0, int(CUTS["align_end"] / _al.DT))
+else:
+    res, _ = align([w["w"] for w in words])
 for w, (_, a, b, c) in zip(words, res):
     w["a"], w["b"], w["conf"] = a, b, c
 
@@ -103,7 +107,8 @@ for k, v in enumerate(list(act) + [False]):
             else: kind = "noise"
             t0, t1 = s * 0.01, k * 0.01
             near = min(min(abs(t0 - w["e"]), abs(w["s"] - t1)) for w in words)
-            if kind in ("background voice", "mouth click", "noise") and pk < -40 and near < 0.12:
+            tk = CUTS.get("tail_keep", {"near": 0.12, "peak": -40})   # per episode: roomier takes have longer voiced tails
+            if kind in ("background voice", "mouth click", "noise") and pk < tk["peak"] and near < tk["near"]:
                 kind = "word tail (kept)"
             if any(k0 < t1 and t0 < k1 for k0, k1 in CUTS.get("keep", [])):
                 kind = "word tail (kept)"   # listened/decoded: part of a word (e.g. an unvoiced onset), never replace
