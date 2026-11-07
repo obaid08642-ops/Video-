@@ -17,7 +17,8 @@ import numpy as np, soundfile as sf, librosa
 
 import os
 # the aligner must read the CTC log-probs of THIS input file (NABD_ALIGN_DIR holds align.py + logits.npy for it)
-sys.path.insert(0, os.environ.get("NABD_ALIGN_DIR", "/opt/nabd/edit"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "stt"))   # portable align.py (reads $NABD_ALIGN_DIR)
+sys.path.insert(0, os.environ.get("NABD_ALIGN_DIR", "/opt/nabd/edit"))                          # an episode-local align.py wins if present
 from align import align  # noqa: E402
 
 RAW, VERB, OUT = sys.argv[1], sys.argv[2], sys.argv[3]

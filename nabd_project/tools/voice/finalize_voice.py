@@ -30,7 +30,7 @@ den = f"{OUT}/denoised.wav"
 if not os.path.exists(den):
     sh("ffmpeg", "-v", "error", "-y", "-i", EDITED, "-ar", "48000", "-c:a", "pcm_f32le", f"{OUT}/_in.wav")
     os.makedirs(f"{OUT}/_df", exist_ok=True)
-    sh("/opt/nabd/tools/deep-filter", "--compensate-delay", "--atten-lim-db", "18", "-o", f"{OUT}/_df", f"{OUT}/_in.wav")
+    sh(os.path.join(os.environ.get("NABD_MODELS", "/opt/nabd"), "tools", "deep-filter"), "--compensate-delay", "--atten-lim-db", "18", "-o", f"{OUT}/_df", f"{OUT}/_in.wav")
     os.replace(f"{OUT}/_df/_in.wav", den); os.remove(f"{OUT}/_in.wav")
 # words: either the edit tool's words_out list or a video timing JSON
 _wj = json.load(open(WORDS, encoding="utf-8"))
