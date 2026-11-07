@@ -5,6 +5,7 @@ import { EpV9, calcEpV9, type EpV9Props } from "./videos/ep01/EpV9";
 import { Ep02, calcEp02, type Ep02Props } from "./videos/ep02/Ep02";
 import { Ep02Cover } from "./videos/ep02/Cover";
 import { Ep03AssetSheet } from "./videos/ep03/AssetSheet";
+import { Ep03Cover } from "./videos/ep03/Cover";
 import { Ep03, calcEp03, type Ep03Props } from "./videos/ep03/Ep03";
 import { Ep03LongTail, TAIL_FRAMES as TAIL_FRAMES_03 } from "./videos/ep03/LongTail";
 import { Ep02LongTail, TAIL_FRAMES } from "./videos/ep02/LongTail";
@@ -37,6 +38,7 @@ export const RemotionRoot: React.FC = () => (
     {/* episode 03 (nasal sprays): the owner's recorded voice + its YouTube long-form tail */}
     <Composition id="Ep03Final" component={Ep03} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp03} defaultProps={{ voice: "recording" } as Ep03Props} />
     <Composition id="Ep03LongTail" component={Ep03LongTail} fps={30} width={1080} height={1920} durationInFrames={TAIL_FRAMES_03} />
+    <Composition id="Ep03Cover" component={Ep03Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep03AssetSheet" component={Ep03AssetSheet} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep02Cover" component={Ep02Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep02Final" component={Ep02} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp02} defaultProps={{ voice: "recording" } as Ep02Props} />
