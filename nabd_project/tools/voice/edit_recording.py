@@ -68,6 +68,13 @@ for i, w in enumerate(words):
     e = w["b"]
     while e + 0.01 < min(hi, w["b"] + 0.35) and db[fidx(e)] > FLOOR + 10: e += 0.01
     w["s"], w["e"] = s, e
+# energy-verified word bounds (cuts file "word_bounds": [[word, near_s, start_or_null, end_or_null]]): fixes a word the
+# aligner stretched over a following silence (e.g. ep04 «معايا» 137.5 -> 140.5 while the energy ends at 137.8)
+for tok, near, s_fix, e_fix in CUTS.get("word_bounds", []):
+    cand = [w for w in words if w["w"] == tok]
+    w = min(cand, key=lambda w: abs(w["a"] - near))
+    if s_fix is not None: w["s"] = s_fix
+    if e_fix is not None: w["e"] = e_fix
 # energy-verified restart spans override the alignment estimate
 for key, (a, b) in CUTS["restarts"].items():
     toks = key.split()

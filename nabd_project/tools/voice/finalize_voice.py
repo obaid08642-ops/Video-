@@ -27,6 +27,10 @@ os.makedirs(OUT, exist_ok=True)
 sh = lambda *a: subprocess.run(a, check=True, capture_output=True, text=True)
 
 den = f"{OUT}/denoised.wav"
+if os.environ.get("NABD_DF_DONE") == "1" and not os.path.exists(den):
+    # very noisy takes (ep04): DeepFilterNet ran on the whole pre-filtered recording BEFORE editing, so word ends
+    # are detected on the clean signal (noise hides the tails -> early ends -> pauses ~0.1 s too short)
+    sh("ffmpeg", "-v", "error", "-y", "-i", EDITED, "-ar", "48000", "-c:a", "pcm_f32le", den)
 if not os.path.exists(den):
     sh("ffmpeg", "-v", "error", "-y", "-i", EDITED, "-ar", "48000", "-c:a", "pcm_f32le", f"{OUT}/_in.wav")
     os.makedirs(f"{OUT}/_df", exist_ok=True)
