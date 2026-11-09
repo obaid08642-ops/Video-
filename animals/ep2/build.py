@@ -60,9 +60,9 @@ for i,(n,s,d) in enumerate(SEG):
 n=len(SEG)
 vcat="".join(f"[v{i}]" for i in range(n))+f"concat=n={n}:v=1:a=0[v]"
 acat="".join(f"[a{i}]" for i in range(n))+f"concat=n={n}:v=0:a=1[am]"
-nf=f"loudnorm=I=-14:TP=-2:LRA=11,afade=t=out:st={TOT-0.5:.2f}:d=0.5,alimiter=limit=0.84"
+nf=f"loudnorm=I=-14:TP=-2:LRA=11,afade=t=out:st={TOT-0.5:.2f}:d=0.5,alimiter=limit=0.84:level=0"
 base=["ffmpeg","-v","error","-y",*inp]
 enc=["-c:v","libx264","-crf","17","-preset","slow","-pix_fmt","yuv420p","-c:a","aac","-b:a","192k","-movflags","+faststart"]
 subprocess.run(base+["-filter_complex",";".join(vf+af+[vcat,acat,f"[am]{nf}[ao]"]),"-map","[v]","-map","[ao]",*enc,"ep2/episode2_model_audio.mp4"],check=True)
-subprocess.run(base+["-i","ep2/foley.wav","-filter_complex",";".join(vf+[vcat,f"[{n}:a]{nf}[ao]"]),"-map","[v]","-map","[ao]",*enc,"-shortest","ep2/episode2_foley.mp4"],check=True)
+subprocess.run(base+["-i","ep2/foley.wav","-filter_complex",";".join(vf+[vcat,f"[{n}:a]{nf},volume=-2.5dB[ao]"]),"-map","[v]","-map","[ao]",*enc,"-shortest","ep2/episode2_foley.mp4"],check=True)
 print("total",TOT)
