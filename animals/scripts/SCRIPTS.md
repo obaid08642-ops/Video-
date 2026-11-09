@@ -49,7 +49,7 @@ If you want, the same episode can be re-made as v2 with these beats (same refere
 4. Brain freeze: eyes cross, hands slap heads, ice crackles chain-reaction over each body: they freeze into ice statues one after another.
 5. Penguin (unbothered) taps a statue: it rings like glass.
 6. The sun melts them, cracks, ice falls, they shiver.
-7. **Twist:** penguin tastes his own new cone and gets the worst freeze.
+7. **Twist (logic fixed):** the penguin NEVER tastes his product in the main clip (he is smug); in the extension he tries it for the first time and gets the worst freeze.
 8. **Button:** the four thawed friends bite again... and freeze again.
 
 **Main clip (15 s) — Seedance prompt** (refs: 1 Fizz, 2 Bunny, 3 Bucky, 4 Croco, 5 Penguin, 6 boardwalk)
@@ -58,10 +58,10 @@ Shot 1 (0-3s) hook: extreme close-up of the four melting in the heat: sweat drop
 Shot 2 (3-6s): the penguin slides four giant cones across the counter with a flourish: Fizz a triple strawberry, the bunny an orange carrot scoop, Bucky vanilla with chocolate dip, Croco a scoop as big as his head; they snatch them with huge grins.
 Shot 3 (6-9s): the four bite at exactly the same moment, one beat of pure bliss with closed eyes, then all their eyes snap open and cross.
 Shot 4 (9-12s): brain freeze chain: hands slap foreheads, a loud ice crackle runs across Fizz, then the bunny, Bucky and Croco in turn, frost creeping over fur and skin until all four are glittering ice statues with frozen screaming faces.
-Shot 5 (12-15s): the penguin, calm, taps a statue and it rings like glass; the sun beats down, drips fall, cracks run across the statues and Croco's ice mask falls off in chunks, his teary eyes wide.
+Shot 5 (12-15s): the penguin, who never tastes his own ice-cream, rubs his flippers with a smug grin and taps a statue so it rings like glass; the sun beats down, drips fall, cracks run across the statues and Croco's ice mask falls off in chunks, his teary eyes wide.
 Sound design only, absolutely no music: seaside waves and gulls, sizzling heat, crunchy bites, chained ice crackle, glass-tapping rings, dripping meltwater, squeaky yelps, small comic boing accents synced to every action.`
 
-**Extension (5 s)** `Keep all characters exactly as in the first frame. The four thawed, shivering friends glare at the penguin; the penguin shrugs and takes a bite of his own cone: his eyes cross, his whole body freezes mid-bite into an ice statue. The four look at each other, then at their new cones, and all bite at once: they freeze again in their funny poses. Sound: shivering, ice crackle chains, glass rings, squeaks, no music.`
+**Extension (5 s)** `Keep all characters exactly as in the first frame. The four thawed, shivering friends glare at the penguin; the penguin shrugs, scoops one small cone for himself (he has never tried it) and takes a curious first bite: his eyes cross and his whole body freezes mid-bite into an ice statue. The four look at each other, sneak to the cart, grab four fresh cones, and all bite at once: they freeze again in funny poses. Sound: shivering, ice crackle chains, glass rings, squeaks, no music.`
 
 ---
 ## EP-B  "The Pie Thief" (bear)  — theme: *the sleeper was never asleep*
@@ -72,7 +72,7 @@ Sound design only, absolutely no music: seaside waves and gulls, sizzling heat, 
 **Beat checklist**
 1. Hook: steaming blueberry pie rises and falls on the bear's belly; three hungry faces peek from behind a rock.
 2. Plan: Fizz holds a long feather, Bunny points the route, Bucky puffs his cheeks to stay quiet.
-3. Tiptoe: each step creaks a twig (rule of three: twig, rustle, squeak) and the bear's nose twitches.
+3. Tiptoe: rule of three tiny sounds (twig, rustle, squeak), each twitches the bear's ear; **clue planted:** one bear eye cracks open for a split second (he is awake, but the sneeze is real and unavoidable).
 4. Feather touches nose: whiskers shake, cheeks inflate, pie wobbles.
 5. GIANT sneeze: friends and pie launched, trees bend, leaves rain.
 6. Crash into a treetop; the pie floats down and lands perfectly on the bear's belly again.
@@ -82,7 +82,7 @@ Sound design only, absolutely no music: seaside waves and gulls, sizzling heat, 
 **Main clip (15 s)** (refs: 1 Fizz, 2 Bunny, 3 Bucky, 4 Big Bear, 5 meadow)
 `3D Pixar-style animated film, vertical 9:16, golden hour, rich detail. Keep exactly as in the reference images, never stretching or changing proportions: Fizz the green frog (image 1), the caramel bunny (image 2), Bucky the brown beaver (image 3), the big brown bear (image 4); setting: the hillside meadow with the giant tree (image 5). Five hard-cut shots, each starts with immediate action.
 Shot 1 (0-3s) hook: extreme close-up of a steaming blueberry pie rising and falling on the sleeping bear's belly with each snore; behind a rock three hungry faces peek out, drooling.
-Shot 2 (3-6s): wide: Fizz grips a long white feather and tiptoes forward, Bunny points the route with a stern face, Bucky puffs his cheeks to hold his breath; a twig creaks under Bucky's foot, the bear's ear twitches, they freeze, then continue.
+Shot 2 (3-6s): wide: Fizz grips a long white feather and tiptoes forward, Bunny points the route with a stern face, Bucky puffs his cheeks to hold his breath; three tiny sounds each make the bear's ear twitch (a twig creaks under Bucky's foot, Bucky's tail rustles the grass, Fizz's foot squeaks), they freeze each time, then continue; for one split second one of the bear's eyes cracks open and closes again.
 Shot 3 (6-9s): extreme close-up: the feather tip brushes the bear's nose, whiskers shake, nose twitches, cheeks inflate like a balloon, the pie wobbles on his belly.
 Shot 4 (9-12s): GIANT sneeze: the grass flattens, the three friends and the pie are blasted into the sky spinning, trees bend, leaves rain, comic screams.
 Shot 5 (12-15s): they smash into the treetop and hang in the branches with leaves on their heads and dizzy stars; far below the pie floats down and lands perfectly on the bear's belly; the bear opens one eye and smirks.
@@ -109,11 +109,11 @@ Sound design only, absolutely no music: meadow ambience, deep snores, creaking t
 Shot 1 (0-3s) hook: close-up: the octopus's eyes pop open with a sly grin, his ink sac swells, the crab sleeps below with snore bubbles.
 Shot 2 (3-6s): the octopus squirts a thick black ink jet straight into the crab's face, the crab's eyes snap open, the ink cloud blooms across the reef.
 Shot 3 (6-9s): total blackout, only wide glowing eyes visible: the octopus giggling, the crab turning in circles clicking his claws, the pufferfish trembling.
-Shot 4 (9-12s): the pufferfish panics and inflates, ricocheting off rocks, coral, the crab and the octopus like a pinball, each hit a rubbery boing, the crab snapping at every sound.
-Shot 5 (12-15s): the ink clears: the crab holds the octopus's tentacle in one claw, the octopus covered in black ink from head to arms, the pufferfish stuck among his tangled arms.
+Shot 4 (9-12s): the pufferfish panics and inflates, ricocheting off rocks, coral and the crab like a pinball, each hit a rubbery boing, then slams the octopus straight into the middle of his own ink cloud; the crab snaps at every sound.
+Shot 5 (12-15s): the ink clears: the crab holds the octopus's tentacle in one claw, the octopus is covered in black ink from head to arms because the pufferfish knocked him into his own cloud, the pufferfish stuck among his tangled arms.
 Sound design only, absolutely no music: muffled underwater ambience, bubbles, an ink 'splurt', whooshing cloud, rubbery boings, claw clicks, squeaky yelps.`
 
-**Extension (5 s)** `Keep all characters as in the first frame. The crab lets go with a pop, flicks one tiny drop of ink onto the octopus's nose; the octopus crosses his eyes, sneezes ink, the pufferfish deflates giggling; all three burst into silent laughter with bubbles. Sound: pops, bubbles, giggles, no music.`
+**Extension (5 s)** `Keep all characters as in the first frame. The crab lets go with a pop, wipes a claw across the octopus's inky head and flicks one tiny drop of ink onto his nose; the octopus crosses his eyes, sneezes ink, the pufferfish deflates giggling; all three burst into silent laughter with bubbles. Sound: pops, bubbles, giggles, no music.`
 
 ---
 ## EP-D  "Bubble Gum Contest" (meadow)  — theme: *the smallest one wins (by cheating)*
@@ -123,22 +123,22 @@ Sound design only, absolutely no music: muffled underwater ambience, bubbles, an
 
 **Beat checklist**
 1. Hook: four pink bubbles swelling side by side, faces red with effort; Shelly raises the flag.
-2. Rule of three: Bunny pops hers, Bucky pops his, Croco's grows huge.
+2. Rule of three: Bunny pops hers, Bucky pops his, Croco's grows huge (smug) until Fizz's croak-powered bubble overtakes it.
 3. Fizz's bubble is tiny, he winks, inflates his throat sac inside it: the bubble swells and lifts him.
 4. Fizz floats, Croco grabs his foot, Bunny grabs Croco, Bucky grabs Bunny: floating chain.
 5. Bubble hits a pine: pop, gum covers all faces, they fall bouncing.
-6. **Twist/button:** Shelly gives the trophy to Bucky (most gum on his face), Fizz sulks.
+6. **Twist/button (logic fixed):** Shelly gives the trophy to Fizz (his bubble was biggest); when he raises it the gum strings pull the other three into the air.
 
 **Main clip (15 s)** (refs: 1 Fizz, 2 Bunny, 3 Bucky, 4 Croco, 5 Shelly, 6 meadow)
 `3D Pixar-style animated film, vertical 9:16, golden hour. Keep exactly as in the reference images, never stretching or changing proportions: Fizz (image 1), the bunny (image 2), Bucky (image 3), Croco (image 4), Shelly the turtle judge (image 5); setting: the meadow (image 6). Five hard-cut shots, each starts with immediate action.
 Shot 1 (0-3s) hook: four pink gum bubbles swelling side by side, cheeks puffed and faces red, Shelly raises a small flag.
 Shot 2 (3-6s): the bunny's bubble pops on her face, Bucky's pops on his nose, Croco's keeps growing; Fizz's bubble is tiny; he winks at the camera.
-Shot 3 (6-9s): Fizz inflates his frog throat inside his tiny bubble: it swells enormous and lifts him off the ground, legs kicking.
+Shot 3 (6-9s): Fizz croaks and his frog throat balloons, every croak blowing more air into his bubble: it swells bigger than Croco's, overtakes it, and lifts him off the ground, legs kicking.
 Shot 4 (9-12s): wide: Fizz floats above the forest, Croco jumps and grabs his foot, the bunny grabs Croco, Bucky grabs the bunny: a floating chain of four wobbling.
 Shot 5 (12-15s): the bubble hits a pine tree with a loud pop; pink gum splatters over all four faces and stretches in strings as they fall and bounce onto the meadow.
 Sound design only, absolutely no music: meadow ambience, wet bubble-blowing, rubbery creaks, a frog throat croak, gasps, a loud pop, splat and boing.`
 
-**Extension (5 s)** `Keep all characters as in the first frame. Shelly walks over, studies the gum-covered friends, hands a tiny trophy to Bucky who is covered the most; Bucky beams with gum strings from his teeth, Fizz sulks with arms crossed, Croco and the bunny giggle. Sound: gum stretch, trophy ding, giggles, no music.`
+**Extension (5 s)** `Keep all characters as in the first frame. Shelly walks over, studies the gum-covered friends and hands the tiny trophy to Fizz (biggest bubble, he crossed the banner while floating); Fizz raises it proudly but gum strings tie him to the other three, and as he lifts his arm all three are pulled into the air by the strings. Shelly gives an unimpressed eyebrow. Sound: gum stretch, trophy ding, squeaks, no music.`
 
 ---
 ## EP-E  "Pepper Sneeze" (picnic)  — theme: *rule of three sneezes*
@@ -151,19 +151,19 @@ Sound design only, absolutely no music: meadow ambience, wet bubble-blowing, rub
 2. Sneeze 1 (small): hats and napkins fly.
 3. Sneeze 2 (medium): the blanket and basket fly.
 4. Sneeze 3 (giant): the three friends are launched across the meadow.
-5. They land tangled on his trunk and ears like swings.
-6. **Twist/button:** elephant sniffs the pepper shaker, eyes widen; a fourth sneeze launches them... into his own back; he gives them a ride.
+5. **Logic fixed:** the sneeze blasts them far away; his next inhale sucks them back onto his trunk and ears like swings.
+6. **Twist/button:** he closes the pepper shaker, a tiny sneeze puff flips them onto his back; he gives them a ride.
 
 **Main clip (15 s)** (refs: 1 Fizz, 2 Bunny, 3 Bucky, 4 Elephant, 5 meadow)
 `3D Pixar-style animated film, vertical 9:16, golden hour. Keep exactly as in the reference images, never stretching or changing proportions: Fizz (image 1), the bunny (image 2), Bucky (image 3), the elephant (image 4); setting: the picnic meadow (image 5). Five hard-cut shots, each starts with immediate action.
 Shot 1 (0-3s) hook: extreme close-up: Fizz sprinkles black pepper over a pile of peanuts and winks at the camera, the elephant's big eye watches innocently.
 Shot 2 (3-6s): the elephant munches a peanut, freezes, his trunk twitches: a tiny sneeze, the bunny's hat and napkins flutter away.
 Shot 3 (6-9s): a bigger sneeze: the picnic blanket flips, the basket and peanuts fly, Bucky grabs a tree, Fizz hides behind him.
-Shot 4 (9-12s): the elephant's ears flap wide, eyes water, cheeks puff: a GIANT sneeze launches all three friends across the meadow, trees bending, leaves flying.
-Shot 5 (12-15s): they land and hang tangled on the elephant's trunk and ears like swings, dizzy stars; the elephant blinks, confused.
+Shot 4 (9-12s): the elephant's ears flap wide, eyes water, cheeks puff: a GIANT sneeze blasts all three friends far across the meadow until they are tiny dots, trees bending, leaves flying.
+Shot 5 (12-15s): the elephant wipes his watery eyes and inhales deeply for another sneeze, sucking the three friends back like a vacuum: they slam onto his trunk and ears and hang there spinning like swings with dizzy stars; the elephant blinks, confused.
 Sound design only, absolutely no music: meadow ambience, crunchy peanuts, a tickling sniff, three 'achoo' blasts of growing size with wind whoosh, flapping ears, comic boings.`
 
-**Extension (5 s)** `Keep all characters as in the first frame. The elephant lifts the pepper shaker, sniffs it, his eyes widen; a sneeze sends all three friends up and back down onto his broad back; he smiles, closes the shaker and strolls off with the three friends riding on his back. Sound: sniff, sneeze blast, soft thuds, happy trumpet, no music.`
+**Extension (5 s)** `Keep all characters as in the first frame. The elephant, still holding the sneeze, notices the pepper shaker Fizz dropped, closes it with his trunk, then lets out one tiny 'achoo' puff that flips the three friends up and onto his broad back; he smiles and strolls off with them riding. Sound: sniff, tiny sneeze puff, soft thuds, happy trumpet, no music.`
 
 ---
 ## EP-F  "Shelly's Sign" (dunes; comment-bait format)  — theme: *what should the sign say?*
@@ -184,7 +184,7 @@ Shot 1 (0-3s) hook: the sand glows and Shelly pops out of the hole holding a cle
 Shot 2 (3-6s): Fizz dips a finger in honey and scribbles on the sign, a bee lands and sticks in the honey, the sign drips.
 Shot 3 (6-9s): the bunny smears berry juice across the sign with her paw, proud, the juice running down.
 Shot 4 (9-12s): Bucky slaps a handful of mud on the sign with a big splat; Shelly stares at the camera, unimpressed, one eyebrow raised.
-Shot 5 (12-15s): a gust of wind flips the sign; when it turns back it is completely clean and blank again; the friends look at each other, confused.
+Shot 5 (12-15s): a gust of wind spins the sign around so the clean, blank BACK side faces the camera (the messy side is hidden); the friends look at each other, confused.
 Sound design only, absolutely no music: desert wind, wet honey drips, bee buzz, squelchy mud splat, comic boings, a soft shimmer for the glowing hole.`
 
 **Extension (5 s)** `Keep all characters as in the first frame. Shelly lifts the blank sign toward the camera, taps it twice with her flipper and winks; Fizz, the bunny and Bucky peek in from behind with hopeful faces; the glowing hole sparkles. Sound: sign taps, soft wind, tiny sparkle, no music.`
