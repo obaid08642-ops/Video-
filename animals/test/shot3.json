@@ -1,0 +1,4 @@
+{"model":"bytedance/seedance-2.0-fast","out":"test/shot3.mp4","input":{
+"prompt":"3D Pixar-style animation, vertical. Extreme close-up of the grey rabbit from image 1 sitting in the sunny pond clearing from image 3, holding a red chili pepper. She bites it with a proud confident smile. Then her face and ears slowly turn bright red, her cheeks puff, her eyes bulge and water, she trembles and forces a tight smile. Behind her the small green frog from image 2 gives a sly wink. Soft golden-hour light, shallow depth of field, smooth cartoon motion, funny comedic timing. Sound: crunch, small gasp, sizzling.",
+"reference_images":["ref/rabbit_ref.png","characters/fizz/fizz_front.png","env/pond_vertical.jpg"],
+"duration":5,"resolution":"720p","aspect_ratio":"9:16","generate_audio":true}}
