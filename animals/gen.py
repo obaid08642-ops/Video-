@@ -8,7 +8,7 @@ def call(url,body=None):
     for i in range(8):
         try: return json.load(urllib.request.urlopen(r))
         except urllib.error.HTTPError as e:
-            if e.code!=429: raise
+            if e.code not in (429,500,502,503,504): raise
             time.sleep(10+5*i)
     raise RuntimeError("rate limited")
 def run(model,inp,out):
