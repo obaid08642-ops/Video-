@@ -1,11 +1,16 @@
-import sys, json, base64, time, mimetypes, urllib.request, os
+import sys, json, urllib.error, base64, time, mimetypes, urllib.request, os
 H={"Authorization":"Bearer proxy-injected","Content-Type":"application/json"}
 def uri(p):
     m=mimetypes.guess_type(p)[0] or "image/png"
     return f"data:{m};base64,"+base64.b64encode(open(p,"rb").read()).decode()
 def call(url,body=None):
     r=urllib.request.Request(url,data=json.dumps(body).encode() if body else None,headers=H)
-    return json.load(urllib.request.urlopen(r))
+    for i in range(8):
+        try: return json.load(urllib.request.urlopen(r))
+        except urllib.error.HTTPError as e:
+            if e.code!=429: raise
+            time.sleep(10+5*i)
+    raise RuntimeError("rate limited")
 def run(model,inp,out):
     p=call(f"https://api.replicate.com/v1/models/{model}/predictions",{"input":inp})
     print("id",p["id"],flush=True)
