@@ -46,6 +46,10 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep04Long" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "long" } as Ep04Props} />
     <Composition id="Ep04Short1" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short1" } as Ep04Props} />
     <Composition id="Ep04Short2" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short2" } as Ep04Props} />
+    <Composition id="Ep04Short3" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short3" } as Ep04Props} />
+    <Composition id="Ep04Short4" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short4" } as Ep04Props} />
+    <Composition id="Ep04CoverShort3" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
+    <Composition id="Ep04CoverShort4" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short4" as const }} />
     <Composition id="Ep04CoverLong" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "long" as const }} />
     <Composition id="Ep04CoverShort1" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
     <Composition id="Ep04CoverShort2" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
