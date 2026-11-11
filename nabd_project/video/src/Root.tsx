@@ -11,6 +11,7 @@ import { Ep03LongTail, TAIL_FRAMES as TAIL_FRAMES_03 } from "./videos/ep03/LongT
 import { Ep02LongTail, TAIL_FRAMES } from "./videos/ep02/LongTail";
 import { Ep04, calcEp04, type Ep04Props } from "./videos/ep04/Ep04";
 import { Ep04Cover } from "./videos/ep04/Cover";
+import { Ep05, calcEp05, type Ep05Props } from "./videos/ep05/Ep05";
 import { CharSheet } from "./assets/characters";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
@@ -44,6 +45,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep03Cover" component={Ep03Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep03AssetSheet" component={Ep03AssetSheet} fps={30} width={1080} height={1920} durationInFrames={1} />
     {/* episode 04 (paracetamol): one recording -> long video + 2 Shorts (voice = long | short1 | short2) */}
+    <Composition id="Ep05" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{} as Ep05Props} />
     <Composition id="Ep04Long" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "long" } as Ep04Props} />
     <Composition id="Ep04Short1" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short1" } as Ep04Props} />
     <Composition id="Ep04Short2" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short2" } as Ep04Props} />
