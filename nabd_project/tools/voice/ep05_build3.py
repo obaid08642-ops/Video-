@@ -21,14 +21,14 @@ SPEED = float(sys.argv[sys.argv.index("--speed") + 1]) if "--speed" in sys.argv 
 REF = os.environ.get("NABD_REF", "/home/user/Video-/nabd_project/video/public/voice/ep01_recording.wav")
 os.makedirs(OUT, exist_ok=True)
 SR = 48000
-GAP = {"S": 0.65, "s": 0.40, "m": 0.48, "w": 0.30}      # scene / sentence / ellipsis / within-sentence silence (s)
+GAP = {"S": 0.55, "s": 0.40, "m": 0.48, "w": 0.30}      # scene / sentence / ellipsis / within-sentence silence (s)
 ST = {1: 0.0, 2: 0.0, 3: 0.0}                            # semitones with --pitch 1 (subtle); --pitch 0 = no shift at all
 TWEAK = {100: 0.0, 130: 0.8, 180: 0.0, 250: -2.0, 400: -1.0, 1000: 0.0, 2500: 0.0, 3200: 0.8, 5000: 0.5, 8000: 0.8, 12000: 0.5}   # calmer / lighter: less thick, no harsh presence boost
 
 # non-speech sounds / false starts to drop (raw-timeline seconds; any speech run that overlaps is removed)
 DROPS = {
  1: [(82.6, 83.04), (156.0, 156.8), (172.0, 174.6)],   # «وفيه» stutter, first «بالطريقة», first take of «أما مضادات الحساسية»
- 2: [(73.3, 74.3), (74.45, 75.6)],                      # cut-off «النظام», throat-clear
+ 2: [(73.3, 74.3), (74.45, 75.6), (97.6, 99.6), (142.4, 144.6)],   # cut-off «النظام», throat-clear, first «هرمون بيساعد جس-», first «الكافيين بيقفل المستقبل-»
  3: [(45.2, 45.7), (35.6, 37.5)],                       # cough before «خلينا», doubled «وتقلق»
 }
 # (rec, a, b, break_before, note[, opts]): a..b select the speech RUNS (energy-separated phrases) whose centre lies inside;
