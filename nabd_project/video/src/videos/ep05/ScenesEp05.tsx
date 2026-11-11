@@ -179,7 +179,7 @@ const S6 = mk(6, [
   { a: "أوركسين", sfx: "pop", r: (p, f, a) => (<><Place x={540} y={980} s={1.4}><Brain /></Place><Place x={540} y={1250} s={0.9}><Toggle on={prog(f, a + 20, 12) > 0.5 ? 0 : 1} /></Place><ChipAt y={1290} text="Orexin" dir="ltr" w={360} hot p={p} /><ChipAt y={1410} text="بيقلل إشارات اليقظة" size={46} p={p} /></>) },
   { a: "مضادات", sfx: "bump", r: (p) => (<><Place x={540} y={1000} s={1.5}><MedSyrup /></Place><Place x={540} y={1000} s={2 * p} o={0.9}><XMark p={p} /></Place><ChipAt text="مضادات الحساسية: مش للأرق المزمن" size={42} w={860} p={p} /></>) },
   { a: "والخلاصة", sfx: "ding", r: (p) => (<><Place x={330} y={1000} s={1.1}><PharmacistM /></Place><Place x={780} y={980} s={1.0}><MedTablet /></Place><ChipAt text="الدواء حسب مشكلتك مش الأقوى" size={44} w={840} hot p={p} /></>) },
-  { a: "فأنصحك", r: (p) => (<><Place x={540} y={1010} s={1.25}><DoctorM /></Place><Place x={820} y={800} s={1 * p}><Hospital /></Place><ChipAt text="استشر الطبيب" p={p} /></>) },
+  { a: "فأنصحك", r: (p) => (<><Place x={470} y={900} s={0.95}><DoctorM /></Place><Place x={830} y={760} s={0.9 * p}><Hospital /></Place><ChipAt y={1180} text="استشر الطبيب" p={p} /></>) },
 ]);
 // ============================================================ 7. Summary
 const S7 = mk(7, [
