@@ -102,6 +102,8 @@ PIECES = [
  (1, 283.0, 286.2, "s", "closing: ولو عندك أي استفسار اكتب لنا في الكومنتات (إضافة منك؛ اترجعت)"),
 ]
 
+if os.environ.get("EP05_PIECES"):      # Shorts: a custom take list (same processing, same drops)
+    PIECES = [tuple(x[:5]) + ((x[5],) if len(x) > 5 and x[5] else ()) for x in json.load(open(os.environ["EP05_PIECES"], encoding="utf-8"))]
 def rms_db(x):
     if len(x) == 0: return -120.0
     return 20 * np.log10(np.sqrt(np.mean(x.astype(np.float64) ** 2)) + 1e-9)

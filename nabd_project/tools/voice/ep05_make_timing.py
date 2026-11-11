@@ -104,6 +104,8 @@ for sc in ranges:
 dur = round(edl["duration"] / SP, 3)
 T = dict(voice="recording", audio=AUDIO, duration=dur, sampleRate=48000, pauseScale=1.0,
          scenes=[dict(id=sc, start=round(a, 3), end=round(b, 3)) for sc, (a, b) in sorted(ranges.items())], lines=lines)
+import os
+if os.environ.get("EP05_STRICT"): T["strict"] = True
 json.dump(T, open(OUT, "w", encoding="utf-8"), ensure_ascii=False)
 src = {}
 for l in lines:

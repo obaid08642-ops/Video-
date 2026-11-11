@@ -14,6 +14,7 @@ import { FPS, norm, type T } from "../../lib/timing";
 import type { Cue } from "../../lib/sfx";
 import { C, FONT } from "../../theme";
 
+export { Cup, Phone, Bed };
 export type SceneDef = { C: React.FC<{ t: T }>; cues: (t: T) => Cue[]; pulses: (t: T) => number[] };
 const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <svg viewBox="0 0 1080 1920" width={1080} height={1920} style={{ position: "absolute", inset: 0 }}>{children}</svg>
@@ -74,11 +75,14 @@ const allWords = (t: T) => {
 const anchors = (t: T, scene: number, beats: Beat[]) => {
   const sc = t.timing.scenes.find((s) => s.id === scene); const out: number[] = []; let from = sc ? Math.max(0, sc.start) : 0;
   const w = allWords(t);
+  const strict0 = !!(t.timing as unknown as { strict?: boolean }).strict; const start0 = from;
   beats.forEach((b, i) => {
     const k = norm(b.a);
+    if (strict0) from = start0;
     const hit = k === "" ? undefined : w.find((x) => x.s >= from - 0.02 && x.n.includes(k));
-    const s = k === "" ? from : hit ? hit.s : from + (i ? 1.2 : 0);
-    out.push(s); from = s + 0.05;
+    const strict = !!(t.timing as unknown as { strict?: boolean }).strict;
+    const s = k === "" ? from : hit ? hit.s : strict ? 1e6 : from + (i ? 1.2 : 0);
+    out.push(s); if (s < 1e5 && !strict0) from = s + 0.05;
   });
   return out;
 };
@@ -89,7 +93,8 @@ const mk = (scene: number, beats: Beat[]): SceneDef => ({
     return (
       <Svg>
         {beats.map((b, i) => {
-          const a = Math.round(an[i] * FPS); const e = i + 1 < beats.length ? Math.round(an[i + 1] * FPS) : end;
+          if (an[i] > 1e5) return null;
+          const a = Math.round(an[i] * FPS); const later = an.filter((x) => x > an[i] + 0.04 && x < 1e5); const e = later.length ? Math.round(Math.min(...later) * FPS) : end;
           const o = inOut(f, a - 4, e + 4, 10, 8);
           return o > 0.01 ? (<g key={i} opacity={o}>{b.r(pop(f, a, 12), f, a, e)}</g>) : null;
         })}

@@ -8,16 +8,22 @@ import { buildCards, type CaptionData } from "../../lib/captions";
 import { FPS, T, type Timing } from "../../lib/timing";
 import { schedule } from "../../lib/sfx";
 import { clamp, easeOut, popEase, prog } from "../../lib/anim";
-import captionData from "../../data/ep05_captions.json";
+import capLong from "../../data/ep05_captions.json";
+import capS1 from "../../data/ep05_short1_captions.json";
+import capS2 from "../../data/ep05_short2_captions.json";
+import capS3 from "../../data/ep05_short3_captions.json";
 import { DISCLAIMER_EP05, SCENES_EP05, THEME_EP05 } from "./ScenesEp05";
 import { C, FONT } from "../../theme";
 
-export type Ep05Props = { timing?: Timing };
-const LOGO = 1.5, ENDCARD = 7.0;
+export type Ep05Props = { variant?: "long" | "short1" | "short2" | "short3"; timing?: Timing };
+const CAPS = { long: capLong, short1: capS1, short2: capS2, short3: capS3 };
+const fileOf = (v: string) => (v === "long" ? "recording" : v);
+const LOGO = 1.5, ENDCARD = 7.0, SHORT_LOGO = 3.0;
 const SOURCES = ["AASM", "VA/DoD 2025", "NCCIH", "FDA", "AAP", "Endotext"];
-export const calcEp05: CalculateMetadataFunction<Ep05Props> = async () => {
-  const timing = (await (await fetch(staticFile("voice/ep05_recording_timing.json"))).json()) as Timing;
-  return { durationInFrames: Math.ceil((timing.duration + LOGO + ENDCARD) * FPS), props: { timing } };
+export const calcEp05: CalculateMetadataFunction<Ep05Props> = async ({ props }) => {
+  const v = props.variant ?? "long";
+  const timing = (await (await fetch(staticFile(`voice/ep05_${fileOf(v)}_timing.json`))).json()) as Timing;
+  return { durationInFrames: Math.ceil((timing.duration + (v === "long" ? LOGO + ENDCARD : SHORT_LOGO)) * FPS), props: { ...props, timing } };
 };
 
 const SourceLine: React.FC<{ color: string }> = ({ color }) => (
@@ -29,14 +35,16 @@ const SourceLine: React.FC<{ color: string }> = ({ color }) => (
   </div>
 );
 
-export const Ep05: React.FC<Ep05Props> = ({ timing }) => {
+export const Ep05: React.FC<Ep05Props> = ({ timing, variant = "long" }) => {
+  const isLong = variant === "long";
+  const captionData = CAPS[variant];
   const f = useCurrentFrame();
   const t = useMemo(() => new T(timing!), [timing]);
   const cards = useMemo(() => buildCards(timing!, captionData as unknown as CaptionData), [timing]);
   const ids = timing!.scenes.map((s) => s.id);
   const voiceEnd = Math.ceil(timing!.duration * FPS);
-  const logoEnd = voiceEnd + Math.ceil(LOGO * FPS);
-  const total = logoEnd + Math.ceil(ENDCARD * FPS);
+  const logoEnd = voiceEnd + Math.ceil((isLong ? LOGO : SHORT_LOGO) * FPS);
+  const total = logoEnd + (isLong ? Math.ceil(ENDCARD * FPS) : 0);
   const cues = useMemo(() => schedule(ids.flatMap((id) => SCENES_EP05[id].cues(t)).filter((c) => c.at > 0 && c.at < timing!.duration), t.keywordSpans()), [t]);
   const pulses = useMemo(() => ids.flatMap((id) => SCENES_EP05[id].pulses(t)).filter((p) => p < voiceEnd), [t]);
   const mask = useMemo(() => {
@@ -59,7 +67,7 @@ export const Ep05: React.FC<Ep05Props> = ({ timing }) => {
     return out;
   }, [timing]);
   const discOn = prog(f, voiceEnd - 75, 12), logo = prog(f, voiceEnd, 6);
-  const inEnd = f >= logoEnd - 6;
+  const inEnd = isLong && f >= logoEnd - 6;
   const endIn = prog(f, logoEnd, 10, easeOut);
 
   return (
@@ -77,7 +85,13 @@ export const Ep05: React.FC<Ep05Props> = ({ timing }) => {
       {f >= voiceEnd && f < logoEnd && (
         <AbsoluteFill style={{ opacity: logo }}>
           <OffthreadVideo src={staticFile("brand/nabd_intro_vertical_9x16.mp4")} muted playbackRate={2.5} />
-          <SourceLine color="#fff" />
+          {isLong ? <SourceLine color="#fff" /> : (
+            <div style={{ position: "absolute", left: 60, width: 960, top: 1290, textAlign: "center", fontFamily: FONT, direction: "rtl" }}>
+              <div style={{ display: "inline-block", background: "#FFF3CF", border: `6px solid ${C.ink}`, borderRadius: 44, padding: "18px 44px 26px", transform: `scale(${interpolate(f, [voiceEnd + 6, voiceEnd + 18], [0.85, 1], { ...clamp, easing: popEase })})` }}>
+                <div style={{ fontSize: 66, fontWeight: 700, color: C.ink, whiteSpace: "nowrap" }}>الحلقة الكاملة على القناة</div>
+              </div>
+            </div>
+          )}
         </AbsoluteFill>
       )}
       {inEnd && (
@@ -93,7 +107,7 @@ export const Ep05: React.FC<Ep05Props> = ({ timing }) => {
           </div>
         </AbsoluteFill>
       )}
-      <Audio src={staticFile("voice/ep05_recording.flac")} />
+      <Audio src={staticFile(`voice/ep05_${fileOf(variant)}.flac`)} />
       {themes.map(([name, a, b], i) => (
         <Sequence key={i} from={a} durationInFrames={b - a + 20}>
           <Audio src={staticFile(`audio/music/${name}.mp3`)} loop loopVolumeCurveBehavior="extend" volume={(fr) => musicVol(fr + a) * interpolate(fr, [0, 30, b - a - 10, b - a + 20], [0, 1, 1, 0], clamp)} />
@@ -101,9 +115,9 @@ export const Ep05: React.FC<Ep05Props> = ({ timing }) => {
       ))}
       {cues.map((c, i) => (<Sequence key={i} from={Math.round(c.at * FPS)} durationInFrames={2 * FPS}><Audio src={staticFile(`audio/sfx/${c.sfx}.wav`)} volume={c.vol} /></Sequence>))}
       <Sequence from={voiceEnd} durationInFrames={Math.ceil(1.5 * FPS)}><Audio src={staticFile("audio/sfx/heartbeat.wav")} volume={0.32} /></Sequence>
-      <Sequence from={logoEnd} durationInFrames={Math.ceil(ENDCARD * FPS)}>
+      {isLong && <Sequence from={logoEnd} durationInFrames={Math.ceil(ENDCARD * FPS)}>
         <Audio src={staticFile("audio/music/hope.mp3")} startFrom={30 * 20} volume={(fr) => 0.2 * interpolate(fr, [0, 15, ENDCARD * FPS - 25, ENDCARD * FPS], [0, 1, 1, 0], clamp)} />
-      </Sequence>
+      </Sequence>}
     </AbsoluteFill>
   );
 };

@@ -1,0 +1,10 @@
+{
+ "maxWords": 9,
+ "overrides": {},
+ "sources": {
+  "s6l3": "NCCIH",
+  "s6l6": "NCCIH"
+ },
+ "rename": {},
+ "renamePhrase": {}
+}
