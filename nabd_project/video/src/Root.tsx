@@ -11,6 +11,7 @@ import { Ep03LongTail, TAIL_FRAMES as TAIL_FRAMES_03 } from "./videos/ep03/LongT
 import { Ep02LongTail, TAIL_FRAMES } from "./videos/ep02/LongTail";
 import { Ep04, calcEp04, type Ep04Props } from "./videos/ep04/Ep04";
 import { Ep04Cover } from "./videos/ep04/Cover";
+import { CharSheet } from "./assets/characters";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
 const fontHandle = delayRender("fonts");
@@ -50,6 +51,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep04Short4" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short4" } as Ep04Props} />
     <Composition id="Ep04CoverShort3" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
     <Composition id="Ep04CoverShort4" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short4" as const }} />
+    <Composition id="CharSheet" component={CharSheet} fps={30} width={1920} height={1080} durationInFrames={1} />
     <Composition id="Ep04CoverLong" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "long" as const }} />
     <Composition id="Ep04CoverShort1" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
     <Composition id="Ep04CoverShort2" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
