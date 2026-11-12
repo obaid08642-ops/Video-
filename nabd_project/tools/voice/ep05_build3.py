@@ -11,7 +11,7 @@ sit at -55 dB, not at digital zero), pauses > 0.6 s inside a take are cut to 0.4
 (d) real room tone instead of synthetic noise; (e) children's-sleep block placed before the closing lines.
 Only whole spans of the original recordings are used; nothing is synthesised. Originals are never modified.
 """
-import json, os, re, subprocess, sys
+import json, os, re, re, subprocess, sys
 import numpy as np, soundfile as sf, scipy.signal as sg
 
 W, OUT = sys.argv[1], sys.argv[2]
@@ -102,6 +102,11 @@ PIECES = [
  (1, 283.0, 286.2, "s", "closing: ولو عندك أي استفسار اكتب لنا في الكومنتات (إضافة منك؛ اترجعت)"),
 ]
 
+import glob as _g
+RECS = sorted(int(re.search(r"c(\d+)\.wav$", f).group(1)) for f in _g.glob(f"{W}/clean/c*.wav"))
+if os.environ.get("EP05_DROPS"): DROPS = {int(k): [tuple(x) for x in v] for k, v in json.load(open(os.environ["EP05_DROPS"])).items()}
+for _i in RECS: DROPS.setdefault(_i, [])
+ST = {i: ST.get(i, 0.0) for i in RECS}
 if os.environ.get("EP05_PIECES"):      # Shorts: a custom take list (same processing, same drops)
     PIECES = [tuple(x[:5]) + ((x[5],) if len(x) > 5 and x[5] else ()) for x in json.load(open(os.environ["EP05_PIECES"], encoding="utf-8"))]
 def rms_db(x):
@@ -129,7 +134,7 @@ def smooth(d): return np.convolve(np.pad(d, 1, mode="edge"), [0.25, 0.5, 0.25], 
 ref, rsr = sf.read(REF, dtype="float32"); ref = ref if ref.ndim == 1 else ref.mean(1)
 ref_prof = bands(*profile(ref, rsr))
 shifted, eq_log = {}, {}
-for i in (1, 2, 3):
+for i in RECS:
     src = f"{W}/clean/c{i}.wav"; st = ST[i] if PITCH else 0.0
     if st > 0.05:
         tmp = f"{W}/clean/p{i}.wav"
@@ -137,26 +142,27 @@ for i in (1, 2, 3):
         src = tmp
     y, _ = sf.read(src, dtype="float32"); shifted[i] = y if y.ndim == 1 else y.mean(1)
 # reference tone = recording 2 matched 75 % to the Ep01 master (this is the sample the owner liked)
-b2 = bands(*profile(shifted[2], SR)); d2 = ref_prof - b2; d2 = d2 - d2[(fc >= 200) & (fc <= 5000)].mean()
+REF_REC = int(os.environ.get('EP_REFREC', 2))
+b2 = bands(*profile(shifted[REF_REC], SR)); d2 = ref_prof - b2; d2 = d2 - d2[(fc >= 200) & (fc <= 5000)].mean()
 d2 = smooth(np.clip(0.75 * d2, -5, 5))
 tone_ref = b2 + d2                                           # profile of the liked sound (without the gentle tweak)
 proc = {}
-for i in (1, 2, 3):
-    d = d2 if i == 2 else smooth(np.clip((lambda x: x - x[(fc >= 200) & (fc <= 5000)].mean())(tone_ref - bands(*profile(shifted[i], SR))), -7, 7))
+for i in RECS:
+    d = d2 if i == REF_REC else smooth(np.clip((lambda x: x - x[(fc >= 200) & (fc <= 5000)].mean())(tone_ref - bands(*profile(shifted[i], SR))), -7, 7))
     h, g = fir_from(d)
     proc[i] = sg.fftconvolve(shifted[i], h, mode="full")[: len(shifted[i])].astype(np.float32)
     eq_log[i] = dict(pitch_semitones=round(float(ST[i] if PITCH else 0), 2), eq_db={int(round(c)): round(float(x), 1) for c, x in zip(fc, g)})
     sf.write(f"{W}/clean/e{i}.wav", proc[i], SR, subtype="FLOAT")
 
 # silence threshold per recording (rec1's pauses sit near -55 dB, the others near digital silence)
-SIL = {i: float(np.percentile(frame_db(proc[i]), 80)) - 24 for i in (1, 2, 3)}
-for i in (1, 2, 3):                                          # blank the non-speech sounds (short fades, no clicks)
+SIL = {i: float(np.percentile(frame_db(proc[i]), 80)) - 24 for i in RECS}
+for i in RECS:                                          # blank the non-speech sounds (short fades, no clicks)
     for a, b in DROPS[i]:
         k0, k1 = int(a * SR), int(b * SR); proc[i][k0:k1] = 0.0
 
 # ---------------------------------------------------------------- 2. assemble (run-based)
 import librosa
-SIL = {i: float(np.percentile(frame_db(proc[i]), 80)) - 24 for i in (1, 2, 3)}
+SIL = {i: float(np.percentile(frame_db(proc[i]), 80)) - 24 for i in RECS}
 def runs_of(y, thr, gap=0.10, minlen=0.04):
     db = frame_db(y); sp = db > thr; R = []; s = l = None
     for k, v in enumerate(sp):
@@ -167,7 +173,7 @@ def runs_of(y, thr, gap=0.10, minlen=0.04):
     if s is not None: R.append([s / 100, (l + 1) / 100])
     return [r for r in R if r[1] - r[0] >= minlen]
 RUNS, KEEP = {}, {}
-for i in (1, 2, 3):
+for i in RECS:
     vp = f"{W}/clean/voiced{i}.npy"
     if os.path.exists(vp): vf = np.load(vp)
     else:
@@ -213,7 +219,7 @@ for n_, pc in enumerate(PIECES):
     parts.append(seg.astype(np.float32)); cursor += len(seg) / SR
 v = np.concatenate(parts)
 # real room tone: the quietest 2 s of recording 3's own pauses (hum-notched, HPF, NOT denoised), looped with crossfades, ~46 dB under the speech
-pre, _ = sf.read(f"{W}/clean/pre3.wav", dtype="float32")
+pre, _ = sf.read(f"{W}/clean/{os.environ.get('EP_RT', 'pre3')}.wav", dtype="float32")
 dbp = frame_db(pre); win = 200; best = min(range(0, len(dbp) - win, 25), key=lambda k: np.percentile(dbp[k: k + win], 95))
 rt = pre[best * (SR // 100): (best + win) * (SR // 100)].astype(np.float64); rt -= rt.mean()
 speech_rms = rms_db(v[np.abs(v) > 10 ** (-45 / 20)]) if np.any(np.abs(v) > 10 ** (-45 / 20)) else -25
