@@ -184,19 +184,25 @@ export const Bubble: React.FC<{ text: string; w?: number; size?: number }> = ({ 
     <text y={16} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={size} fill={C.ink} direction="rtl">{text}</text>
   </g>
 );
-/** a thin hair with a little arm raised (the acting hair): body = Strand; the arm is drawn separately */
-export const HairHero: React.FC<{ wave?: number; len?: number }> = ({ wave = 0, len = 0.6 }) => (
-  <g>
-    <Strand len={len} thick={0.5} />
-    <g transform={`translate(0 ${-110 * len}) rotate(${-30 + 12 * Math.sin(wave)})`}>
-      <path d="M0 0 C-30 -10 -50 -40 -52 -80" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />
-      <circle cx={-52} cy={-86} r={12} fill={SKIN} {...th} strokeWidth={4} />
+/** the acting hair: a thin strand with big eyes, a worried mouth, a raised arm and a sweat drop */
+export const HairHero: React.FC<{ wave?: number; len?: number }> = ({ wave = 0, len = 0.6 }) => {
+  const top = -260 * len;
+  return (
+    <g>
+      <Strand len={len} thick={0.9} />
+      <g transform={`translate(0 ${top + 70})`}>
+        <circle cx={-12} cy={-6} r={11} fill="#fff" {...th} strokeWidth={4} /><circle cx={12} cy={-6} r={11} fill="#fff" {...th} strokeWidth={4} />
+        <circle cx={-10} cy={-4} r={4.5} fill={C.ink} /><circle cx={14} cy={-4} r={4.5} fill={C.ink} />
+        <path d="M-10 16 q10 -8 20 0" fill="none" {...th} strokeWidth={4} />
+        <path d="M30 -30 q-8 16 0 22 q8 -6 0 -22" fill="#BFE3F7" {...th} strokeWidth={3} />
+      </g>
+      <g transform={`translate(-6 ${top + 150}) rotate(${-8 + 10 * Math.sin(wave)})`}>
+        <path d="M0 0 C-40 -10 -62 -50 -60 -100" fill="none" stroke={C.ink} strokeWidth={9} strokeLinecap="round" />
+        <circle cx={-60} cy={-108} r={13} fill={SKIN} {...th} strokeWidth={4} />
+      </g>
     </g>
-    <circle cx={-6} cy={-250 * len} r={3} fill="none" />
-    <circle cx={-10} cy={-232 * len} r={3.5} fill={C.ink} /><circle cx={10} cy={-232 * len} r={3.5} fill={C.ink} />
-    <path d={`M-8 ${-218 * len} q8 -8 16 0`} fill="none" {...th} strokeWidth={3} />
-  </g>
-);
+  );
+};
 export const Grafts: React.FC<{ n?: number }> = ({ n = 6 }) => (
   <g>{Array.from({ length: n }).map((_, i) => (<g key={i} transform={`translate(${-40 + (i % 3) * 40} ${-18 + Math.floor(i / 3) * 36})`}><circle r={11} fill={HAIR} {...th} strokeWidth={4} /></g>))}</g>
 );

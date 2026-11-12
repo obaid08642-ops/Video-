@@ -3,7 +3,7 @@
 import React from "react";
 import { useCurrentFrame } from "remotion";
 import { Place, Clock, QuestionIcon, CheckIcon } from "../../assets";
-import { Calendar, Moon } from "../../assets/more";
+import { Moon } from "../../assets/more";
 import { Warn, StopHand } from "../../assets/v9";
 import { Chip, Gauge, Hospital, OkMark, XMark } from "../../assets/ep02";
 import { Tablet, Drop, Flash, Thermo } from "../../assets/ep04";
@@ -12,7 +12,8 @@ import { HairGuy, ScalpTop, Follicle, Strand, Hexa, DropperBottle, Rosemary, See
 import { bob, clamp, easeIn, easeOut, inOut, pop, prog } from "../../lib/anim";
 import { FPS, norm, type T } from "../../lib/timing";
 import type { Cue } from "../../lib/sfx";
-import { C } from "../../theme";
+import { sk as skk } from "../../components/Frame";
+import { C, FONT } from "../../theme";
 
 export type SceneDef = { C: React.FC<{ t: T }>; cues: (t: T) => Cue[]; pulses: (t: T) => number[] };
 const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
@@ -59,6 +60,21 @@ const mk = (scene: number, beats: Beat[]): SceneDef => ({
   cues: (t) => { const an = anchors(t, scene, beats); return beats.flatMap((b, i) => (b.sfx && an[i] < 1e5 ? [{ at: an[i] - 0.12, sfx: b.sfx, vol: 0.13 }] : [])); },
   pulses: (t) => { const sc = t.timing.scenes.find((s) => s.id === scene); return sc ? [Math.round(sc.end * FPS) - 2] : []; },
 });
+const Calendar: React.FC<{ year: string }> = ({ year }) => (
+  <g>
+    <rect x={-170} y={-150} width={340} height={320} rx={30} fill={C.paper} {...skk} />
+    <path d="M-170 -150 H170 V-60 H-170 Z" fill={C.brand} {...skk} />
+    <circle cx={-90} cy={-150} r={14} fill={C.bg} {...skk} strokeWidth={5} /><circle cx={90} cy={-150} r={14} fill={C.bg} {...skk} strokeWidth={5} />
+    <text x={0} y={72} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={year.length > 5 ? 74 : 96} fill={C.ink} direction="rtl">{year}</text>
+  </g>
+);
+const Caution: React.FC<{ y?: number }> = ({ y = 1440 }) => (
+  <g transform={`translate(540 ${y})`}>
+    <rect x={-480} y={-78} width={960} height={156} rx={34} fill="#FFF3CF" {...skk} />
+    <text y={-14} textAnchor="middle" fontFamily={FONT} fontWeight={700} fontSize={40} fill={C.warn} direction="rtl">الديرما رولر: بحذر وبعد استشارة الطبيب</text>
+    <text y={44} textAnchor="middle" fontFamily={FONT} fontWeight={600} fontSize={36} fill={C.ink} direction="rtl">الاستخدام العشوائي ممكن يسبب عدوى أو ندبات</text>
+  </g>
+);
 const L = (f: number, a: number, d = 20) => prog(f, a, d, easeOut);
 
 // ============================================================ 1. Hook: friend vs you -> follicle -> why does hair fall
@@ -73,14 +89,14 @@ const S1 = mk(1, [
   { a: "البصيله", sfx: "shimmer", r: (p, f, a) => (<><Place x={540} y={1010} s={1.0 + 0.25 * L(f, a, 24)}><Follicle size={0.55} len={0.6} /></Place><ChipAt text="المشكلة في البصيلة" hot p={p} /></>) },
   { a: "سيب", sfx: "whoosh", r: (p, f, a) => { const z = L(f, a, 16); return (<><Place x={270 - 560 * z} y={1010} s={0.52}><HairGuy kind="white" /></Place><Place x={540} y={1060} s={1.35}><HairGuy kind="bald" /></Place><Place x={430} y={880} s={0.9 * (1 - z * 0.3)} r={180}><Arrow len={170} /></Place></>); } },
   { a: "والموضوع", sfx: "swell", r: (p, f, a) => (<><Place x={540} y={1000} s={1.35}><HairGuy kind="bald" tilt={L(f, a, 30)} /></Place><ChipAt text="الموضوع ده غالبًا ما بدأش النهارده" w={860} size={46} p={p} /></>) },
-  { a: "السلع", sfx: "tick", r: (p, f, a) => { const z = L(f, a, 18); return (<><Place x={540} y={990} s={1.3}><ScalpTop hairs={3} recede={1} /></Place>{[0, 1, 2, 3].map((i) => (<Place key={i} x={540} y={990} s={1.3} r={((f - a) * 14 + i * 90) % 360}><path d="M0 0 L0 -200" stroke={C.ink} strokeWidth={5} opacity={0.5 * (1 - z)} /></Place>))}<ChipAt text="الصلع الوراثي" hot p={p} /></>); } },
+  { a: "الصلع", sfx: "tick", r: (p, f, a) => { const z = L(f, a, 18); return (<><Place x={540} y={990} s={1.3}><ScalpTop hairs={3} recede={1} /></Place>{[0, 1, 2, 3].map((i) => (<Place key={i} x={540} y={990} s={1.3} r={((f - a) * 14 + i * 90) % 360}><path d="M0 0 L0 -200" stroke={C.ink} strokeWidth={5} opacity={0.5 * (1 - z)} /></Place>))}<ChipAt text="الصلع الوراثي" hot p={p} /></>); } },
   { a: "البصيله", sfx: "pop", r: (p, f, a, b) => (<><Place x={540} y={1010} s={1.25}><Follicle size={1 - 0.65 * prog(f, a, Math.max(30, b - a))} len={0.9 - 0.5 * prog(f, a, Math.max(30, b - a))} /></Place><ChipAt text="البصيلة بتضعف تدريجيًا" p={p} /></>) },
   { a: "شهور", sfx: "tick", r: (p, f, a) => (<><Place x={300} y={1000} s={0.9 * p}><Calendar year="شهور" /></Place><Place x={790} y={1010} s={0.8}><Follicle size={0.45} len={0.4} /></Place></>) },
   { a: "واحيانا", r: (p, f, a) => (<><Place x={300} y={1000} s={0.85}><Calendar year="سنين" /></Place><Place x={790} y={1010} s={0.8}><Follicle size={0.35} len={0.3} /></Place></>) },
   { a: "دوره", sfx: "pop", r: (p, f, a) => (<>{[0, 1, 2].map((i) => (<Place key={i} x={290 + i * 250} y={1230}><Place x={0} y={0} s={pop(f, a + i * 14, 10)}><Strand len={0.9 - 0.18 * i} thick={1 - 0.28 * i} /></Place></Place>))}<ChipAt text="كل دورة: شعرة أرفع وأقصر" p={p} /></>) },
   { a: "ارفع", sfx: "shimmer", r: (p, f) => (<><Place x={420} y={1230} s={1.3}><HairHero wave={f / 5} len={0.85} /></Place><Place x={700} y={880} s={p}><Bubble text="أنا مش قادرة!" w={420} /></Place><Place x={540} y={1000} s={p} o={0.7}><Arrow len={120} dashed /></Place></>) },
   { a: "ليه", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.2}><HairGuy kind="bald" mood={-0.3} /></Place><Place x={820} y={800} s={1.5 * p}><QuestionIcon /></Place><ChipAt text="ليه الشعر بيقع؟" hot p={p} /></>) },
-  { a: "ويمتى", r: (p, f) => (<><Place x={540} y={980} s={1.4}><Clock a={f / 14} /></Place><ChipAt text="وإمتى يبقى طبيعي؟" p={p} /></>) },
+  { a: "امتي", r: (p, f) => (<><Place x={540} y={980} s={1.4}><Clock a={f / 14} /></Place><ChipAt text="وإمتى يبقى طبيعي؟" p={p} /></>) },
   { a: "نحافظ", sfx: "ding", r: (p) => (<><Place x={540} y={980} s={1.1}><ScalpTop hairs={14} recede={0} /></Place><Place x={820} y={820} s={0.9 * p}><CheckIcon /></Place><ChipAt text="نحافظ على شعرنا" hot p={p} /></>) },
 ]);
 // ============================================================ 2. Not every hair loss is baldness
@@ -109,7 +125,7 @@ const S3 = mk(3, [
   { a: "سميكه", r: (p) => (<><Place x={300} y={1100} s={1.5}><Strand len={0.9} thick={1.3} /></Place><Place x={540} y={1000} s={0.8}><Arrow len={150} /></Place></>) },
   { a: "ارفع", sfx: "shimmer", r: (p) => (<><Place x={300} y={1100} s={1.3}><Strand len={0.9} thick={1.3} /></Place><Place x={800} y={1100} s={1.3 * p}><Strand len={0.55} thick={0.45} /></Place><Place x={540} y={1000} s={0.8}><Arrow len={150} /></Place><ChipAt text="أرفع وأقصر" p={p} /></>) },
   { a: "ضعيف", r: (p) => (<><Place x={540} y={1050} s={1.15}><Follicle size={0.3} len={0.25} /></Place><ChipAt text="شعر ضعيف جدًا أو يقل الظاهر" size={44} w={820} p={p} /></>) },
-  { a: "منتر", sfx: "ding", r: (p, f, a) => (<>{[0.95, 0.65, 0.35].map((s, i) => (<Place key={i} x={230 + i * 310} y={1050} s={0.5 * pop(f, a + i * 10, 12)}><Follicle size={s} len={s} /></Place>))}<ChipAt y={1300} text="Miniaturization" dir="ltr" w={560} hot p={p} /><ChipAt y={1420} text="تصغير البصيلات" p={p} /></>) },
+  { a: "miniaturization", sfx: "ding", r: (p, f, a) => (<>{[0.95, 0.65, 0.35].map((s, i) => (<Place key={i} x={230 + i * 310} y={1050} s={0.5 * pop(f, a + i * 10, 12)}><Follicle size={s} len={s} /></Place>))}<ChipAt y={1300} text="Miniaturization" dir="ltr" w={560} hot p={p} /><ChipAt y={1420} text="تصغير البصيلات" p={p} /></>) },
   { a: "الرجاله", sfx: "pop", r: (p) => (<><Place x={540} y={980} s={1.2}><ScalpTop hairs={6} recede={1} /></Place><ChipAt text="الرجالة: تراجع خط الشعر" p={p} /></>) },
   { a: "التاج", r: (p) => (<><Place x={540} y={980} s={1.2}><ScalpTop hairs={2} recede={1} /></Place><Place x={540} y={1000} s={0.9 * p} o={0.9}><circle r={80} fill="none" stroke={C.warn} strokeWidth={8} strokeDasharray="3 16" /></Place><ChipAt text="أو خفة في منطقة التاج" p={p} /></>) },
   { a: "الستات", sfx: "pop", r: (p) => (<><Place x={540} y={980} s={1.2}><ScalpTop hairs={14} recede={0} part /></Place><ChipAt text="الستات: فرق الشعر بيتوسع" p={p} /></>) },
@@ -127,12 +143,12 @@ const S4 = mk(4, [
   { a: "الراحه", sfx: "swell", r: (p, f, a) => (<>{[0, 1, 2, 3, 4].map((i) => (<Place key={i} x={190 + i * 175} y={1010} s={0.38 * pop(f, a + i * 5, 10)}><Follicle size={0.5} len={0.4} /></Place>))}<ChipAt text="بصيلات أكتر بتدخل مرحلة الراحة" size={44} w={860} p={p} /></>) },
   { a: "شهرين", sfx: "tick", r: (p) => (<><Place x={540} y={1000} s={1.2 * p}><Calendar year="2-3 شهور" /></Place><ChipAt text="بعد شهرين أو تلاتة" p={p} /></>) },
   { a: "منتشر", r: (p) => (<><Place x={540} y={980} s={1.25}><ScalpTop hairs={6} recede={0} /></Place><ChipAt text="تساقط منتشر" p={p} /></>) },
-  { a: "تلوجين", sfx: "ding", r: (p) => (<><Place x={540} y={980} s={1.1}><ScalpTop hairs={6} recede={0} /></Place><ChipAt text="Telogen Effluvium" dir="ltr" w={640} hot p={p} /></>) },
+  { a: "telogen", sfx: "ding", r: (p) => (<><Place x={540} y={980} s={1.1}><ScalpTop hairs={6} recede={0} /></Place><ChipAt text="Telogen Effluvium" dir="ltr" w={640} hot p={p} /></>) },
   { a: "يتعالج", sfx: "shimmer", r: (p) => (<><Place x={540} y={980} s={1.1}><ScalpTop hairs={14} recede={0} /></Place><Place x={820} y={780} s={1.1 * p}><OkMark p={p} /></Place><ChipAt text="بيتحسن لما السبب يتعالج" p={p} /></>) },
   { a: "الحديد", sfx: "pop", r: (p) => (<><Place x={540} y={980} s={1.5 * p}><IronDrop /></Place><ChipAt text="نقص الحديد أو البروتين" p={p} /></>) },
-  { a: "الدراقيه", r: (p) => (<><Place x={540} y={990} s={1.4 * p}><Thyroid /></Place><ChipAt text="اضطرابات الغدة الدرقية" p={p} /></>) },
-  { a: "تكايس", r: (p) => (<><Place x={540} y={1010} s={1.2}><PatientF /></Place><ChipAt text="تكيس المبايض عند الستات" p={p} /></>) },
-  { a: "السعلبه", sfx: "pop", r: (p) => (<><Place x={540} y={990} s={1.25 * p}><Patch /></Place><ChipAt text="الثعلبة البقعية (مناعة)" p={p} /></>) },
+  { a: "الدرقيه", r: (p) => (<><Place x={540} y={990} s={1.4 * p}><Thyroid /></Place><ChipAt text="اضطرابات الغدة الدرقية" p={p} /></>) },
+  { a: "تكيس", r: (p) => (<><Place x={540} y={1010} s={1.2}><PatientF /></Place><ChipAt text="تكيس المبايض عند الستات" p={p} /></>) },
+  { a: "الثعلبه", sfx: "pop", r: (p) => (<><Place x={540} y={990} s={1.25 * p}><Patch /></Place><ChipAt text="الثعلبة البقعية (مناعة)" p={p} /></>) },
   { a: "فطريات", r: (p) => (<><Place x={540} y={990} s={1.15}><Patch /></Place><Place x={820} y={800} s={0.9 * p}><Warn /></Place><ChipAt text="فطريات فروة الرأس (علاج بالفم)" size={44} w={880} p={p} /></>) },
   { a: "شد", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.35 * p}><Ponytail /></Place><ChipAt text="شد الشعر المستمر" p={p} /></>) },
   { a: "الادويه", r: (p) => (<><Place x={380} y={1000} s={1.1 * p}><MedTablet /></Place><Place x={720} y={1000} s={1.0 * p}><Drop color="#9DC9E8" /></Place><ChipAt text="بعض الأدوية والعلاج الكيماوي" size={44} w={860} p={p} /></>) },
@@ -143,7 +159,7 @@ const S5 = mk(5, [
   { a: "", sfx: "pop", r: (p) => (<><Place x={540} y={1010} s={1.3 * p}><DoctorM /></Place><Place x={820} y={780} s={1.2 * p}><QuestionIcon /></Place></>) },
   { a: "بيبدا", r: (p) => (<><Place x={380} y={1000} s={0.95}><DoctorM /></Place><Place x={790} y={980} s={0.8 * p}><Calendar year="التاريخ" /></Place><ChipAt text="تاريخ التساقط" p={p} /></>) },
   { a: "فروه", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.1}><ScalpTop hairs={4} recede={1} /></Place><Place x={700} y={900} s={0.9 * p}><Magnifier /></Place><ChipAt text="فحص فروة الرأس" p={p} /></>) },
-  { a: "تريكوسكوب", sfx: "ding", r: (p) => (<><Place x={540} y={1010} s={1.1}><Follicle size={0.5} len={0.5} /></Place><Place x={640} y={880} s={1.2 * p}><Magnifier /></Place><ChipAt text="Trichoscope" dir="ltr" w={520} hot p={p} /></>) },
+  { a: "trichoscope", sfx: "ding", r: (p) => (<><Place x={540} y={1010} s={1.1}><Follicle size={0.5} len={0.5} /></Place><Place x={640} y={880} s={1.2 * p}><Magnifier /></Place><ChipAt text="Trichoscope" dir="ltr" w={520} hot p={p} /></>) },
   { a: "بيكبر", r: (p) => (<><Place x={380} y={1030} s={0.55}><Follicle size={0.95} len={0.9} /></Place><Place x={760} y={1030} s={0.55}><Follicle size={0.35} len={0.35} /></Place><ChipAt text="يكشف اختلاف سُمك الشعر" p={p} /></>) },
   { a: "تحليل", sfx: "pop", r: (p, f, a) => (<>{[0, 1, 2].map((i) => (<Place key={i} x={270 + i * 270} y={1000} s={1.1 * pop(f, a + i * 8, 12)}><TestTube fill={0.8 - 0.15 * i} /></Place>))}<ChipAt text="صورة دم • حديد • غدة درقية" size={44} w={860} p={p} /></>) },
   { a: "20", sfx: "bump", r: (p) => (<><Place x={540} y={1000} s={1.2}><TestTube /></Place><Place x={540} y={1000} s={2.2 * p} o={0.9}><XMark p={p} /></Place><ChipAt text="مش كل واحد محتاج 20 تحليل" p={p} /></>) },
@@ -157,17 +173,17 @@ const S5 = mk(5, [
 const S6 = mk(6, [
   { a: "", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.2 * p}><ScalpTop hairs={5} recede={1} /></Place></>) },
   { a: "موضعي", sfx: "pop", r: (p, f, a) => (<><Place x={540} y={1010} s={1.0}><ScalpTop hairs={5} recede={1} /></Place><Place x={760} y={790} s={1.2 * p} r={30}><DropperBottle /></Place><Place x={600} y={1060 + 40 * L(f, a, 20)} s={0.7 * L(f, a + 8, 12)}><Drop color="#CFE0EE" /></Place></>) },
-  { a: "المينوكسديل", sfx: "ding", r: (p) => (<><Place x={540} y={990} s={1.4 * p}><DropperBottle /></Place><ChipAt text="المينوكسيديل" hot p={p} /></>) },
+  { a: "المينوكسيديل", sfx: "ding", r: (p) => (<><Place x={540} y={990} s={1.4 * p}><DropperBottle /></Place><ChipAt text="المينوكسيديل" hot p={p} /></>) },
   { a: "المثبته", r: (p) => (<><Place x={380} y={1000} s={1.0}><HairGuy kind="bald" /></Place><Place x={760} y={1000} s={1.0}><PatientF /></Place><Place x={540} y={780} s={1.0 * p}><OkMark p={p} /></Place><ChipAt text="مثبت للصلع الوراثي: رجال وستات" size={46} w={860} p={p} /></>) },
   { a: "بيساعد", sfx: "bubbles", r: (p, f, a) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.4 + 0.4 * prog(f, a, 50)} len={0.3 + 0.4 * prog(f, a, 50)} /></Place><ChipAt text="بيحسّن نمو بعض البصيلات" p={p} /></>) },
-  { a: "ويطالت", r: (p, f, a) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.8} len={0.5 + 0.5 * prog(f, a, 40)} /></Place><ChipAt text="يطوّل مرحلة النمو" p={p} /></>) },
+  { a: "اطاله", r: (p, f, a) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.8} len={0.5 + 0.5 * prog(f, a, 40)} /></Place><ChipAt text="يطوّل مرحلة النمو" p={p} /></>) },
   { a: "سمك", r: (p) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.9} len={0.9} /></Place><ChipAt text="ويزود سُمك الشعر… عند بعض الناس" size={44} w={860} p={p} /></>) },
   { a: "الدم", sfx: "drip", r: (p, f, a) => (<><Place x={540} y={1030} s={1.15}><Follicle size={0.8} len={0.7} /></Place>{[0, 1, 2].map((i) => (<Place key={i} x={150 + 70 * ((f / 2 + i * 30) % 60) / 60 * 4 + i * 20} y={1250 + i * 30} s={0.4}><Drop color="#D9524B" /></Place>))}<ChipAt text="بيزود تدفق الدم لفروة الرأس" p={p} /></>) },
   { a: "العدم", sfx: "bump", r: (p) => (<><Place x={540} y={980} s={1.2}><ScalpTop hairs={2} recede={1} /></Place><Place x={540} y={980} s={2.2 * p} o={0.9}><XMark p={p} /></Place><ChipAt text="مش بيطلع شعر من العدم" p={p} /></>) },
   { a: "شهور", sfx: "tick", r: (p) => (<><Place x={540} y={1000} s={1.2 * p}><Calendar year="6 شهور" /></Place><ChipAt text="التقييم بعد 6 شهور أو أكتر" p={p} /></>) },
   { a: "مؤقته", r: (p, f, a) => (<>{[0, 1, 2, 3, 4].map((i) => { const z = prog(f, a + i * 5, 36); return (<Place key={i} x={240 + i * 150} y={820 + 300 * z} s={0.5}><Strand len={0.6} thick={0.7} tip={false} /></Place>); })}<ChipAt text="زيادة مؤقتة في التساقط في البداية" size={44} w={880} p={p} /></>) },
   { a: "فشل", r: (p) => (<><Place x={540} y={980} s={1.4}><CheckIcon /></Place><ChipAt text="مش معناها إن العلاج فشل" p={p} /></>) },
-  { a: "اقفت", sfx: "swell", r: (p, f, a) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.85 - 0.5 * prog(f, a, 60)} len={0.9 - 0.5 * prog(f, a, 60)} /></Place><ChipAt text="لو وقفته: بتفقد الشعر اللي حافظ عليه" size={44} w={880} p={p} /></>) },
+  { a: "وقفته", sfx: "swell", r: (p, f, a) => (<><Place x={540} y={1030} s={1.2}><Follicle size={0.85 - 0.5 * prog(f, a, 60)} len={0.9 - 0.5 * prog(f, a, 60)} /></Place><ChipAt text="لو وقفته: بتفقد الشعر اللي حافظ عليه" size={44} w={880} p={p} /></>) },
   { a: "الكافيين", sfx: "pop", r: (p) => (<><Place x={540} y={990} s={1.0}><DropperBottle color="#C9B59D" label /></Place><ChipAt y={1330} text="منتجات الكافيين" p={p} /><ChipAt y={1450} text="الأدلة لسه محدودة" w={560} hot p={p} /></>) },
   { a: "مستمر", sfx: "ding", r: (p, f) => (<><Place x={540} y={990} s={1.4}><Clock a={f / 9} /></Place><ChipAt text="علاج مستمر طول ما عايز النتيجة" size={46} w={860} hot p={p} /></>) },
 ]);
@@ -195,14 +211,14 @@ const S8 = mk(8, [
   { a: "الدراسات", r: (p) => (<><Place x={420} y={1010} s={1.0}><Rosemary /></Place><Place x={720} y={1030} s={1.0}><Seeds /></Place><ChipAt text="دراسات محدودة… مش كفاية نسميها علاج" size={44} w={900} p={p} /></>) },
   { a: "هديه", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.6 * p}><Gift /></Place><ChipAt text="هدية مني ليك" hot p={p} /></>) },
   { a: "بعض", r: (p) => (<><Place x={420} y={1010} s={1.0}><Rosemary /></Place><Place x={720} y={1030} s={1.0}><Seeds /></Place><ChipAt text="بعض الدراسات: ممكن تحسّن" p={p} /></>) },
-  { a: "واسق", sfx: "ding", r: (p) => (<><Place x={540} y={1000} s={1.2}><DropperBottle /></Place><Place x={820} y={780} s={1.0 * p}><CheckIcon /></Place><ChipAt text="اتأكد من مصدر التركيبة" p={p} /></>) },
+  { a: "واثق", sfx: "ding", r: (p) => (<><Place x={540} y={1000} s={1.2}><DropperBottle /></Place><Place x={820} y={780} s={1.0 * p}><CheckIcon /></Place><ChipAt text="اتأكد من مصدر التركيبة" p={p} /></>) },
   { a: "اكليل", r: (p, f, a) => (<>{[<Rosemary key="a" />, <OliveDrop key="b" />, <Seeds key="c" />, <Drop key="d" color="#F0A23B" />].map((n, i) => (<Place key={i} x={200 + i * 230} y={1020} s={0.8 * pop(f, a + i * 25, 12)}>{n}</Place>))}<ChipAt text="إكليل الجبل • اللوز • حبة البركة • الجزر" size={42} w={940} p={p} /></>) },
   { a: "الموضعي", sfx: "pop", r: (p) => (<><Place x={320} y={1000} s={1.1}><DropperBottle /></Place><Place x={760} y={1020} s={1.0}><DropperBottle color="#C9B04A" /></Place><ChipAt text="زيوت أو مينوكسيديل موضعي" p={p} /></>) },
-  { a: "مايكرو", sfx: "bump", r: (p) => (<><Place x={300} y={1020} s={1.15 * p}><Roller warn /></Place><Place x={790} y={1000} s={1.0}><ScalpTop hairs={3} recede={1} /></Place><Place x={540} y={1440} s={p}><Chip text="بحذر وبعد استشارة الطبيب: الاستخدام العشوائي ممكن يسبب عدوى أو ندبات" w={960} size={34} fill="#FFF3CF" color={C.warn} /></Place></>) },
+  { a: "مايكرو", sfx: "bump", r: (p) => (<><Place x={300} y={1020} s={1.15 * p}><Roller warn /></Place><Place x={790} y={1000} s={1.0}><ScalpTop hairs={3} recede={1} /></Place><Caution /></>) },
 ]);
 // ============================================================ 10. Hair transplant
 const S10 = mk(10, [
-  { a: "", sfx: "pop", r: (p, f, a) => (<><Place x={540} y={1000} s={1.25}><ScalpTop hairs={2} recede={1} /></Place><Place x={540} y={1180} s={0.8 * p}><Grafts n={6} /></Place></>) },
+  { a: "", sfx: "pop", r: (p, f, a) => (<><Place x={540} y={960} s={1.15}><ScalpTop hairs={2} recede={1} /></Place><Place x={540} y={1180} s={0.8 * p}><Grafts n={6} /></Place><Caution /></>) },
   { a: "ممتاز", sfx: "ding", r: (p) => (<><Place x={540} y={1000} s={1.25}><ScalpTop hairs={8} recede={0.4} /></Place><Place x={830} y={780} s={1.1 * p}><OkMark p={p} /></Place><ChipAt text="خيار ممتاز لبعض الحالات" p={p} /></>) },
   { a: "اهم", sfx: "swell", r: (p) => (<><Place x={540} y={990} s={1.5 * p}><Warn /></Place><ChipAt text="أهم نقطة" hot p={p} /></>) },
   { a: "بتنقل", sfx: "whoosh", r: (p, f, a) => (<><Place x={540} y={1000} s={1.2}><ScalpTop hairs={2} recede={1} /></Place><Place x={540 - 20 * L(f, a, 24)} y={1240 - 300 * L(f, a, 28)} s={0.8}><Grafts n={6} /></Place><Place x={540} y={870} s={0.8 * p} r={-90}><Arrow len={160} dashed /></Place><ChipAt text="بتنقل بصيلات من منطقة لأخرى" p={p} /></>) },
