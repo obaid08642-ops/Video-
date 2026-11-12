@@ -239,12 +239,27 @@ pre_f = f"{OUT}/_pre.wav"
 e = run(["ffmpeg", "-hide_banner", "-nostats", "-i", f"{OUT}/assembled.wav", "-af", "ebur128", "-f", "null", "-"]).stderr
 I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", e)[-1])
 chain = f"volume={-20 - I:.2f}dB,deesser=i=0.45,acompressor=threshold=0.063:ratio=2.5:attack=8:release=110:makeup=1.5"
-if os.environ.get("EP_SPEED2") and SPEEDMODE == "wsola":
+if os.environ.get("EP_PIECE_SPEEDS"):
+    # per-piece total speed (list, one value per piece): each piece (with the gap before it) is time-stretched on its own
+    PS = json.load(open(os.environ["EP_PIECE_SPEEDS"]))
+    base_f = f"{OUT}/_base.wav"
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/assembled.wav", "-af", chain, "-c:a", "pcm_f32le", base_f], check=True)
+    bx, _sr = sf.read(base_f, dtype="float32"); segs = []
+    bnd = [0] + [int(max(0, e_["out_at"] - e_["gap_before"]) * SR) for e_ in edl[1:]] + [len(bx)]
+    for k_ in range(len(edl)):
+        tmp_i, tmp_o = f"{OUT}/_s_i.wav", f"{OUT}/_s_o.wav"
+        sf.write(tmp_i, bx[bnd[k_]:bnd[k_ + 1]], SR, subtype="FLOAT")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp_i, "-af", f"atempo={PS[k_]:.4f}", "-c:a", "pcm_f32le", tmp_o], check=True)
+        segs.append(sf.read(tmp_o, dtype="float32")[0])
+    sf.write(pre_f, np.concatenate(segs), SR, subtype="FLOAT")
+    for f_ in (base_f, f"{OUT}/_s_i.wav", f"{OUT}/_s_o.wav"): os.remove(f_)
+    chain = None
+elif os.environ.get("EP_SPEED2") and SPEEDMODE == "wsola":
     # second speed from the piece index EP_SPLIT_PIECE on (slower-paced recording gets a little extra)
     T2 = edl[int(os.environ["EP_SPLIT_PIECE"])]["out_at"] - 0.05
     chain += f",asplit[a][b];[a]atrim=0:{T2:.3f},atempo={SPEED}[x];[b]atrim=start={T2:.3f},asetpts=PTS-STARTPTS,atempo={os.environ['EP_SPEED2']}[y];[x][y]concat=n=2:v=0:a=1"
 elif abs(SPEED - 1) > 1e-3: chain += (f",atempo={SPEED}" if SPEEDMODE == "wsola" else f",asetrate={int(SR * SPEED)},aresample={SR}")
-subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/assembled.wav", "-af", chain, "-c:a", "pcm_f32le", pre_f], check=True)
+if chain: subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/assembled.wav", "-af", chain, "-c:a", "pcm_f32le", pre_f], check=True)
 ln = run(["ffmpeg", "-hide_banner", "-nostats", "-i", pre_f, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"]).stderr
 m = json.loads(re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", ln, re.S).group())
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", pre_f, "-af",
