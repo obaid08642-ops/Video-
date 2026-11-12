@@ -246,10 +246,26 @@ if os.environ.get("EP_PIECE_SPEEDS"):
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/assembled.wav", "-af", chain, "-c:a", "pcm_f32le", base_f], check=True)
     bx, _sr = sf.read(base_f, dtype="float32"); segs = []
     bnd = [0] + [int(max(0, e_["out_at"] - e_["gap_before"]) * SR) for e_ in edl[1:]] + [len(bx)]
+    def _stat(seg):                                         # active-speech level and spectral tilt (2-5 kHz vs 150-500 Hz)
+        H_ = SR // 50; n_ = len(seg) // H_
+        if n_ < 10: return None
+        fr_ = 20 * np.log10(np.sqrt((seg[: n_ * H_].reshape(n_, H_) ** 2).mean(1)) + 1e-9)
+        keep_ = np.repeat(fr_ > np.percentile(fr_, 95) - 22, H_); act = seg[: n_ * H_][keep_]
+        if len(act) < SR // 4: return None
+        f_, P_ = sg.welch(act, SR, nperseg=2048)
+        return rms_db(act), 10 * np.log10(P_[(f_ > 2000) & (f_ < 5000)].sum() / P_[(f_ > 150) & (f_ < 500)].sum())
+    st_ = [_stat(bx[bnd[k_]:bnd[k_ + 1]]) for k_ in range(len(edl))]
+    good_ = [t_ for t_ in st_ if t_]; tgt_lv = float(np.median([t_[0] for t_ in good_])); tgt_tilt = float(np.median([t_[1] for t_ in good_]))
     for k_ in range(len(edl)):
         tmp_i, tmp_o = f"{OUT}/_s_i.wav", f"{OUT}/_s_o.wav"
-        sf.write(tmp_i, bx[bnd[k_]:bnd[k_ + 1]], SR, subtype="FLOAT")
-        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp_i, "-af", f"atempo={PS[k_]:.4f}", "-c:a", "pcm_f32le", tmp_o], check=True)
+        seg_ = bx[bnd[k_]:bnd[k_ + 1]].copy(); af_ = ""
+        if st_[k_]:                                         # even out level (+-3 dB) and brightness (-2..+4.5 dB high shelf) between pieces
+            g_ = float(np.clip(tgt_lv - st_[k_][0], -1.5, 3)); seg_ *= 10 ** (g_ / 20)
+            sh_ = float(np.clip(tgt_tilt - st_[k_][1], -2, 4.5))
+            if abs(sh_) > 0.8: af_ = f"highshelf=f=2500:g={sh_:.2f},"
+            print(f"piece {k_}: lvl {g_:+.1f} dB, shelf {sh_:+.1f} dB, speed {PS[k_]}")
+        sf.write(tmp_i, seg_, SR, subtype="FLOAT")
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp_i, "-af", f"{af_}atempo={PS[k_]:.4f}", "-c:a", "pcm_f32le", tmp_o], check=True)
         segs.append(sf.read(tmp_o, dtype="float32")[0])
     sf.write(pre_f, np.concatenate(segs), SR, subtype="FLOAT")
     for f_ in (base_f, f"{OUT}/_s_i.wav", f"{OUT}/_s_o.wav"): os.remove(f_)
