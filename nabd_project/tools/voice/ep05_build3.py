@@ -239,7 +239,11 @@ pre_f = f"{OUT}/_pre.wav"
 e = run(["ffmpeg", "-hide_banner", "-nostats", "-i", f"{OUT}/assembled.wav", "-af", "ebur128", "-f", "null", "-"]).stderr
 I = float(re.findall(r"I:\s+(-?[\d.]+) LUFS", e)[-1])
 chain = f"volume={-20 - I:.2f}dB,deesser=i=0.45,acompressor=threshold=0.063:ratio=2.5:attack=8:release=110:makeup=1.5"
-if abs(SPEED - 1) > 1e-3: chain += (f",atempo={SPEED}" if SPEEDMODE == "wsola" else f",asetrate={int(SR * SPEED)},aresample={SR}")
+if os.environ.get("EP_SPEED2") and SPEEDMODE == "wsola":
+    # second speed from the piece index EP_SPLIT_PIECE on (slower-paced recording gets a little extra)
+    T2 = edl[int(os.environ["EP_SPLIT_PIECE"])]["out_at"] - 0.05
+    chain += f",asplit[a][b];[a]atrim=0:{T2:.3f},atempo={SPEED}[x];[b]atrim=start={T2:.3f},asetpts=PTS-STARTPTS,atempo={os.environ['EP_SPEED2']}[y];[x][y]concat=n=2:v=0:a=1"
+elif abs(SPEED - 1) > 1e-3: chain += (f",atempo={SPEED}" if SPEEDMODE == "wsola" else f",asetrate={int(SR * SPEED)},aresample={SR}")
 subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{OUT}/assembled.wav", "-af", chain, "-c:a", "pcm_f32le", pre_f], check=True)
 ln = run(["ffmpeg", "-hide_banner", "-nostats", "-i", pre_f, "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json", "-f", "null", "-"]).stderr
 m = json.loads(re.search(r"\{[^{}]*\"input_i\"[^{}]*\}", ln, re.S).group())
