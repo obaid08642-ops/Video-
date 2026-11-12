@@ -30,7 +30,7 @@ for k in range(1,len(SEG)):
     vl,al=f"vx{k}",f"ax{k}"; cum=cum+d[k]-X
 tot=cum
 fc.append(f"anoisesrc=color=pink:amplitude=0.5:duration={tot:.2f}:sample_rate=44100,lowpass=f=500,tremolo=f=0.15:d=0.6,volume=0.05,aformat=channel_layouts=stereo[wind]")
-fc.append(f"[{al}][wind]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-2:LRA=9,alimiter=limit=0.84:level=0,afade=t=out:st={tot-0.7:.2f}:d=0.7[aout]")
+fc.append(f"[{al}][wind]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-2:LRA=9,alimiter=limit=0.7:level=0,afade=t=out:st={tot-0.7:.2f}:d=0.7[aout]")
 fc.append(f"[{vl}]fade=t=in:st=0:d=0.2,fade=t=out:st={tot-0.5:.2f}:d=0.5[vout]")
-subprocess.run(["ffmpeg","-v","error","-y",*inp,"-filter_complex",";".join(fc),"-map","[vout]","-map","[aout]","-c:v","libx264","-crf","20","-preset","medium","-pix_fmt","yuv420p","-c:a","aac","-b:a","160k","-movflags","+faststart","zizo_draft.mp4"],check=True)
+subprocess.run(["ffmpeg","-v","error","-y",*inp,"-filter_complex",";".join(fc),"-map","[vout]","-map","[aout]","-c:v","libx264","-crf","27","-preset","medium","-pix_fmt","yuv420p","-c:a","aac","-b:a","160k","-movflags","+faststart","zizo_draft.mp4"],check=True)
 print("total",tot)
