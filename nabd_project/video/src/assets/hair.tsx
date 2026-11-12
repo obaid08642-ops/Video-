@@ -10,7 +10,7 @@ const th = { ...sk, strokeWidth: 5 };
  *  tilt 0..1: head bows forward and the crown (skin, with a couple of thin hairs) shows. */
 export const HairGuy: React.FC<{ kind: "bald" | "white"; tilt?: number; mood?: number; shirt?: string }> = ({ kind, tilt = 0, mood = 1, shirt }) => {
   const sh = shirt ?? (kind === "bald" ? SHIRT_A : SHIRT_B);
-  const hy = 18 * tilt, ky = 1 - 0.14 * tilt;
+  const hy = 18 * tilt;
   return (
     <g>
       <path d="M-150 330 C-150 150 -110 105 0 105 C110 105 150 150 150 330 Z" fill={sh} {...sk} />
@@ -205,4 +205,12 @@ export const Needle: React.FC = () => (
 );
 export const Gene: React.FC = () => (
   <g>{Array.from({ length: 9 }).map((_, i) => { const y = -110 + i * 28, x = 44 * Math.sin(i * 0.9); return (<g key={i}><path d={`M${-x} ${y} L${x} ${y}`} stroke={C.ink} strokeWidth={5} /><circle cx={-x} cy={y} r={9} fill="#9DC9E8" {...th} strokeWidth={4} /><circle cx={x} cy={y} r={9} fill="#F2D79A" {...th} strokeWidth={4} /></g>); })}</g>
+);
+export const Gift: React.FC = () => (
+  <g>
+    <rect x={-70} y={-30} width={140} height={100} rx={10} fill="#F2D79A" {...sk} />
+    <rect x={-78} y={-60} width={156} height={34} rx={8} fill="#F7C548" {...sk} />
+    <path d="M0 -60 V70" {...sk} stroke={C.brand} strokeWidth={14} />
+    <path d="M0 -62 C-40 -110 -70 -70 -30 -62 M0 -62 C40 -110 70 -70 30 -62" fill="none" {...sk} />
+  </g>
 );

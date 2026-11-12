@@ -13,6 +13,8 @@ import { Ep04, calcEp04, type Ep04Props } from "./videos/ep04/Ep04";
 import { Ep04Cover } from "./videos/ep04/Cover";
 import { Ep05, calcEp05, type Ep05Props } from "./videos/ep05/Ep05";
 import { Ep05Cover } from "./videos/ep05/Cover";
+import { Ep06, calcEp06, type Ep06Props } from "./videos/ep06/Ep06";
+import { Ep06Cover } from "./videos/ep06/Cover";
 import { CharSheet } from "./assets/characters";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
@@ -46,6 +48,14 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep03Cover" component={Ep03Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep03AssetSheet" component={Ep03AssetSheet} fps={30} width={1080} height={1920} durationInFrames={1} />
     {/* episode 04 (paracetamol): one recording -> long video + 2 Shorts (voice = long | short1 | short2) */}
+    <Composition id="Ep06" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{} as Ep06Props} />
+    <Composition id="Ep06Short1" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short1" }} />
+    <Composition id="Ep06Short2" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short2" }} />
+    <Composition id="Ep06Short3" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short3" }} />
+    <Composition id="Ep06Cover" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="Ep06CoverShort1" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
+    <Composition id="Ep06CoverShort2" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
+    <Composition id="Ep06CoverShort3" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
     <Composition id="Ep05" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{} as Ep05Props} />
     <Composition id="Ep05Short1" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{ variant: "short1" }} />
     <Composition id="Ep05CoverShort1" component={Ep05Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
