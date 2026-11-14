@@ -2,13 +2,13 @@ import subprocess
 A="lionkeys/";B="lionkeys2/";C="lionkeys3/";D="lionkeys4/"
 FONT="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 # (path, start, end, [(text,ts,te,size)], transition, dur)
-SEG=[(C+"85927b75.mp4",8.2,9.6,[("DON'T NAP HERE",0.1,1.3,84)],None,0),
+SEG=[(C+"85927b75.mp4",8.2,9.6,[("DONT NAP HERE",0.1,1.3,84)],None,0),
 (A+"bb63afa5.mp4",0.0,6.5,[],"fadewhite",0.2),
 (A+"17735915.mp4",0.0,7.5,[],"fade",0.2),
-(C+"866cfacc.mp4",0.0,8.0,[("HE'S AWAKE?!",2.4,3.9,110)],"fade",0.2),
+(C+"866cfacc.mp4",0.0,8.0,[("HES AWAKE?!",2.4,3.9,110)],"fade",0.2),
 (C+"85927b75.mp4",0.0,9.0,[("PLAN: COLD SHOWER",0.8,3.2,80),("BRO...",6.4,8.2,130)],"fade",0.2),
 (C+"d011ec86.mp4",0.0,7.5,[("SKILL ISSUE",2.0,3.6,110)],"fade",0.15),
-(A+"03a6aa26.mp4",0.0,5.5,[("THAT'S A ROAR?",1.8,3.4,90)],"fade",0.15),
+(A+"03a6aa26.mp4",0.0,5.5,[("THATS A ROAR?",1.8,3.4,90)],"fade",0.15),
 (D+"cc77bff7.mp4",0.0,9.0,[("KING OF THE JUNGLE??",6.6,8.6,72)],"fade",0.25),
 (D+"c57b2fc4.mp4",0.0,9.0,[("UH OH...",5.6,7.0,120),("SIR??",7.3,8.7,130)],"fade",0.2),
 (B+"d70bfa60.mp4",0.0,5.5,[("THE QUEEN IS HERE",0.4,2.4,84)],"fade",0.25),
