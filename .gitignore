@@ -34,3 +34,5 @@ animals/meta/corn/rev_*.mp4
 animals/meta/*_nt.mp4
 animals/meta/corn_v3.mp4
 animals/meta/corn_v*.mp4
+animals/meta/ref/*.mp4
+animals/meta/ref/*.png
