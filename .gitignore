@@ -78,3 +78,10 @@ animals/meta/carrot_v6.mp4
 animals/meta/tree/*.mp4
 animals/meta/tree/*.png
 animals/meta/tree_v*.mp4
+animals/meta/map/*
+animals/meta/bell/*
+animals/meta/camp/*
+animals/meta/map_v*.mp4
+animals/meta/bell_v*.mp4
+animals/meta/camp_v*.mp4
+animals/meta/tree_v*.mp4

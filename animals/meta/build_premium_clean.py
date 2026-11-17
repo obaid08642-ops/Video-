@@ -24,7 +24,7 @@ for k in range(1,len(SEG)):
 tot=cum
 # grade: S-curve + warm highlights + glow + vignette + fades
 fc.append(f"[{vl}]curves=all='0/0 0.25/0.22 0.5/0.52 0.78/0.82 1/1',colorbalance=rh=0.03:gh=0.01:bh=-0.04:rm=0.02:bm=-0.02,split[g1][g2];"
-          f"[g2]curves=all='0/0 0.72/0 1/1',gblur=sigma=22[glow];[g1][glow]blend=all_mode=screen:all_opacity=0.16,vignette=angle=PI/6,fade=t=in:st=0:d=0.12,fade=t=out:st={tot-0.6:.2f}:d=0.6[vout]")
+          f"[g2]curves=all='0/0 0.72/0 1/1',gblur=sigma=22[glow];[g1][glow]blend=all_mode=screen:all_opacity=0.16,vignette=angle=PI/6,fade=t=out:st={tot-0.6:.2f}:d=0.6[vout]")
 # audio: ambience + whooshes
 mix=[f"[{al}]"]; n=1
 fc.append("".join(mix)+f"amix=inputs={n}:duration=first:normalize=0,afade=t=out:st={tot-0.8:.2f}:d=0.8[araw]")
