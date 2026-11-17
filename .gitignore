@@ -75,3 +75,6 @@ animals/meta/henny/*.mp4
 animals/meta/henny/*.png
 animals/meta/henny_v*.mp4
 animals/meta/carrot_v6.mp4
+animals/meta/tree/*.mp4
+animals/meta/tree/*.png
+animals/meta/tree_v*.mp4
