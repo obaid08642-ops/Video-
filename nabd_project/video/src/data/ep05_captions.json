@@ -1,0 +1,20 @@
+{
+ "maxWords": 9,
+ "overrides": {},
+ "sources": {
+  "s4l11": "VA/DoD 2025",
+  "s4l12": "VA/DoD 2025",
+  "s5l15": "AASM • VA/DoD 2025",
+  "s5l17": "AASM • VA/DoD 2025",
+  "s5l23": "AASM • VA/DoD 2025",
+  "s5l24": "AASM • VA/DoD 2025",
+  "s6l4": "NCCIH",
+  "s6l7": "NCCIH",
+  "s6l10": "FDA • VA/DoD 2025",
+  "s6l20": "FDA",
+  "s6l21": "FDA",
+  "s6l24": "VA/DoD 2025"
+ },
+ "rename": {},
+ "renamePhrase": {}
+}
