@@ -21,6 +21,7 @@ SPEED = float(sys.argv[sys.argv.index("--speed") + 1]) if "--speed" in sys.argv 
 REF = os.environ.get("NABD_REF", "/home/user/Video-/nabd_project/video/public/voice/ep01_recording.wav")
 os.makedirs(OUT, exist_ok=True)
 SR = 48000
+GAPCAP = float(os.environ.get('EP_GAPCAP', '0.4'))
 GAP = {"S": 0.50, "s": 0.34, "m": 0.42, "w": 0.26}      # scene / sentence / ellipsis / within-sentence silence (s)
 ST = {1: 0.0, 2: 0.0, 3: 0.0}                            # semitones with --pitch 1 (subtle); --pitch 0 = no shift at all
 TWEAK = {100: 0.0, 130: 0.8, 180: 0.0, 250: -2.0, 400: -1.0, 1000: 0.0, 2500: 0.0, 3200: 0.8, 5000: 0.5, 8000: 0.8, 12000: 0.5}   # calmer / lighter: less thick, no harsh presence boost
@@ -211,13 +212,13 @@ for n_, pc in enumerate(PIECES):
     for ra, rb, sa, sb in sel:
         seg = y[int(sa * SR): int(sb * SR)].copy(); seg[:F10] *= f_in; seg[-F10:] *= f_in[::-1]
         if prev_b is not None:
-            g_orig = ra - prev_b; g_new = 0.40 if g_orig > 0.45 else max(g_orig, 0.10)
+            g_orig = ra - prev_b; g_new = min(g_orig, GAPCAP) if os.environ.get('EP_GAPCAP') else (0.40 if g_orig > 0.45 else max(g_orig, 0.10)); g_new = max(g_new, 0.08)
             pieces_audio.append(np.zeros(int(g_new * SR), dtype=np.float32))
         pieces_audio.append(seg); prev_b = rb
     seg = np.concatenate(pieces_audio)
     fo = max(F10, int(opt.get("fade", 0.012) * SR)); seg[-fo:] *= np.sin(np.linspace(0, np.pi / 2, fo))[::-1] ** 2
     if parts:
-        g = GAP.get(brk, 0.4); parts.append(np.zeros(int(g * SR), dtype=np.float32)); cursor += g
+        g = GAP.get(brk, 0.4) * float(os.environ.get("EP_BRKSCALE", "1")); parts.append(np.zeros(int(g * SR), dtype=np.float32)); cursor += g
     edl.append(dict(n=n_, rec=rec, src_a=round(sel[0][2], 2), src_b=round(sel[-1][3], 2), out_at=round(cursor, 2), dur=round(len(seg) / SR, 2), runs=len(sel), gap_before=GAP.get(brk, 0), note=note))
     parts.append(seg.astype(np.float32)); cursor += len(seg) / SR
 v = np.concatenate(parts)
