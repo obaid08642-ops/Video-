@@ -43,7 +43,7 @@ const Bug: React.FC<{ rot: number }> = ({ rot }) => {
 export const Pylori3D: React.FC = () => {
   const f = useCurrentFrame();
   return (
-    <ThreeCanvas width={1080} height={1080} camera={{ position: [0, 0, 8.2], fov: 34 }} style={{ background: "transparent" }}>
+    <ThreeCanvas width={1080} height={1080} camera={{ position: [0, 0, 11], fov: 34 }} style={{ background: "transparent" }}>
       <ambientLight intensity={0.9} />
       <directionalLight position={[3, 4, 5]} intensity={1.6} />
       <Bug rot={Math.sin(f / 28) * 0.55} />
