@@ -103,6 +103,7 @@ PIECES = [
 ]
 
 import glob as _g
+FORCEKEEP = json.load(open(os.environ['EP_FORCEKEEP'])) if os.environ.get('EP_FORCEKEEP') else []
 RECS = sorted(int(re.search(r"c(\d+)\.wav$", f).group(1)) for f in _g.glob(f"{W}/clean/c*.wav"))
 if os.environ.get("EP05_DROPS"): DROPS = {int(k): [tuple(x) for x in v] for k, v in json.load(open(os.environ["EP05_DROPS"])).items()}
 for _i in RECS: DROPS.setdefault(_i, [])
@@ -184,6 +185,8 @@ for i in RECS:
         vfrac = float(np.mean(vf[int(a * 100): int(b * 100)])) if int(b * 100) > int(a * 100) else 0.0
         non_speech = vfrac < 0.30 and (b - a) < 0.9                         # breath / sigh / swallow / cough / click: not voiced, short, isolated
         dropped = any(a < e and b > s for s, e in DROPS[i])
+        if non_speech and any(r == i and a < e and b > s for r, s, e in FORCEKEEP): non_speech = False   # EP_FORCEKEEP: soft voiced-poor word endings (e.g. a trailing 'sh')
+        if non_speech and any(pc[0] == i and pc[1] <= (a + b) / 2 <= pc[2] for pc in PIECES): print(f"  dropped non-speech run rec{i} {a:.2f}-{b:.2f} vfrac {vfrac:.2f}")
         KEEP[i].append(not (non_speech or dropped))
 def quietest(y, lo, hi):
     best, bt = 1e9, lo; w = int(0.03 * SR)
