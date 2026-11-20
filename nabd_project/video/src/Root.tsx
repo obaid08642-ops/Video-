@@ -18,6 +18,7 @@ import { Ep06Cover } from "./videos/ep06/Cover";
 import { Proto3D } from "./proto/Proto";
 import { CharSheetV3, CharSheetLite, CharSheetMe } from "./proto/CharsV3";
 import { Story } from "./proto/Story";
+import { CharSheetCute } from "./proto/CharsCute";
 import { CharSheet } from "./assets/characters";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
@@ -55,6 +56,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep06Short1" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short1" }} />
     <Composition id="Ep06Short2" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short2" }} />
     <Composition id="Ep06Short3" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short3" }} />
+    <Composition id="CharSheetCute" component={CharSheetCute} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="CharSheetMe" component={CharSheetMe} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="CharSheetLite" component={CharSheetLite} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="CharSheetV3" component={CharSheetV3} fps={30} width={1080} height={1920} durationInFrames={1} />
