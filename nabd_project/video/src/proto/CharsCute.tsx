@@ -17,23 +17,23 @@ const Eye: React.FC<{ x: number; m: (typeof MOOD)[CMood] }> = ({ x, m }) => (
     {m.half ? (
       <><path d="M-18 4 Q0 -10 18 4" fill="none" {...sk} strokeWidth={6} /><path d="M-18 4 Q0 16 18 4 Q0 0 -18 4 Z" fill={C.ink} opacity={0.15} /></>
     ) : (
-      <><ellipse rx={16} ry={21 * m.eh} fill={C.ink} /><circle cx={5} cy={-8 * m.eh} r={7} fill="#fff" /><circle cx={-5} cy={8 * m.eh} r={3.2} fill="#fff" /></>
+      <><ellipse rx={14} ry={19 * m.eh} fill={C.ink} /><circle cx={4} cy={-7 * m.eh} r={6} fill="#fff" /><circle cx={-4} cy={7 * m.eh} r={2.8} fill="#fff" /></>
     )}
   </g>
 );
 const Brow: React.FC<{ x: number; m: (typeof MOOD)[CMood]; flip?: boolean }> = ({ x, m, flip }) => (
-  <path d={`M${x - 18} ${-30 - m.lift + (flip ? -m.brow : m.brow) * 0.5} Q${x} ${-40 - m.lift} ${x + 18} ${-30 - m.lift + (flip ? m.brow : -m.brow) * 0.5}`} fill="none" stroke={HAIR} strokeWidth={7} strokeLinecap="round" />
+  <path d={`M${x - 18} ${-30 - m.lift + (flip ? -m.brow : m.brow) * 0.5} Q${x} ${-40 - m.lift} ${x + 18} ${-30 - m.lift + (flip ? m.brow : -m.brow) * 0.5}`} fill="none" stroke={HAIR} strokeWidth={10} strokeLinecap="round" />
 );
 const Head: React.FC<{ mood: CMood }> = ({ mood }) => {
   const m = MOOD[mood];
   return (
     <g>
       <ellipse cx={-104} cy={14} rx={14} ry={20} fill={SKIN} {...sk} /><ellipse cx={104} cy={14} rx={14} ry={20} fill={SKIN} {...sk} />
-      <path d="M-108 6 C-108 -70 -64 -104 0 -104 C64 -104 108 -70 108 6 C108 66 62 104 0 104 C-62 104 -108 66 -108 6 Z" fill={SKIN} {...sk} />
-      <path d="M-102 -10 C-112 -90 -60 -124 4 -120 C70 -122 116 -90 100 -8 C92 -52 60 -74 26 -76 C0 -50 -44 -58 -102 -10 Z" fill={HAIR} {...sk} />
-      <path d="M-8 -114 C-14 -150 30 -158 30 -126" fill={HAIR} {...sk} />
-      <path d="M-46 -98 C-20 -110 20 -110 48 -96" fill="none" stroke={HAIR_L} strokeWidth={7} strokeLinecap="round" />
-      <circle cx={-68} cy={34} r={17} fill={CHEEK} opacity={0.75} /><circle cx={68} cy={34} r={17} fill={CHEEK} opacity={0.75} />
+      <path d="M-108 6 C-108 -70 -64 -104 0 -104 C64 -104 108 -70 108 6 C108 52 86 98 42 103 Q0 110 -42 103 C-86 98 -108 52 -108 6 Z" fill={SKIN} {...sk} />
+      <path d="M-104 -6 C-114 -92 -58 -124 2 -122 C66 -124 116 -92 102 -6 C94 -44 70 -64 40 -68 C20 -50 -48 -56 -104 -6 Z" fill={HAIR} {...sk} />
+      <path d="M-40 -112 L-30 -138 L-12 -116 M4 -118 L18 -146 L32 -118 M38 -114 L56 -136 L62 -108" fill={HAIR} {...sk} strokeWidth={5} />
+      <path d="M-50 -96 C-20 -108 20 -108 52 -94" fill="none" stroke={HAIR_L} strokeWidth={7} strokeLinecap="round" />
+      <circle cx={-68} cy={36} r={14} fill={CHEEK} opacity={0.5} /><circle cx={68} cy={36} r={14} fill={CHEEK} opacity={0.5} />
       <Brow x={-40} m={m} /><Brow x={40} m={m} flip />
       <Eye x={-40} m={m} /><Eye x={40} m={m} />
       <path d="M-4 30 Q0 36 5 30" fill="none" {...sk} strokeWidth={5} />
@@ -50,15 +50,15 @@ const Arm: React.FC<{ d: string; fill: string }> = ({ d, fill }) => (<g><path d=
 /** Cute doctor: round head, big eyes, white coat, coral Nabd badge, stethoscope. */
 export const CuteDoc: React.FC<{ mood?: CMood; up?: boolean; wave?: number }> = ({ mood = "happy", up, wave = 0 }) => (
   <g>
-    <path d="M-120 330 C-120 190 -88 140 0 138 C88 140 120 190 120 330 Z" fill={COAT} {...sk} />
-    <path d="M-120 330 C-120 220 -112 176 -96 156 L-96 330 Z" fill={COAT_D} opacity={0.7} />
+    <path d="M-132 330 C-132 190 -96 140 0 138 C96 140 132 190 132 330 Z" fill={COAT} {...sk} />
+    <path d="M-132 330 C-132 220 -124 176 -106 156 L-106 330 Z" fill={COAT_D} opacity={0.7} />
     <path d="M-26 134 L0 214 L26 134 Z" fill={BLUE} {...sk} strokeWidth={5} />
     <path d="M-48 150 L-24 130 L-12 170 Z M48 150 L24 130 L12 170 Z" fill={COAT} {...sk} strokeWidth={5} />
     <path d="M-40 150 C-60 260 -6 296 24 270" fill="none" stroke={C.ink} strokeWidth={7} strokeLinecap="round" /><circle cx={30} cy={268} r={16} fill="#B8BEC6" {...sk} strokeWidth={5} />
     <circle cx={-70} cy={236} r={20} fill={C.brand} {...sk} strokeWidth={5} /><circle cx={-70} cy={230} r={4} fill="#fff" /><path d="M-80 242 Q-70 252 -60 242" fill="none" stroke="#fff" strokeWidth={4.5} strokeLinecap="round" />
-    <Arm d="M-108 176 C-150 226 -146 280 -122 312" fill={COAT} />
-    <Arm d={up ? "M108 176 C150 150 160 110 150 70" : "M108 176 C150 226 146 280 122 312"} fill={COAT} />
-    <Mitt x={-122} y={316} /><Mitt x={up ? 150 : 122} y={up ? 64 : 316} up={up} />
+    <Arm d="M-118 176 C-160 226 -156 280 -132 312" fill={COAT} />
+    <Arm d={up ? "M118 176 C160 150 170 110 160 70" : "M118 176 C160 226 156 280 132 312"} fill={COAT} />
+    <Mitt x={-132} y={316} /><Mitt x={up ? 160 : 132} y={up ? 64 : 316} up={up} />
     <rect x={-24} y={84} width={48} height={64} fill={SKIN} {...sk} /><path d="M-24 128 Q0 144 24 128" fill="none" stroke={C.ink} strokeWidth={5} opacity={0.35} />
     <g transform={`translate(0 ${-4 + wave})`}><Head mood={mood} /></g>
   </g>
