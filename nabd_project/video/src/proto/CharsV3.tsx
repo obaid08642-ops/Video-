@@ -18,7 +18,7 @@ const Eye: React.FC<{ x: number; open: number; look?: number; lite?: boolean }> 
   </g>
 );
 const Brow: React.FC<{ x: number; tilt: number; lift: number; flip?: boolean; lite?: boolean; me?: boolean }> = ({ x, tilt, lift, flip, lite, me }) => (
-  <path d={`M${x - 28} ${-44 - lift + (flip ? -tilt : tilt)} Q${x} ${-56 - lift} ${x + 28} ${-44 - lift + (flip ? tilt : -tilt)}`} fill="none" stroke={me ? "#2B2623" : lite ? "#6B4F3A" : HAIR} strokeWidth={me ? 11 : lite ? 7 : 10} strokeLinecap="round" />
+  <path d={`M${x - 28} ${-44 - lift + (flip ? -tilt : tilt)} Q${x} ${-56 - lift} ${x + 28} ${-44 - lift + (flip ? tilt : -tilt)}`} fill="none" stroke={me ? "#2B2623" : lite ? "#6B4F3A" : HAIR} strokeWidth={me ? 10 : lite ? 7 : 10} strokeLinecap="round" />
 );
 const MOODS: Record<Mood, { open: number; tilt: number; lift: number; mouth: string; teeth: boolean; look: number }> = {
   happy: { open: 0.85, tilt: -3, lift: 0, mouth: "M-30 58 Q0 90 30 58", teeth: true, look: 0 },
@@ -32,18 +32,18 @@ const Head: React.FC<{ mood: Mood; hair?: "short" | "bald" | "hijab"; beard?: bo
   const th = lite ? { ...sk, strokeWidth: 4 } : { ...sk, strokeWidth: 5 }; const HAIRC = me ? "#2B2623" : lite ? "#7A5A44" : HAIR; const SK = me ? "#DDAA86" : lite ? "#EDC3A5" : skin;
   return (
     <g>
-      <ellipse cx={-92} cy={4} rx={16} ry={24} fill={skin} {...th} /><ellipse cx={92} cy={4} rx={16} ry={24} fill={skin} {...th} />
-      <path d="M-86 0 C-86 -70 -52 -102 0 -102 C52 -102 86 -70 86 0 C86 62 52 100 0 106 C-52 100 -86 62 -86 0 Z" fill={SK} {...th} />
+      <ellipse cx={me ? -80 : -92} cy={4} rx={15} ry={24} fill={me ? "#DDAA86" : skin} {...th} /><ellipse cx={me ? 80 : 92} cy={4} rx={15} ry={24} fill={me ? "#DDAA86" : skin} {...th} />
+      <path d={me ? "M-76 -2 C-76 -72 -48 -104 0 -104 C48 -104 76 -72 76 -2 C76 48 62 92 34 106 Q0 118 -34 106 C-62 92 -76 48 -76 -2 Z" : "M-86 0 C-86 -70 -52 -102 0 -102 C52 -102 86 -70 86 0 C86 62 52 100 0 106 C-52 100 -86 62 -86 0 Z"} fill={SK} {...th} />
       <path d="M26 -96 C70 -80 90 -30 86 14 C84 66 56 98 8 106 C48 82 66 34 60 -14 C56 -48 44 -78 26 -96 Z" fill={SKIN_D} opacity={lite ? 0.22 : 0.55} />
       <ellipse cx={-48} cy={30} rx={18} ry={12} fill="#EFA58E" opacity={0.55} />
-      {hair === "short" && me && (<><path d="M-90 -6 C-104 -86 -62 -128 -8 -126 C34 -150 102 -126 92 -6 C86 -40 70 -64 48 -76 C20 -90 -34 -84 -62 -62 C-78 -48 -86 -28 -90 -6 Z" fill={HAIRC} {...th} /><path d="M-30 -112 C-8 -128 30 -128 56 -108" fill="none" stroke="#4A403A" strokeWidth={8} strokeLinecap="round" /><path d="M-88 -10 C-92 6 -90 22 -84 30 L-78 4 Z M88 -10 C92 6 90 22 84 30 L78 4 Z" fill={HAIRC} /></>)}
+      {hair === "short" && me && (<><path d="M-76 -26 C-88 -102 -52 -148 0 -148 C52 -148 90 -104 76 -26 C70 -50 58 -64 44 -72 C20 -84 -20 -84 -44 -72 C-58 -64 -70 -50 -76 -26 Z" fill={HAIRC} {...th} /><path d="M-34 -124 C-10 -140 30 -140 56 -118" fill="none" stroke="#4A403A" strokeWidth={8} strokeLinecap="round" /><path d="M-76 -26 C-80 -8 -78 8 -74 18 L-68 -10 Z M76 -26 C80 -8 78 8 74 18 L68 -10 Z" fill={HAIRC} /><path d="M-66 28 C-62 84 -38 106 0 110 C38 106 62 84 66 28 C56 60 38 74 0 74 C-38 74 -56 60 -66 28 Z" fill="#5A463C" opacity={0.3} /></>)}
       {hair === "short" && !me && (<><path d="M-90 -14 C-100 -94 -52 -126 4 -122 C60 -122 100 -88 90 -12 C80 -50 44 -78 4 -76 C-40 -78 -78 -56 -90 -14 Z" fill={HAIRC} {...th} /><path d="M-44 -100 C-18 -112 24 -112 52 -96" fill="none" stroke={HAIR_L} strokeWidth={9} strokeLinecap="round" /></>)}
       {hair === "hijab" && (<path d="M-100 20 C-122 -120 122 -120 100 20 C104 90 66 136 0 140 C-66 136 -104 90 -100 20 Z M-70 8 C-60 -50 60 -50 70 8 C74 56 40 92 0 96 C-40 92 -74 56 -70 8 Z" fill="#7FB7B0" {...sk} fillRule="evenodd" />)}
       <Brow x={-34} tilt={m.tilt} lift={m.lift} lite={lite} me={me} /><Brow x={34} tilt={m.tilt} lift={m.lift} flip lite={lite} me={me} />
       <Eye x={-34} open={m.open} look={m.look} lite={lite} /><Eye x={34} open={m.open} look={m.look} lite={lite} />
       <path d="M-4 -4 Q-14 30 -10 38 Q0 46 12 38" fill="none" {...th} strokeWidth={4.5} />
       <path d="M-14 42 Q0 50 14 42" fill="none" stroke={SKIN_D} strokeWidth={5} strokeLinecap="round" opacity={0.7} />
-      {me && (<g><path d="M-80 22 C-76 76 -44 104 0 106 C44 104 76 76 80 22 C72 48 50 58 0 58 C-50 58 -72 48 -80 22 Z" fill="#3A302B" opacity={0.78} /><path d="M-36 44 Q0 30 36 44 Q24 58 0 54 Q-24 58 -36 44 Z" fill="#2B2623" /><path d="M-9 70 Q0 86 9 70 Z" fill="#2B2623" /></g>)}
+      
       {beard && !lite && !me && <path d="M-80 20 C-76 90 -44 114 0 114 C44 114 76 90 80 20 C66 60 44 74 0 74 C-44 74 -66 60 -80 20 Z" fill={HAIR} opacity={0.82} />}
       <path d={m.mouth} fill={m.teeth || mood === "surprised" || mood === "shock" ? "#7A2E2E" : "none"} {...th} />
       {m.teeth && <path d="M-24 62 Q0 78 24 62 Q0 66 -24 62 Z" fill="#fff" />}
