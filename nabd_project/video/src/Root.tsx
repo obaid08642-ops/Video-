@@ -16,7 +16,7 @@ import { Ep05Cover } from "./videos/ep05/Cover";
 import { Ep06, calcEp06, type Ep06Props } from "./videos/ep06/Ep06";
 import { Ep06Cover } from "./videos/ep06/Cover";
 import { Proto3D } from "./proto/Proto";
-import { CharSheetV3, CharSheetLite } from "./proto/CharsV3";
+import { CharSheetV3, CharSheetLite, CharSheetMe } from "./proto/CharsV3";
 import { Story } from "./proto/Story";
 import { CharSheet } from "./assets/characters";
 
@@ -55,6 +55,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep06Short1" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short1" }} />
     <Composition id="Ep06Short2" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short2" }} />
     <Composition id="Ep06Short3" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short3" }} />
+    <Composition id="CharSheetMe" component={CharSheetMe} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="CharSheetLite" component={CharSheetLite} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="CharSheetV3" component={CharSheetV3} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="ProtoStory" component={Story} fps={30} width={1080} height={1920} durationInFrames={180} />
