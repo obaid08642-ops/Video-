@@ -121,10 +121,10 @@ const S6 = mk(6, [
 const S7 = mk(7, [
   { a: "", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.2}><I.BugC /></Place>{Q(p, 830, 780)}<ChipAt text="طريقة العدوى مش محسومة تمامًا" w={860} size={44} p={p} /></>) },
   { a: "بالفم", sfx: "pop", r: (p) => (<>{Pt("happy", 320, 1010, 0.7)}{Pt("happy", 780, 1010, 0.7)}<Place x={540} y={1010} s={0.8}><Arrow len={150} /></Place><ChipAt text="غالبًا بالفم" p={p} /></>) },
-  { a: "ملوثين", sfx: "drip", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.WaterBottle /></Place><Place x={540} y={1000} s={0.6}><I.BugC s={0.4} /></Place><ChipAt text="أكل ومية ملوثين" p={p} /></>) },
+  { a: "ملوثين", sfx: "drip", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.WaterBottle /></Place><Place x={540} y={1000} s={0.6}><I.BugC s={0.4} /></Place><ChipAt text="أكل ومياه ملوثين" p={p} /></>) },
   { a: "الحمايه", sfx: "swell", r: (p) => (<>{D("happy", 540, 1010, 0.85)}<ChipAt text="طيب الحماية؟" hot p={p} /></>) },
   { a: "الايدين", sfx: "bubbles", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.Soap /></Place><ChipAt text="غسل الإيدين" p={p} /></>) },
-  { a: "نضيفين", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.WaterBottle /></Place>{Tick(p, 780, 800)}<ChipAt text="أكل ومية نضيفين" p={p} /></>) },
+  { a: "نضيفين", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.WaterBottle /></Place>{Tick(p, 780, 800)}<ChipAt text="أكل ومياه نضيفين" p={p} /></>) },
   { a: "الاطفال", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.KidHead /></Place><Place x={540} y={1190} s={0.45}><I.Belly /></Place><ChipAt text="وجع البطن عند الأطفال" p={p} /></>) },
   { a: "جرثومه", r: (p) => (<><Place x={540} y={1000} s={1.3}><I.KidHead /></Place>{Cross(p, 540, 1000, 1.6)}<ChipAt text="مش دايمًا جرثومة" hot p={p} /></>) },
   { a: "الفحص", sfx: "ding", r: (p) => (<>{D("explain", 540, 1010, 0.85, true)}<ChipAt text="الفحص والعلاج: قرار طبيب الأطفال" w={880} size={42} hot p={p} /></>) },
