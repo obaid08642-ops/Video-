@@ -65,7 +65,7 @@ export const Ep08: React.FC<Ep08Props> = ({ timing, variant = "long" }) => {
     out[out.length - 1][2] = voiceEnd;
     return out;
   }, [timing]);
-  const discOn = prog(f, voiceEnd - 75, 12), logo = prog(f, voiceEnd, 6);
+  const logo = prog(f, voiceEnd, 6);
   const inEnd = isLong && f >= logoEnd - 6;
   const endIn = prog(f, logoEnd, 10, easeOut);
 
@@ -84,17 +84,18 @@ export const Ep08: React.FC<Ep08Props> = ({ timing, variant = "long" }) => {
       {!inEnd && <Captions cards={cards} />}
       {!inEnd && <div style={{ transform: "translateY(70px)" }}><Badge pulses={pulses} /></div>}
       {!inEnd && <div style={{ transform: "translate(-52px,70px)" }}><SeriesTag text="#الجهاز_الهضمي" /></div>}
-      {!inEnd && f < voiceEnd && (<div style={{ opacity: discOn * (1 - logo) }}><SourceLine color={C.source} /></div>)}
+      
       {f >= voiceEnd && f < logoEnd && (
         <AbsoluteFill style={{ opacity: logo }}>
           <OffthreadVideo src={staticFile("brand/nabd_intro_vertical_9x16.mp4")} muted playbackRate={2.5} />
-          {isLong ? <SourceLine color="#fff" /> : (
+          {isLong ? <SourceLine color="#fff" /> : (<>
+            <div style={{ position: "absolute", left: 90, width: 900, top: 1120, textAlign: "center", fontFamily: FONT, direction: "rtl", fontSize: 30, fontWeight: 600, color: "#fff", lineHeight: 1.45 }}>{DISCLAIMER_EP08}</div>
             <div style={{ position: "absolute", left: 60, width: 960, top: 1290, textAlign: "center", fontFamily: FONT, direction: "rtl" }}>
               <div style={{ display: "inline-block", background: "#FFF3CF", border: `6px solid ${C.ink}`, borderRadius: 44, padding: "18px 44px 26px", transform: `scale(${interpolate(f, [voiceEnd + 6, voiceEnd + 18], [0.85, 1], { ...clamp, easing: popEase })})` }}>
                 <div style={{ fontSize: 66, fontWeight: 700, color: C.ink, whiteSpace: "nowrap" }}>الحلقة الكاملة على القناة</div>
               </div>
             </div>
-          )}
+          </>)}
         </AbsoluteFill>
       )}
       {inEnd && (

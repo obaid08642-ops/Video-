@@ -7,8 +7,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 COMP=$1; PROPS=$2; OUT=$3
 TMP=$(mktemp -d)
-npx remotion render src/index.ts "$COMP" "$TMP/raw.mov" --props="$PROPS" \
-  --codec=h264 --crf=14 --audio-codec=pcm-16 --concurrency=4 --log=error
+node tools/render_gl.mjs "$COMP" "$PROPS" "$TMP/raw.mov"
 DUR=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$TMP/raw.mov")
 VBR=$(python3 -c "d=float('$DUR'); print(int(min(14_000_000, (90*8*1_000_000/d) - 300_000)))")
 ffmpeg -hide_banner -nostats -y -i "$TMP/raw.mov" -af loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json -f null - 2> "$TMP/ln.json" || true
