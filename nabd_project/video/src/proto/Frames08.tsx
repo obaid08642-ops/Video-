@@ -1,7 +1,7 @@
 // Ep08 (H. pylori) style frames: cute 2D doctor + toon 3D bacterium. Safe zones: nothing below y=1536 or right of x=950.
 import React from "react";
 import { AbsoluteFill } from "remotion";
-import { Paper, SeriesTag, NabdMark, sk } from "../components/Frame";
+import { Paper, SeriesTag, sk } from "../components/Frame";
 import { Place } from "../assets";
 import { CuteDoc, CutePatient } from "./CharsCute";
 import { Pylori3D } from "./Pylori3D";
