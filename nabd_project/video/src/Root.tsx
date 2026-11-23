@@ -18,6 +18,7 @@ import { Ep06Cover } from "./videos/ep06/Cover";
 import { Proto3D } from "./proto/Proto";
 import { Cover08 } from "./proto/Cover08";
 import { Ep08, calcEp08 } from "./videos/ep08/Ep08";
+import { Ep07, calcEp07 } from "./videos/ep07/Ep07";
 import { FrameHook, FrameData, FrameTreat } from "./proto/Frames08";
 import { CharSheetV3, CharSheetLite, CharSheetMe } from "./proto/CharsV3";
 import { Story } from "./proto/Story";
@@ -79,6 +80,18 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep08s07c" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07c_why_some_get_sick" }} />
     <Composition id="Ep08s08" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short08_children" }} />
     <Composition id="Cover08" component={Cover08} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
+    <Composition id="Ep07" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "long" }} />
+    <Composition id="Ep07s01" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short01" }} />
+    <Composition id="Ep07s02" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short02" }} />
+    <Composition id="Ep07s03" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short03" }} />
+    <Composition id="Ep07s04" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short04" }} />
+    <Composition id="Ep07s05" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short05" }} />
+    <Composition id="Ep07s06" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short06" }} />
+    <Composition id="Ep07s07" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short07" }} />
+    <Composition id="Ep07s09" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short09" }} />
+    <Composition id="Ep07s10" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short10" }} />
+    <Composition id="Ep07s11" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short11" }} />
+    <Composition id="Ep07s12" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short12" }} />
     <Composition id="Proto3D" component={Proto3D} fps={30} width={1080} height={1920} durationInFrames={90} />
     <Composition id="Ep06Cover" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep06CoverShort1" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
