@@ -18,7 +18,7 @@ export const ChipAt: React.FC<{ x?: number; y?: number; text: string; w?: number
   <Place x={540 + (x - 540) / ZOOM} y={1000 + (y - 1000) / ZOOM} s={p / ZOOM}><Chip text={text} w={w} size={size} dir={dir} fill={hot ? "#FFF3CF" : C.card} color={hot ? C.key : C.ink} /></Place>
 );
 // ---- beats machinery (same as Ep05)
-type Beat = { a: string; sfx?: string; r: (p: number, f: number, a: number, b: number) => React.ReactNode };
+export type Beat = { a: string; sfx?: string; r: (p: number, f: number, a: number, b: number) => React.ReactNode };
 const wordsOf = new WeakMap<object, { n: string; s: number }[]>();
 const allWords = (t: T) => {
   let w = wordsOf.get(t.timing);

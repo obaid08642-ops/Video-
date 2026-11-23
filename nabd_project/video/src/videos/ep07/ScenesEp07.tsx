@@ -9,7 +9,7 @@ import * as I from "../../assets/ep08";
 import * as J from "../../assets/ep07";
 import { FONT, C } from "../../theme";
 import { mk, ChipAt, D, Pt, Cross, Tick, Q, L, type SceneDef } from "../ep08/engine08";
-import { SHORTS07 } from "./ShortsEp07";
+import { SHORTS07, B12 } from "./ShortsEp07";
 export type { SceneDef };
 
 export const S1 = mk(1, [
@@ -83,8 +83,17 @@ export const S8 = mk(8, [
   { a: "ثالثا", sfx: "pop", r: (p) => (<><Place x={540} y={990} s={1.4}><Warn /></Place><ChipAt text="3) اعرف علامات الخطر" hot p={p} /></>) },
   { a: "الكومنتات", sfx: "ding", r: (p) => (<><Place x={540} y={980} s={1.8 * p}><QuestionIcon /></Place><ChipAt text="اكتب في التعليقات: الحلقة الجاية؟" w={860} size={46} hot p={p} /></>) },
 ]);
+export const S8b = mk(9, [
+  { a: "", sfx: "swell", r: (p) => (<>{D("happy", 540, 1010, 0.85, true)}<ChipAt text="الخلاصة: 3 حاجات" hot p={p} /></>) },
+  { a: "اولا", sfx: "pop", r: (p, f) => (<><Place x={540} y={1000} s={1.2}><Virus spin={f / 20} /></Place><ChipAt text="1) أغلب النزلات فيروس" hot p={p} /></>) },
+  { a: "ثانيا", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.2}><J.Bed /></Place><ChipAt text="2) راحة ونوم وسوائل" hot p={p} /></>) },
+  { a: "ثالثا", sfx: "pop", r: (p) => (<><Place x={540} y={990} s={1.4}><Warn /></Place><ChipAt text="3) اعرف علامات الخطر" hot p={p} /></>) },
+  { a: "الكومنتات", sfx: "ding", r: (p) => (<><Place x={540} y={980} s={1.8 * p}><QuestionIcon /></Place><ChipAt text="اكتب في التعليقات: الحلقة الجاية؟" w={860} size={46} hot p={p} /></>) },
+]);
+export const S12as8 = mk(8, B12);
+export const SCENES_LANDSCAPE07: Record<number, SceneDef> = { 1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S12as8, 9: S8b };
 export const SCENES_LONG07: Record<number, SceneDef> = { 1: S1, 2: S2, 3: S3, 4: S4, 5: S5, 6: S6, 7: S7, 8: S8 };
-export const THEME_EP07: Record<number, "curiosity" | "tension" | "hope"> = { 0: "curiosity", 1: "curiosity", 2: "curiosity", 3: "tension", 4: "hope", 5: "curiosity", 6: "tension", 7: "curiosity", 8: "hope" };
+export const THEME_EP07: Record<number, "curiosity" | "tension" | "hope"> = { 0: "curiosity", 1: "curiosity", 2: "curiosity", 3: "tension", 4: "hope", 5: "curiosity", 6: "tension", 7: "curiosity", 8: "hope", 9: "hope" };
 export const DISCLAIMER_EP07 = "شرح مبسط للتوعية، مش بديل لاستشارة الطبيب أو الصيدلي. المصادر في الوصف.";
-export const sceneDef = (variant: string, id: number): SceneDef => (variant === "long" ? SCENES_LONG07[id] : SHORTS07[variant]);
+export const sceneDef = (variant: string, id: number): SceneDef => (variant === "long" ? SCENES_LONG07[id] : variant === "landscape" ? SCENES_LANDSCAPE07[id] : SHORTS07[variant]);
 export { Arrow, Magnifier, StopHand, CheckIcon, FONT, C, L };

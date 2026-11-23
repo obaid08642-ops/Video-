@@ -7,7 +7,7 @@ import { Virus, Bacterium } from "../../assets";
 import { Moon } from "../../assets/more";
 import * as I from "../../assets/ep08";
 import * as J from "../../assets/ep07";
-import { mk, ChipAt, D, Pt, Cross, Tick, Q, L, type SceneDef } from "../ep08/engine08";
+import { mk, ChipAt, D, Pt, Cross, Tick, Q, L, type SceneDef, type Beat } from "../ep08/engine08";
 
 const S: Record<string, SceneDef> = {};
 S.short01 = mk(1, [
@@ -130,7 +130,7 @@ S.short11 = mk(1, [
   { a: "عياني", r: (p) => (<>{Pt("tired", 540, 1010, 0.9)}<ChipAt text="الطفل العيّان: في البيت" p={p} /></>) },
   { a: "علامات", sfx: "swell", r: (p) => (<><Place x={540} y={990} s={1.4 * p}><Warn /></Place><ChipAt text="علامات الخطر: دكتور فورًا" hot p={p} /></>) },
 ]);
-S.short12 = mk(1, [
+export const B12: Beat[] = [
   { a: "", sfx: "swell", r: (p) => (<><Place x={300} y={1010} s={1.1}><I.Blister /></Place><Place x={780} y={1010} s={1.1}><I.Blister /></Place><ChipAt text="اقرأ كلمة واحدة على العلبة" hot p={p} /></>) },
   { a: "لكل", sfx: "pop", r: (p) => (<><Place x={540} y={1000} s={1.4}><I.Blister /></Place><ChipAt text="لكل دوا مادة فعالة" p={p} /></>) },
   { a: "واسماء", sfx: "bump", r: (p) => (<><Place x={300} y={1010} s={1.0}><I.Blister /></Place><Place x={780} y={1010} s={1.0}><I.Blister /></Place><Place x={540} y={1010} s={1.0}><text textAnchor="middle" y={30} fontSize={120} fontWeight={700} fill="#D9622B" fontFamily="sans-serif">=</text></Place><ChipAt text="أسماء مختلفة… نفس المادة" hot p={p} /></>) },
@@ -146,5 +146,6 @@ S.short12 = mk(1, [
   { a: "القاعده", sfx: "swell", r: (p) => (<><Place x={540} y={1000} s={1.3}><Magnifier /></Place><ChipAt text="القاعدة: اقرأ المادة الفعالة" hot p={p} /></>) },
   { a: "علبتين", sfx: "bump", r: (p) => (<><Place x={300} y={1010} s={1.0}><I.Blister /></Place><Place x={780} y={1010} s={1.0}><I.Blister /></Place>{Cross(p, 540, 1000, 2.2)}<ChipAt text="في علبتين؟ متجمعش" hot p={p} /></>) },
   { a: "ابعتها", sfx: "pop", r: (p) => (<>{D("happy", 540, 1010, 0.85, true)}<ChipAt text="ابعتها لحد بيخلط أدوية البرد" hot p={p} /></>) },
-]);
+];
+S.short12 = mk(1, B12);
 export const SHORTS07 = S;
