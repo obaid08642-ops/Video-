@@ -15,7 +15,7 @@ export const Svg: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 );
 export const ZOOM = 1.2;   // art is drawn bigger than the old episodes; chips are counter-scaled so text stays inside the safe zone
 export const ChipAt: React.FC<{ x?: number; y?: number; text: string; w?: number; size?: number; p?: number; dir?: "rtl" | "ltr"; hot?: boolean }> = ({ x = 540, y = 1400, text, w = 600, size = 50, p = 1, dir = "rtl", hot }) => (
-  <Place x={540 + (x - 540) / ZOOM} y={1000 + (y - 1000) / ZOOM} s={p / ZOOM}><Chip text={text} w={w} size={size} dir={dir} fill={hot ? "#FFF3CF" : C.card} color={hot ? C.key : C.ink} /></Place>
+  <Place x={540 + (x - 540) / ZOOM} y={1000 + (y - 1000) / ZOOM} s={p / ZOOM}><Chip text={text} w={Math.min(940, Math.max(w, Math.ceil(text.length * size * 0.47 + 90)))} size={size} dir={dir} fill={hot ? "#FFF3CF" : C.card} color={hot ? C.key : C.ink} /></Place>
 );
 // ---- beats machinery (same as Ep05)
 export type Beat = { a: string; sfx?: string; r: (p: number, f: number, a: number, b: number) => React.ReactNode };
