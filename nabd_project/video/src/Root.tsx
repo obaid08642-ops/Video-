@@ -17,7 +17,7 @@ import { Ep06, calcEp06, type Ep06Props } from "./videos/ep06/Ep06";
 import { Ep06Cover } from "./videos/ep06/Cover";
 import { Proto3D } from "./proto/Proto";
 import { Cover08 } from "./proto/Cover08";
-import { Cover07 } from "./proto/Cover07";
+import { Cover07, Cover07L } from "./proto/Cover07";
 import { Ep08, calcEp08 } from "./videos/ep08/Ep08";
 import { Ep07, calcEp07 } from "./videos/ep07/Ep07";
 import { Ep07L, calcEp07L } from "./videos/ep07/Ep07L";
@@ -81,6 +81,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep08s07b" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07b_stress" }} />
     <Composition id="Ep08s07c" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07c_why_some_get_sick" }} />
     <Composition id="Ep08s08" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short08_children" }} />
+    <Composition id="Cover07L" component={Cover07L} fps={30} width={1920} height={1080} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
     <Composition id="Cover07" component={Cover07} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
     <Composition id="Cover08" component={Cover08} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
     <Composition id="Ep07" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "long" }} />

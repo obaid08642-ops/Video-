@@ -17,9 +17,10 @@ const C = [
 ];
 const serveUrl = await bundle({ entryPoint: path.resolve("src/index.ts"), onProgress: () => {} });
 const browserExecutable = process.env.REMOTION_BROWSER || null; const chromiumOptions = { gl: "swangle" };
-for (const [file, title, sub, art] of C) {
+C.push(["ep07_cover_long_landscape", "نزلة البرد: مفيش علاج!", "فإيه اللي بينفع فعلًا؟", "long", "Cover07L"]);
+for (const [file, title, sub, art, comp] of C) {
   const inputProps = { title, sub, art };
-  const composition = await selectComposition({ serveUrl, id: "Cover07", inputProps, browserExecutable, chromiumOptions });
+  const composition = await selectComposition({ serveUrl, id: comp || "Cover07", inputProps, browserExecutable, chromiumOptions });
   await renderStill({ composition, serveUrl, output: `/home/user/Video-/out/${file}.png`, inputProps, browserExecutable, chromiumOptions, logLevel: "error" });
   console.log("ok", file);
 }
