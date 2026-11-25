@@ -11,6 +11,21 @@ import { Ep03LongTail, TAIL_FRAMES as TAIL_FRAMES_03 } from "./videos/ep03/LongT
 import { Ep02LongTail, TAIL_FRAMES } from "./videos/ep02/LongTail";
 import { Ep04, calcEp04, type Ep04Props } from "./videos/ep04/Ep04";
 import { Ep04Cover } from "./videos/ep04/Cover";
+import { Ep05, calcEp05, type Ep05Props } from "./videos/ep05/Ep05";
+import { Ep05Cover } from "./videos/ep05/Cover";
+import { Ep06, calcEp06, type Ep06Props } from "./videos/ep06/Ep06";
+import { Ep06Cover } from "./videos/ep06/Cover";
+import { Proto3D } from "./proto/Proto";
+import { Cover08 } from "./proto/Cover08";
+import { Cover07, Cover07L } from "./proto/Cover07";
+import { Ep08, calcEp08 } from "./videos/ep08/Ep08";
+import { Ep07, calcEp07 } from "./videos/ep07/Ep07";
+import { Ep07L, calcEp07L } from "./videos/ep07/Ep07L";
+import { FrameHook, FrameData, FrameTreat } from "./proto/Frames08";
+import { CharSheetV3, CharSheetLite, CharSheetMe } from "./proto/CharsV3";
+import { Story } from "./proto/Story";
+import { CharSheetCute } from "./proto/CharsCute";
+import { CharSheet } from "./assets/characters";
 
 // IBM Plex Sans Arabic (SIL OFL 1.1), loaded before any frame renders
 const fontHandle = delayRender("fonts");
@@ -43,9 +58,66 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep03Cover" component={Ep03Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep03AssetSheet" component={Ep03AssetSheet} fps={30} width={1080} height={1920} durationInFrames={1} />
     {/* episode 04 (paracetamol): one recording -> long video + 2 Shorts (voice = long | short1 | short2) */}
+    <Composition id="Ep06" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{} as Ep06Props} />
+    <Composition id="Ep06Short1" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short1" }} />
+    <Composition id="Ep06Short2" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short2" }} />
+    <Composition id="Ep06Short3" component={Ep06} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp06} defaultProps={{ variant: "short3" }} />
+    <Composition id="CharSheetCute" component={CharSheetCute} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="CharSheetMe" component={CharSheetMe} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="CharSheetLite" component={CharSheetLite} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="CharSheetV3" component={CharSheetV3} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="ProtoStory" component={Story} fps={30} width={1080} height={1920} durationInFrames={180} />
+    <Composition id="F08Hook" component={FrameHook} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="F08Data" component={FrameData} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="F08Treat" component={FrameTreat} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="Ep08" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "long" }} />
+    <Composition id="Ep08s01" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short01_story" }} />
+    <Composition id="Ep08s02" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short02_data" }} />
+    <Composition id="Ep08s03" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short03_blood_test" }} />
+    <Composition id="Ep08s04" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short04_alarm_signs" }} />
+    <Composition id="Ep08s05" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short05_four_drugs" }} />
+    <Composition id="Ep08s06" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short06_food" }} />
+    <Composition id="Ep08s07" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07_old_myth" }} />
+    <Composition id="Ep08s07b" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07b_stress" }} />
+    <Composition id="Ep08s07c" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short07c_why_some_get_sick" }} />
+    <Composition id="Ep08s08" component={Ep08} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp08} defaultProps={{ variant: "short08_children" }} />
+    <Composition id="Cover07L" component={Cover07L} fps={30} width={1920} height={1080} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
+    <Composition id="Cover07" component={Cover07} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
+    <Composition id="Cover08" component={Cover08} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ title: "", art: "long" }} />
+    <Composition id="Ep07" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "long" }} />
+    <Composition id="Ep07s01" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short01" }} />
+    <Composition id="Ep07s02" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short02" }} />
+    <Composition id="Ep07s03" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short03" }} />
+    <Composition id="Ep07s04" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short04" }} />
+    <Composition id="Ep07s05" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short05" }} />
+    <Composition id="Ep07s06" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short06" }} />
+    <Composition id="Ep07s07" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short07" }} />
+    <Composition id="Ep07s09" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short09" }} />
+    <Composition id="Ep07s10" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short10" }} />
+    <Composition id="Ep07s11" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short11" }} />
+    <Composition id="Ep07s12" component={Ep07} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp07} defaultProps={{ variant: "short12" }} />
+    <Composition id="Ep07L" component={Ep07L} fps={30} width={1920} height={1080} durationInFrames={300} calculateMetadata={calcEp07L} defaultProps={{ variant: "landscape" }} />
+    <Composition id="Proto3D" component={Proto3D} fps={30} width={1080} height={1920} durationInFrames={90} />
+    <Composition id="Ep06Cover" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
+    <Composition id="Ep06CoverShort1" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
+    <Composition id="Ep06CoverShort2" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
+    <Composition id="Ep06CoverShort3" component={Ep06Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
+    <Composition id="Ep05" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{} as Ep05Props} />
+    <Composition id="Ep05Short1" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{ variant: "short1" }} />
+    <Composition id="Ep05CoverShort1" component={Ep05Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
+    <Composition id="Ep05Short2" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{ variant: "short2" }} />
+    <Composition id="Ep05CoverShort2" component={Ep05Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
+    <Composition id="Ep05Short3" component={Ep05} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp05} defaultProps={{ variant: "short3" }} />
+    <Composition id="Ep05CoverShort3" component={Ep05Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
+    <Composition id="Ep05Cover" component={Ep05Cover} fps={30} width={1080} height={1920} durationInFrames={1} />
     <Composition id="Ep04Long" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "long" } as Ep04Props} />
     <Composition id="Ep04Short1" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short1" } as Ep04Props} />
     <Composition id="Ep04Short2" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short2" } as Ep04Props} />
+    <Composition id="Ep04Short3" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short3" } as Ep04Props} />
+    <Composition id="Ep04Short4" component={Ep04} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp04} defaultProps={{ voice: "short4" } as Ep04Props} />
+    <Composition id="Ep04CoverShort3" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short3" as const }} />
+    <Composition id="Ep04CoverShort4" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short4" as const }} />
+    <Composition id="CharSheet" component={CharSheet} fps={30} width={1920} height={1080} durationInFrames={1} />
     <Composition id="Ep04CoverLong" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "long" as const }} />
     <Composition id="Ep04CoverShort1" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short1" as const }} />
     <Composition id="Ep04CoverShort2" component={Ep04Cover} fps={30} width={1080} height={1920} durationInFrames={1} defaultProps={{ variant: "short2" as const }} />
@@ -53,3 +125,5 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="Ep02Final" component={Ep02} fps={30} width={1080} height={1920} durationInFrames={300} calculateMetadata={calcEp02} defaultProps={{ voice: "recording" } as Ep02Props} />
   </>
 );
+
+// Ep08Shorts registered above

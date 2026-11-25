@@ -1,0 +1,10 @@
+{
+ "maxWords": 9,
+ "overrides": {},
+ "sources": {
+  "s4l12": "VA/DoD 2025",
+  "s4l13": "VA/DoD 2025"
+ },
+ "rename": {},
+ "renamePhrase": {}
+}

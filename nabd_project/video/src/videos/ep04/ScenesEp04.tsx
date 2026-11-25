@@ -1012,12 +1012,67 @@ const s14: Omit<SceneDef, "C"> = {
   silence: (t) => [[t.s("s14l3") - 0.8, t.s("s14l3") - 0.05]],
 };
 
+/** 15: Short 3 ending «مش مادة واحدة… آلية تأثيره لسه فيها أسرار!» (everything above y=1200: the disclaimer sits below) */
+const S15: React.FC<{ t: T }> = ({ t }) => {
+  const f = useCurrentFrame(); const F = (a: string) => t.f(a);
+  const a = inOut(f, F("s15l1") - 4, F("s15l1@end") + 6, 12, 8), b = inOut(f, F("s15l2") - 4, F("s15l2@end") + 30, 12, 8);
+  return (
+    <Svg>
+      {a > 0 && (
+        <g opacity={a}>
+          <Place x={540} y={940} s={1.3 * pop(f, F("s15l1:مادة") - 6, 14)}><Cox blocked={1} /></Place>
+          <Label x={540} y={1170} text="مش مادة واحدة بس" size={50} o={prog(f, F("s15l1:واحدة"), 10)} />
+        </g>
+      )}
+      {b > 0 && (
+        <g opacity={b}>
+          <Place x={540} y={940} s={1.15 * pop(f, F("s15l2:آلية") - 4, 14)}><MysteryCard open={prog(f, F("s15l2:أسرار") - 2, 14)} text="؟" sub="" /></Place>
+          <Label x={540} y={1170} text="لسه فيها أسرار" size={52} color={C.key} o={prog(f, F("s15l2:أسرار"), 10)} />
+          {sparkle(f, F("s15l2:أسرار"), 760, 780, 1.3)}
+        </g>
+      )}
+    </Svg>
+  );
+};
+const s15: Omit<SceneDef, "C"> = {
+  cues: (t) => [{ at: t.s("s15l1:مادة") - 0.15, sfx: "pop", vol: 0.13 }, { at: t.s("s15l2:أسرار") - 0.2, sfx: "ding", vol: 0.12 }],
+  pulses: (t) => [t.f("s15l2@end")],
+};
+/** 16: Short 4 ending (1948 re-discovery -> everywhere in the world) */
+const S16: React.FC<{ t: T }> = ({ t }) => {
+  const f = useCurrentFrame(); const F = (a: string) => t.f(a);
+  const a = inOut(f, F("s16l1") - 4, F("s16l1@end") + 6, 12, 8), b = inOut(f, F("s16l2") - 4, F("s16l3@end") + 30, 12, 8);
+  return (
+    <Svg>
+      {a > 0 && (
+        <g opacity={a}>
+          <Place x={540} y={930} s={1.7 * pop(f, F("s16l1:إعادة") - 4, 14)}><Tablet glow={1} /></Place>
+          {sparkle(f, F("s16l1:إعادة"), 330, 790, 1.4)}{sparkle(f, F("s16l1:اكتشاف") - 2, 760, 820, 1.2)}
+          <Label x={540} y={1170} text="إعادة اكتشاف" size={52} color={C.key} o={prog(f, F("s16l1:إعادة"), 10)} />
+        </g>
+      )}
+      {b > 0 && (
+        <g opacity={b}>
+          <Place x={290} y={900} s={0.85}><Pharmacy ok={1} /></Place>
+          <Place x={790} y={890} s={0.8}><Hospital /></Place>
+          {[[340, 1090], [540, 1060], [740, 1090]].map(([x, y], i) => (<Place key={i} x={x} y={y} s={0.5 * pop(f, F("s16l2:استخدامه") + i * 6, 12)}><Tablet /></Place>))}
+          <Label x={540} y={1180} text="من أشهر المسكنات في العالم" size={46} color={C.key} o={prog(f, F("s16l3:أشهر"), 10)} />
+        </g>
+      )}
+    </Svg>
+  );
+};
+const s16: Omit<SceneDef, "C"> = {
+  cues: (t) => [{ at: t.s("s16l1:إعادة") - 0.2, sfx: "paper", vol: 0.13 }, { at: t.s("s16l3:أشهر") - 0.2, sfx: "shimmer", vol: 0.12 }],
+  pulses: (t) => [t.f("s16l3@end")],
+};
+
 export const SCENES_EP04: Record<number, SceneDef> = {
   1: { C: S1, ...s1 }, 2: { C: S2, ...s2 }, 3: { C: S3, ...s3 }, 4: { C: S4, ...s4 }, 5: { C: S5, ...s5 }, 6: { C: S6, ...s6 },
   7: { C: S7, ...s7 }, 8: { C: S8, ...s8 }, 9: { C: S9, ...s9 },
-  11: { C: S11, ...s11 }, 12: { C: S12, ...s12 }, 13: { C: S13, ...s13 }, 14: { C: S14, ...s14 },
+  11: { C: S11, ...s11 }, 12: { C: S12, ...s12 }, 13: { C: S13, ...s13 }, 14: { C: S14, ...s14 }, 15: { C: S15, ...s15 }, 16: { C: S16, ...s16 },
 };
 export const DISCLAIMER_EP04 = "شرح مبسط للتوعية، مش بديل لاستشارة الطبيب أو الصيدلي. المصادر في الوصف.";
 // which music theme plays under which scene: curiosity (explaining), tension (risk / controversy), hope (the takeaway)
-export const THEME_EP04: Record<number, "curiosity" | "tension" | "hope"> = { 1: "curiosity", 2: "curiosity", 3: "curiosity", 4: "curiosity", 5: "curiosity", 6: "tension", 7: "tension", 8: "hope", 9: "hope", 11: "tension", 12: "tension", 13: "hope", 14: "hope" };
+export const THEME_EP04: Record<number, "curiosity" | "tension" | "hope"> = { 1: "curiosity", 2: "curiosity", 3: "curiosity", 4: "curiosity", 5: "curiosity", 6: "tension", 7: "tension", 8: "hope", 9: "hope", 11: "tension", 12: "tension", 13: "hope", 14: "hope", 15: "curiosity", 16: "hope" };
 export { Scissors, Sparkle, Warn, Bubble, easeInOut, easeOut, interpolate, clamp, Muscle, Brain };

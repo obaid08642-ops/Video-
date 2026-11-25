@@ -12,7 +12,7 @@ import captionData from "../../data/ep04_captions.json";
 import { DISCLAIMER_EP04, SCENES_EP04, THEME_EP04 } from "./ScenesEp04";
 import { C, FONT } from "../../theme";
 
-export type Ep04Props = { voice: "long" | "short1" | "short2"; timing?: Timing };
+export type Ep04Props = { voice: "long" | "short1" | "short2" | "short3" | "short4"; timing?: Timing };
 const SHORT_OUTRO = 3.0;      // logo + «الحلقة الكاملة على القناة»
 const LONG_OUTRO = 1.5;       // logo; the sources pages follow (SRC_FRAMES)
 const PAGE = 66, STEP = 10, FADE = 8;
@@ -38,6 +38,17 @@ export const SRC_FRAMES = FADE + PAGES.length * PAGE + 66;
 const SOURCES_LONG = ["FDA", "ACOG 2025", "Environ Health 2025", "JAMA 2024", "JAMA Pediatrics 2026", "Eur J Pain 2015", "J Pharmacol Exp Ther 1948", "J Biol Chem 2005", "Merck Manual"];
 const SOURCES_S1 = ["FDA", "Merck Manual", "UCSF"];
 const SOURCES_S2 = ["ACOG 2025", "Environ Health 2025", "JAMA 2024", "JAMA Pediatrics 2026"];
+const SOURCES_S3 = ["J Biol Chem 2005"];
+const SOURCES_S4 = ["Eur J Pain 2015", "J Pharmacol Exp Ther 1948"];
+// Shorts 3/4 keep only SOME lines of scenes 1/3/4/5 (long ids), so an anchor on a line that is not in the Short must not throw:
+// it resolves to "never" (1e5 s) and that beat simply does not appear. (Shorts 1/2 keep the strict T on purpose.)
+const lenient = (t: T): T => new Proxy(t, {
+  get(tg, p, r) {
+    if (p === "s") return (a: string) => { try { return tg.s(a); } catch { return 1e5; } };
+    if (p === "f") return (a: string) => Math.round((r as T).s(a) * FPS);
+    return Reflect.get(tg, p, tg);
+  },
+});
 
 const EndText: React.FC<{ color: string; sub: string; sources: string[] }> = ({ color, sub, sources }) => (
   <div style={{ position: "absolute", left: 92, width: 826, top: 1240, textAlign: "center", fontFamily: FONT, direction: "rtl" }}>
@@ -93,14 +104,15 @@ const SrcPage: React.FC<{ p: number; f: number; a0: number }> = ({ p, f, a0 }) =
 
 export const Ep04: React.FC<Ep04Props> = ({ voice, timing }) => {
   const f = useCurrentFrame();
-  const t = useMemo(() => new T(timing!), [timing]);
+  const t0 = useMemo(() => new T(timing!), [timing]);
+  const t = useMemo(() => (voice === "short3" || voice === "short4" ? lenient(t0) : t0), [t0, voice]);
   const cards = useMemo(() => buildCards(timing!, captionData as unknown as CaptionData), [timing]);
   const ids = timing!.scenes.map((s) => s.id);
   const voiceEnd = Math.ceil(timing!.duration * FPS);
   const outro = Math.ceil(outroOf(voice) * FPS);
   const total = voiceEnd + outro;
-  const cues = useMemo(() => schedule(ids.flatMap((id) => SCENES_EP04[id].cues(t)), t.keywordSpans()), [t]);
-  const pulses = useMemo(() => ids.flatMap((id) => SCENES_EP04[id].pulses(t)), [t]);
+  const cues = useMemo(() => schedule(ids.flatMap((id) => SCENES_EP04[id].cues(t)).filter((c) => c.at < timing!.duration + 1), t.keywordSpans()), [t]);
+  const pulses = useMemo(() => ids.flatMap((id) => SCENES_EP04[id].pulses(t)).filter((p) => p < total), [t, total]);
   const tray = useMemo(() => ids.flatMap((id) => SCENES_EP04[id].tray?.(t) ?? []), [t]);
   const silences = useMemo(() => ids.flatMap((id) => SCENES_EP04[id].silence?.(t) ?? []), [t]);
 
@@ -135,7 +147,7 @@ export const Ep04: React.FC<Ep04Props> = ({ voice, timing }) => {
   const tension = t.has("s7l12") && t.has("s7l15") ? interpolate(f, [t.f("s7l12") - 15, t.f("s7l12"), t.f("s7l15@end"), t.f("s7l15@end") + 15], [0, 0.07, 0.07, 0], clamp) : 0;
   const discOn = prog(f, voiceEnd - 75, 12);
   const logo = prog(f, voiceEnd, 6);
-  const sources = voice === "long" ? SOURCES_LONG : voice === "short1" ? SOURCES_S1 : SOURCES_S2;
+  const sources = { long: SOURCES_LONG, short1: SOURCES_S1, short2: SOURCES_S2, short3: SOURCES_S3, short4: SOURCES_S4 }[voice];
   const srcStart = voiceEnd + outro;
   const inSrc = voice === "long" && f >= srcStart - 6;
 
